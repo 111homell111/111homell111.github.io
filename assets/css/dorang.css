@@ -11016,7 +11016,7 @@ a:hover {
 }
 
 .card .card-subtitle {
-  font-size: 13px;
+  font-size: 12px;
   opacity: .8;
   font-weight: bold;
   margin-bottom: 3px;
@@ -11780,4 +11780,35 @@ body.light-theme .contact-section .footer .links a {
 
 body.dark-theme {
   background: #212529;
+}
+
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* Custom divider with mode-specific color */
+.section-divider {
+  height: 2px;
+  width: 100%;
+  background-color: var(--divider-color);
+  margin: 20px 0;
+}
+
+/* Dark mode support */
+body.dark-theme .section-divider {
+  background-color: #fff;
+}
+
+/* Light mode support */
+body.light-theme .section-divider {
+  background-color: #343a40;
+}
+
+body.light-theme h2 {
+  color: #212529; /* Dark color for light mode */
+}
+
+body.dark-theme h2 {
+  color: #fff; /* Light color for dark mode */
 }
