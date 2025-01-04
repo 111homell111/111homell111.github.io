@@ -1,5 +1,6 @@
 
 /* typography */
+@use 'sass:math';
 h1,
 h2,
 h3,
@@ -10,10 +11,10 @@ h6 {
 	color: $white;
 }
 .title {
-	font-size: calc(20px + (30 - 20) * ((100vw - 300px) / (1300 - 300)));		
+	font-size: calc(20px + (30 - 20) * math.div((100vw - 300px), (1300 - 300)));		
 }
 p {
-	font-size: calc(13px + (15 - 13) * ((100vw - 300px) / (1300 - 300)));
+	font-size: calc(14px + (15 - 13) * math.div((100vw - 300px), (1300 - 300)));
 	opacity: .9; 
 	font-weight: 400;
 	letter-spacing: .6px;
@@ -34,8 +35,8 @@ a {
 	}
 }
 
-
 .xs-font {
 	font-size: 13px;
 	opacity: .5;
 }
+

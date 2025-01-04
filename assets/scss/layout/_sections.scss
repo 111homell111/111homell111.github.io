@@ -35,3 +35,11 @@ body {
         background-image: radial-gradient(200% 130% at 48% 65%,rgba($dark-theme-color, .50),rgba($dark-theme-color, .60),rgba($dark-theme-color, .70),rgba($dark-theme-color, .87),rgba($dark-theme-color, .99),$dark-theme-color 55%,$dark-theme-color 200%,);
     }
 }
+
+/* Custom divider with mode-specific color */
+.section-divider {
+    height: 2px;
+    width: 100%;
+    background-color: var(--divider-color);
+    margin: 10px 0;
+}
