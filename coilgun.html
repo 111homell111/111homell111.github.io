@@ -13,24 +13,28 @@
 	<link rel="stylesheet" href="assets/css/dorang.css">
 
 </head>
-<body data-spy="scroll" data-target=".navbar" data-offset="40" id="home" class="dark-theme">
+<body data-bs-spy="scroll" data-target=".navbar" data-offset="40" id="home"  data-bs-theme="dark">
     
     <!-- page navbar -->
-    <nav class="page-navbar" data-spy="affix" data-offset-top="10">
-        <ul class="nav-navbar container">
-            <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
-            <li class="nav-item"><a href="index.html#projects" class="nav-link">Projects</a></li>
-            <li class="nav-item"><a href="assets/resume/Resume-oct-2024.pdf" class="nav-link">Resume</a></li>
-            <li class="nav-item search">
-                <a href="javascript:void(0)" class="nav-link search-toggle"><i class="ti-search"></i> Search</a>
-                <div class="search-wrapper">
-                    <form>
-                        <input type="search" class="form-control" name="" placeholder="hit enter to search">
-                    </form>
-                </div>
-            </li>
-        </ul>
-    </nav><!-- end of page navbar -->
+    <nav class="navbar navbar-expand-sm">
+        <div class="container-fluid ">
+            <a class="navbar-brand" href="index.html">Home</a> <!-- me-auto pushes it to the left -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html#projects">Projects</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="assets/resume/Resume-oct-2024.pdf">Resume</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+     <!-- page navbar end -->
 
     <div class="theme-selector">
         <a href="javascript:void(0)" class="spinner">
@@ -49,10 +53,8 @@
     
 
     <!-- page container -->
-    <div class="container page-container">
-        <div class="col-md-10 col-lg-8 m-auto">
-            <h1 class="title mb-4">Multistage Coil Gun</h1>
-        </div>  
+    <div class="container">
+        <h1 class="title my-4 text-center">Multistage Coil Gun</h1>
 
         <div class="section-divider"></div>
 
@@ -67,12 +69,13 @@
                 </div>
                 <!-- Video Column (Right) -->
                 <div class="col-md">
-                    <div class="embed-responsive embed-responsive-16by9">
-                        <iframe class="embed-responsive-item" 
-                                src="https://www.youtube.com/embed/8LhQAW-y8WM?si=PQNdhbqgj-fzKuKk" 
-                                allowfullscreen>
+                    <div class="ratio ratio-16x9">
+                        <iframe 
+                            src="https://www.youtube.com/embed/8LhQAW-y8WM?si=PQNdhbqgj-fzKuKk" 
+                            allowfullscreen>
                         </iframe>
                     </div>
+                    
                 </div>
             </div>
         </div>
@@ -88,7 +91,7 @@
                 <!-- Text Column (Left) -->
                 <div class="col-md text-left">
                     <p>Coil guns utilize solenoids, which can be made from coils of magnetic wire. When a high current is passed through these wires, a strong magnetic field is generated. This magnetic field attract the bullet, accelerating it quickly forward. 
-                    <p>In our multistage coil gun, we have two solenoids placed in series. As the bullet passes the first solenoid, it passes an IR sensor which automatically triggers the second stage to fire.</p>>
+                    <p>In our multistage coil gun, we have two solenoids placed in series. As the bullet passes the first solenoid, it passes an IR sensor which automatically triggers the second stage to fire.</p>
                 </div>
                 <!-- Image Column (Right) -->
                 <div class="col-md">
@@ -106,13 +109,12 @@
 
         <!-- Electrical Components -->
  
-        <h2 class="title my-4 ">Electrical Components</h2> <!-- Adjusted margin classes -->
+        <h2 class="title my-4 text-center">Electrical Components</h2> <!-- Adjusted margin classes -->
        
         
         <!-- Working Voltage -->
         <section class="content-section">
-   
-            <h3 class="subtitle section-title mt-4">Working Voltage</h3>
+            <h3 class="subtitle section-title text-center mt-4">Working Voltage</h3>
             
             <div class="row">
                 <div class="col-12 text-left">
@@ -121,12 +123,12 @@
             </div>    
 
             <div class="row">
-                <div class="col-md-6">
+                <div class="col-md-6 text-center">
                     <img src="assets/imgs/coilgun-assets/buckbooster.png" alt="Coil Gun" class="img-fluid" style="height: 300px; object-fit: contain;">
                     <p>DC-DC Buck Boost, can boost 12V to 390V</p>
                 </div>
                 
-                <div class="col-md-6">
+                <div class="col-md-6 text-center">
                     <img src="assets/imgs/coilgun-assets/capacitor.png" alt="Coil Gun" class="img-fluid" style="height: 300px; object-fit: contain;">
                     <p>3 x 450V, 850uF and 1 x 450V, 780uF total </p>
                 </div>
@@ -155,8 +157,7 @@
 
         <!-- Optocouplers Section -->
         <section class="content-section">
-            <h3 class="subtitle section-title mt-3">Optocouplers</h3>
- 
+            <h3 class="subtitle section-title text-center mt-3">Optocouplers</h3>
             <!-- Content: Bullet Points on Left, Image on Right -->
             <div class="row">
                 <div class="col-md text-left">
@@ -174,7 +175,7 @@
 
         <!-- Thyristors Section -->
         <section class="content-section">
-            <h3 class="subtitle section-title mt-4">SCR - Thyristors</h3>
+            <h3 class="subtitle section-title mt-4 text-center">SCR - Thyristors</h3>
 
             <div class="row">
                 <div class="col-12 text-left">
@@ -183,11 +184,11 @@
             </div>    
 
             <div class="row">
-                <div class="col-md-6">
+                <div class="col-md-6 text-center">
                     <img src="assets/imgs/coilgun-assets/thrysitordatasheet.png" alt="Coil Gun" class="img-fluid" style="max-width: 80%; height: auto;">
                     <p>Thyristor Datasheet</p>
                 </div>
-                <div class="col-md-6">
+                <div class="col-md-6 text-center">
                     <video class="video-fluid" controls>
                         <source src="assets/imgs/coilgun-assets/earlytest.mp4" type="video/mp4">
                         Your browser does not support the video tag.
@@ -199,7 +200,7 @@
 
         <!-- Second Stage Section -->
         <section class="content-section">
-            <h3 class="subtitle section-title mt-4">Second Stage</h3>
+            <h3 class="subtitle section-title mt-4 text-center">Second Stage</h3>
 
             <!-- Content: Bullet Points on Left, Image on Right -->
             <div class="row">
@@ -214,42 +215,62 @@
             <div style="height: 25px;"></div> <!-- Spacer -->
 
             <div class="row">
-                <div class="col-md-6">
+                <div class="col-md-6 text-center">
                     <img src="assets/imgs/coilgun-assets/IR-sensor-test.gif" alt="Coil Gun" class="img-fluid" style="max-width: 80%; height: auto;">
                     <p>Test With the Automatic Second Stage</p>
                 </div>
-                <div class="col-md-6">
+                <div class="col-md-6 text-center">
                     <img src="assets/imgs/coilgun-assets/IR-sensor-cad.png" alt="Coil Gun" class="img-fluid" style="max-width: 80%; height: auto;">
                     <p>CAD of the IR Sensor Mount</p>
                 </div>
             </div>
         </section>
-        
 
-                <div class="section-divider"></div>
-
-                <div class="container my-5">
-                    <!-- Center-Aligned Title -->
-                    <div class="row">
-                        <div class="col-12 text-center">
-                            <h2 class="title mb-3 mt-3">Assembly and Testing</h2> <!-- Adjusted margin classes -->
-                        </div>
-                    </div>
-                    
-                    <!-- Content: Bullet Points on Left, Image on Right -->
-
-                        <!-- Text Column (Left) -->
-                        <div class="col-md-6 text-left">
-                            <p>fSICK AS VIDEOS AND PICTURES </p> 
-                            <p>In our multistage coil gun, weyololyoyl the first solenoid, it passes an IR sensor which automatically triggers the second stage to fire</p>>
-                        </div>
-                
-                        <!-- Image Column (Right) -->
-                        <div class="col-md-6">
-                            <img src="assets/imgs/coilgun-assets/coilgun-animation.gif" alt="Coil Gun" class="img-fluid">
-                        </div>
-                    </div>
+        <section class="content-section">
+            <h3 class="subtitle section-title mt-4 text-center">Full Circuit</h3>
+            <div class="row">
+                <div class="col-md-6">
+                    <p>We based our circuit off <a href="https://github.com/kakushinAU/coilgun/blob/main/Coil%20Gun%20Schematic.pdf"  style="color: rgb(32, 110, 255);">B.Sampson's circuit.</a> We've made small adjustments with certain components like replacing the optocoupler with an IR receiver and emitter when ours broke but everything else is pretty similar.</p>
+                    <p>Here on the right is our constructed circuit with the different voltage levels sectioned off/highlighted.</p>
                 </div>
+                <div class="col-md-6 text-center">
+                    <img src="assets/imgs/coilgun-assets/voltage-sections.jpg" alt="Coil Gun" class="img-fluid" style="max-width: 80%; height: auto;">
+                </div>
+            </div>
+
+            <div style="height: 25px;"></div> <!-- Spacer -->
+
+            <div class="row">
+                <div class="col-md-12 text-center">
+                    <img src="assets/imgs/coilgun-assets/BSampsons-circuit.jpg" alt="Coil Gun" class="img-fluid" style="max-width: 80%; height: auto;">
+                </div>
+            </div>
+        </section>
+        
+        <div class="section-divider"></div>
+
+        <div class="container my-5">
+            <!-- Center-Aligned Title -->
+            <div class="row">
+                <div class="col-12 text-center">
+                    <h2 class="title mb-3 mt-2">Assembly and Testing</h2> <!-- Adjusted margin classes -->
+                </div>
+            </div>
+            
+            <!-- Content: Bullet Points on Left, Image on Right -->
+
+                <!-- Text Column (Left) -->
+                <div class="col-md-6 text-left">
+                    <p>fSICK AS VIDEOS AND PICTURES </p> 
+                    <p>In our multistage coil gun, weyololyoyl the first solenoid, it passes an IR sensor which automatically triggers the second stage to fire</p>>
+                </div>
+        
+                <!-- Image Column (Right) -->
+                <div class="col-md-6">
+                    <img src="assets/imgs/coilgun-assets/coilgun-animation.gif" alt="Coil Gun" class="img-fluid">
+                </div>
+            </div>
+        </div>
     </div> <!-- end of page container -->
 
     <div class="section-divider"></div>
@@ -289,9 +310,6 @@
     <!-- core  -->
     <script src="assets/vendors/jquery/jquery-3.4.1.js"></script>
     <script src="assets/vendors/bootstrap/bootstrap.bundle.js"></script>
-
-    <!-- bootstrap affix -->
-    <script src="assets/vendors/bootstrap/bootstrap.affix.js"></script>
 
     <!-- Dorang js -->
     <script src="assets/js/dorang.js"></script>

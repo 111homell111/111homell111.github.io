@@ -10,36 +10,6 @@ body.light-theme {
 		color: $black;
 	}
 
-	nav.page-navbar {
-		
-		.nav-link {
-			color: $black;
-		}
-
-		&.affix {
-			background: $light-theme-color;
-			border-bottom: 1px solid rgba($gray-700, .2);
-
-			.nav-link {
-				color: $gray-800;
-			}
-		}
-
-		.nav-navbar {
-			.search {
-
-				.search-wrapper {
-					background: $light-theme-color;
-					border-color: rgba($gray-500,.5);
-
-					&:after {
-						border-color: inherit;
-					}
-				}
-			}
-		}
-			
-	}
 
 	.theme-selector {
 		background: $light-theme-color;

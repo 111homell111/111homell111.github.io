@@ -30,13 +30,14 @@ $(document).ready(function(){
     $('.spinner').click(function(){
         $(".theme-selector").toggleClass('show');
     });
-    $('.light').click(function(){
-        $('body').addClass('light-theme');
-        $('body').removeClass('dark-theme');
+    $('.light').click(function() {
+        $('body').attr('data-bs-theme', 'light'); // Set Bootstrap theme
+        $('body').addClass('light-theme').removeClass('dark-theme'); // Optional: Keep your custom classes
     });
-    $('.dark').click(function(){
-        $('body').toggleClass('dark-theme');
-        $('body').removeClass('light-theme');
+    
+    $('.dark').click(function() {
+        $('body').attr('data-bs-theme', 'dark'); // Set Bootstrap theme
+        $('body').addClass('dark-theme').removeClass('light-theme'); // Optional: Keep your custom classes
     });
 });
 
@@ -60,3 +61,4 @@ $(document).ready(function(){
         } 
     });
 }); 
+
