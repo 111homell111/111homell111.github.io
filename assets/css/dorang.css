@@ -11883,12 +11883,19 @@ h6,
 }
 
 p {
-  font-size: calc(18x + 2 * (100vw - 300px) / 1000);
+  font-size: calc(16x + 2 * (100vw - 300px) / 1000);
   opacity: 0.9;
   font-weight: 400;
   letter-spacing: 0.8px;
   line-height: 1.6;
   color: #fff;
+}
+
+p.caption {
+  font-size: calc(12px + 2 * (100vw - 300px) / 1000); /* Smaller font size */
+  opacity: 0.7; /* More transparent */
+  text-align: center; /* Center the caption below media */
+  margin-top: 5px; /* Add spacing above the caption */
 }
 
 a {

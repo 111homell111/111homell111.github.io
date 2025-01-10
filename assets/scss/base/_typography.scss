@@ -13,13 +13,22 @@ h6 {
 	font-size: calc(22px + (30 - 20) * ((100vw - 300px) / (1300 - 300)));		
 }
 p {
-	font-size: calc(18x + (15 - 13) * ((100vw - 300px) / (1300 - 300)));
+	font-size: calc(16x + (15 - 13) * ((100vw - 300px) / (1300 - 300)));
 	opacity: .9; 
 	font-weight: 400;
 	letter-spacing: .8px;
 	line-height: 1.6;
 	color: $white;
 } 
+
+p.caption {
+    font-size: calc(12px + (12 - 10) * ((100vw - 300px) / (1300 - 300))); /* Smaller font size */
+    opacity: 0.7; /* More transparent */
+    //font-style: italic; /* Optional stylistic choice */
+    text-align: center; /* Center the caption below media */
+    margin-top: 5px; /* Add spacing above the caption */
+}
+
 a {
 	color: $gray-600;
 	text-decoration: none;
