@@ -48,35 +48,227 @@
     
     <!-- Add this right after the navigation bar -->
     <div class="container-fluid p-0" style="padding-top: 80px;">
-        <img src="assets/imgs/robotsummer-assets/robot-summer.png" alt="Wide Image" class="img-fluid w-100">
+        <img src="assets/imgs/robotsummer-assets/robot-summer.jpg" alt="Wide Image" class="img-fluid w-100">
     </div>
     
 
     <!-- page container -->
     <div class="container">
-        <h1 class="title my-4 text-center">Robot Summer - Overcooked Robot</h1>
+        <h1 class="title my-4 text-center">ENPH353 - Overcooked Robot</h1>
 
         <div class="section-divider"></div>
 
-        <div class="container my-4">
-            <div class="row">
-                <!-- Text Column (Left) -->
-                <div class="col-md text-left">
-                    <h2>About the Project</h2>
-                    <p>In the second year summer of engineering physics, every student competes in a robot summer competition.</p>
-                    <p>This year the competition was based on the game overcooked. We had to design and build two robots that would work together to assemble fake burgers.</p>
-                    <p>Check out a video of our robot in action! --></p>
-                </div>
-                <!-- Video Column (Right) -->
-                <div class="col-md">
-                    <video class="video-fluid" controls style="height: 400px; object-fit: cover;">
-                        <source src="assets/imgs/robotsummer-assets/competition.mp4" type="video/mp4">
-                        Your browser does not support the video tag.
-                    </video>
+        <!--About Section-->
+        <section class = "content-section">
+            <div class="container my-4">
+                <div class="row">
+                    <!-- Text Column (Left) -->
+                    <div class="col-md text-left">
+                        <h2>About the Project</h2>
+                        <p>The summer of second year at UBC's Engineering Physics program is fondly called robot summer, as every student must compete in an intense, robot competition.</p>
+                        <p>This year the competition was based on the game overcooked. The task was to design and build two robots that would work together to assemble fake dishes in a timed setting, similar to the game overcooked.</p>
+                        <p>Team Members: Ella Yan, Brianna Gopaul, Tristan Brown, Nathan Tourveille</p>
+                        <p>Check out our robot in action below!/p>
+                    </div>
+                    <!-- Video Column (Right) -->
+                </div> 
+                <div class="row">
+                    <div class="col-md">
+                        <video class="video-fluid" controls style="height: 400px; object-fit: cover;">
+                            <source src="assets/imgs/robotsummer-assets/competition.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                        <p class="caption">Burger Assembly From Start to Finish</p>
+                    </div>
+                    <div class="col-md">
+                        <video class="video-fluid" controls style="height: 400px; object-fit: cover;">
+                            <source src="assets/imgs/robotsummer-assets/first-burger.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                        <p class="caption">First Team to Make a Burger :D</p>
+                    </div>
                 </div>
             </div>
-        </div>
+        </section>
 
+        <div class="section-divider"></div>
+
+        
+        <!--Rules Section-->
+        <section class = "content-section">
+            <div class="container my-4">
+                <h2 class="subtitle section-title text-center">Competition Rules</h2>
+                <div class="row">
+                    <div class="col-md text-left">
+                        <p>This year's competition was based on the game Overcooked, a game in which, multiple players have to work together to prepare and serve dishes in a timely manner.</p>
+                        
+                        <h6>Competition Overview</h6>
+                        <ul>
+                            <li><b>Objective:</b> Build two robots to autonomously prepare and serve as many dishes (e.g., plastic salads, burgers, fries) within 2 minutes.</li>
+                            <li><b>Key Tasks:</b> Robots must pick up, "chop", "cook", assemble, and serve dishes to earn points</li>
+                            <li><b>Timeline:</b> Students are given approximately 6 weeks to bring up their robots from scratch</li>
+                        </ul>
+
+                        <h6>Competition Surface</h6>   
+                        <ul>
+                            <li>8'x8' wooden surface with countertops 6" above the surface </li>
+                            <li>Black electrical tape marks a straight path and locations of ingredients/cooktops</li>
+                        </ul>
+
+                        <h6>Ingredients and Plates</h6>   
+                        <ul>
+                            <li>Coloured tape marks where ingredients/plates can be initially placed</li>
+                            <li>Students are to place the ingredients in their specified locations and the robots must autonomously pick them up</li>
+                        </ul>
+
+                        <h6>Recipes</h6>   
+                        <ul>
+                            <li>Many possible recipes ranging from cheese plate (cheese on a plate worth 1 point) to deluxe burger + fries + salad (worth 21 points)</li>
+                            <li>More complex recipes are generally worth more points</li>
+                            <li>Burger patties/fries must be cooked, meaning they must sit on the cooktop for 5-20s</li>
+                            <li>Fries are connected via velcro and must be chopped (seperated) before serving</li>
+                        </ul>
+
+                        <h6>Serving and Tips</h6>   
+                        <ul>
+                            <li>The serving area has no black tape indicator but rather has an IR beacon instead</li>
+                            <li>Dishes like burgers can lose points if the presentation is sloppy (i.e. the pattie is about to fall out of the burger)</li>
+                        </ul>
+                    </div>
+                </div> 
+
+                <div class="row">
+                    <div class="col-md text-center">
+                        <img src="assets/imgs/robotsummer-assets/competition-surface-diagram.png" alt="Competition Surface Diagram" class="img-fluid" style="height: 350px; object-fit: contain;">
+                        <p class="caption">Competition Surface Diagram</p>
+                    </div>
+                    <div class="col-md text-center">
+                        <img src="assets/imgs/robotsummer-assets/recipes.png" alt="Table of Recipes" class="img-fluid" style="height: 350px; object-fit: contain;">
+                        <p class="caption">List of Recipes (Deluxe Includes Tomato and Lettuce)</p>
+                    </div>
+                </div> 
+            </div>
+        </section>
+
+        <div class="section-divider"></div>
+
+        <!--Mechanical Section-->
+        <section class = "content-section">
+            <div class="container my-4">
+                <h2 class="subtitle section-title text-center mb-3">Mechanical Design</h2>
+                <div class="row">
+                    <!-- Text Column (Left) -->
+                    <div class="col-md-7 text-left">
+                        <h4>Preliminary Design</h4>
+                        <ul>
+                            <li>We wanted something that was fool-proof/100% doable in 6 weeks by us, a team of students with next to no mechanical CAD experience :D</li>
+                            <li>We wanted both robots to have a very similar design to reduce the amount of work we had to do/increase our chances of finishing on time</li>
+                            <li>We decided to go for a claw and chute design... (in hindsight this was very wacky but we were running out of time and just had to pick an idea and send it)</li>
+                            <li>We decided to have our robot be extremely wide and only drive left/right, while making slight adjustments to stay on track</li>
+                            <li>The reasoning for the claw was that the large sweeping motion would be robust against positioning errors</li>
+                            <li>The reasoning for the chute was so we could produce a perfectly stacked burger each time</li>
+                            <li>We did consider designs that could make multiple burgers at once, but decided they were not feasable in 6 weeks (which in hindsight was the right play)</li>
+                        </ul>                         
+                    </div>
+                    <div class="col-md text-center">
+                        <img src="assets/imgs/robotsummer-assets/preliminary-serving-sketch.png" alt="Competition Surface Diagram" class="img-fluid" style="height: 350px; object-fit: contain;">
+                        <p class="caption">Preliminary Sketch of Burger Being Served</p>
+                    </div>
+                </div> 
+                
+                <div class="row">
+                    <div class="col-md text-center">
+                        <img src="assets/imgs/robotsummer-assets/preliminary-chassis-config.png" alt="Competition Surface Diagram" class="img-fluid" style="height: 220px; object-fit: contain;">
+                        <p class="caption">Initial Chassis Layout With Tennis Balls for Suspension</p>
+                    </div>
+                    <div class="col-md text-center">
+                        <img src="assets/imgs/robotsummer-assets/preliminary-claw.gif" alt="Competition Surface Diagram" class="img-fluid" style="height: 220px; object-fit: contain;">
+                        <p class="caption">Initial Claw Proof of Concept</p>
+                    </div>
+                    <div class="col-md text-center">
+                        <img src="assets/imgs/robotsummer-assets/preliminary-ugly-diagram-sorry.jpg" alt="Competition Surface Diagram" class="img-fluid" style="height: 220px; object-fit: contain;">
+                        <p class="caption">Inital Sketches of Claw and Chute Idea</p>
+                    </div>
+                </div> 
+
+                <div class="row mt-4">
+                    <div class="col-md text-left">
+                        <h4>Detailed Design and Manufacturing</h4>
+                        <p>One of my tasks during this project was to CAD the chassis, the claw and chute were designed by Tristan and Nathan </p>
+                        <p>I cadded everything using OnShape and made an assembly to allow us to visualize where to mount servos and PCBs</p>
+                        <p>I spent a lot of time laser cutting this summer and also learned a bit about tolerancing</p>
+                        <p>I still wouldn't really say that Mech is my strong suit but it was still really fun to CAD, lasercut and manufacture stuff for once this summer! I enjoyed pretending to be a mecchie for a while haha</p>
+                    </div>
+                    <div class="col-md text-left">
+                        <img src="assets/imgs/robotsummer-assets/robot-chassis-assembly.png" alt="Coil Gun" class="img-fluid" style="max-width: 90%; height: auto;">
+                        <p class="caption">Assembly of the Robot Chassis, Reusable for Both Robots!</p>
+                    </div>
+                </div>
+
+
+                <div class="row">
+                    <div class="col-md text-center">
+                        <img src="assets/imgs/robotsummer-assets/nesting-for-lasercut.png" alt="Coil Gun" class="img-fluid" style="max-width: 60%; height: auto;">
+                        <p class="caption">Testing Burger Serving</p>
+                    </div>
+                    <div class="col-md text-center">
+                        <img src="assets/imgs/robotsummer-assets/manufacturing-chassis.jpg" alt="Coil Gun" class="img-fluid" style="max-width: 60%; height: auto;">
+                        <p class="caption">Testing Burger Serving</p>
+                    </div>
+                </div> 
+
+                <div class="row">
+                    <div class="col-md text-center"></div>
+                        <video class="video-fluid" controls style="height: 800px; object-fit: cover;">
+                            <source src="assets/imgs/robotsummer-assets/chute-testing.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                        <p class="caption">Testing Burger Serving</p>
+                    </div>
+                </div> 
+            </div>
+        </section>
+
+        <div class="section-divider"></div>
+
+        <!--Electrical Ideas Section-->
+        <section class = "content-section">
+            <div class="container my-4">
+                <h2 class="subtitle section-title text-center mb-3">Electrical Design</h2>
+                <div class="row">
+                    <!-- Text Column (Left) -->
+                    <div class="col-md text-left">
+                        <h4>Microcontroller Selection</h4>
+                        <p>We chose to use ESP32's over bluepills as ESP32's come with built in wireless communication capabilities, namely WiFi, Bluetooth, and ESP-NOW. I also just happened to have a bunch lying around :3</p>
+                                                
+                        <h6>What is ESP-NOW?</h6>
+                        <ul>
+                            <li>An efficient peer-to-peer communication protocol developed by Espressif specifically for ESP32 devices</li>
+                            <li>Does not require connection to an external central network</li>
+                            <li>Has low latency and low power consumption</li>
+                        </ul>
+                    </div>
+                    <div class="col-md text-center">
+                        <img src="assets/imgs/robotsummer-assets/esp32-WROOM-pinout.png" alt="Coil Gun" class="img-fluid" style="max-width: 90%; height: auto;">
+                    </div>
+                </div> 
+                
+                <div class="row">
+                    <div class="col-md text-left mt-5">
+                        <h4>Initial System Design</h4>
+                        <p>This was our initial electrical block diagram generated during our planning phase. We ended up not using rotary encoders or the IR beacon sensors (though Brianna's prototype was still really cool!). We also chose not to include the limit switches and IR beam breaks in the interest of time.</p>
+                        <p>We chose give our motors a seperate ground as we didn't want the electrical noise to couple to our sensitive sensors and microcontroller. </p>
+                    </div>
+                </div> 
+
+                <div class="row">
+                    <div class="col-md text-center">
+                        <img src="assets/imgs/robotsummer-assets/electronic-block-diagram.png" alt="Initial Electrical Block Diagram" class="img-fluid" style="max-width: 100%; height: auto;">
+                        <p class="caption">Initial Electrical System Design</p> 
+                    </div>
+                </div> 
+            </div>
+        </section>
     </div> <!-- end of page container -->
 
     <div class="section-divider"></div>

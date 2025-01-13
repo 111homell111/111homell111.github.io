@@ -6,15 +6,40 @@ h3,
 h4,
 h5,
 h6 {
-	font-weight: bold;
-	color: $white;
+    font-weight: bold;
+    color: $white;
 }
+
+h1 {
+    font-size: calc(28px + (30 - 28) * ((100vw - 768px) / (1300 - 768))); /* Largest */
+}
+
+h2 {
+    font-size: calc(26px + (26 - 24) * ((100vw - 768px) / (1300 - 768))); /* Second largest */
+}
+
+h3 {
+    font-size: calc(20px + (24 - 20) * ((100vw - 768px) / (1300 - 768))); /* Medium size */
+}
+
+h4 {
+    font-size: calc(18px + (20 - 18) * ((100vw - 768px) / (1300 - 768))); /* Smaller */
+}
+
+h5 {
+    font-size: calc(16px + (18 - 16) * ((100vw - 768px) / (1300 - 768))); /* Smaller still */
+}
+
+h6 {
+    font-size: calc(16px + (15 - 14) * ((100vw - 768px) / (1300 - 768))); /* Smallest */
+}
+
 .title {
-	font-size: calc(22px + (30 - 20) * ((100vw - 300px) / (1300 - 300)));		
+	font-size: calc(22px + (28 - 20) * ((100vw - 300px) / (1300 - 300)));		
 }
 p {
 	font-size: calc(16x + (15 - 13) * ((100vw - 300px) / (1300 - 300)));
-	opacity: .9; 
+	opacity: 1; 
 	font-weight: 400;
 	letter-spacing: .8px;
 	line-height: 1.6;
