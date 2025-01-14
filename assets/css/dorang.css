@@ -12256,6 +12256,10 @@ a:hover {
   border: 2px solid #fff;
 }
 
+.navbar {
+  transition: transform 0.3s ease-in-out;
+}
+
 .footer {
   position: relative;
   width: 100%;

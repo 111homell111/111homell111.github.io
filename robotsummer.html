@@ -17,7 +17,7 @@
     
     <!-- page navbar -->
     <nav class="navbar navbar-expand-sm">
-        <div class="container-fluid ">
+        <div id="navbar" class="container-fluid ">
             <a class="navbar-brand" href="index.html">Home</a> <!-- me-auto pushes it to the left -->
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
@@ -68,7 +68,7 @@
                         <p>The summer of second year at UBC's Engineering Physics program is fondly called robot summer, as every student must compete in an intense, robot competition.</p>
                         <p>This year the competition was based on the game overcooked. The task was to design and build two robots that would work together to assemble fake dishes in a timed setting, similar to the game overcooked.</p>
                         <p>Team Members: Ella Yan, Brianna Gopaul, Tristan Brown, Nathan Tourveille</p>
-                        <p>Check out our robot in action below!/p>
+                        <p>Check out our robot in action below!</p>
                     </div>
                     <!-- Video Column (Right) -->
                 </div> 
@@ -195,11 +195,13 @@
                     <div class="col-md text-left">
                         <h4>Detailed Design and Manufacturing</h4>
                         <p>One of my tasks during this project was to CAD the chassis, the claw and chute were designed by Tristan and Nathan </p>
+                        <p>We decided to use two wheels, and two tennis balls for support. The tennis balls, though difficult to cut, worked surprisingly well! Their flexibility allows them to act as a suspension while the fuzziness lets them glide smoothly across the floor.</p>
+                        <p>We designed the top half of our robot, holding the claw and chute, to rotate 180°. The reasoning was that we thought that operating a single servo would be easier than making our whole robot rotate (which runs the risk of becoming disoriented). In hindsight this feels a bit inelegant but hey, it still worked.</p>
                         <p>I cadded everything using OnShape and made an assembly to allow us to visualize where to mount servos and PCBs</p>
-                        <p>I spent a lot of time laser cutting this summer and also learned a bit about tolerancing</p>
-                        <p>I still wouldn't really say that Mech is my strong suit but it was still really fun to CAD, lasercut and manufacture stuff for once this summer! I enjoyed pretending to be a mecchie for a while haha</p>
+
+                       
                     </div>
-                    <div class="col-md text-left">
+                    <div class="col-md text-center">
                         <img src="assets/imgs/robotsummer-assets/robot-chassis-assembly.png" alt="Coil Gun" class="img-fluid" style="max-width: 90%; height: auto;">
                         <p class="caption">Assembly of the Robot Chassis, Reusable for Both Robots!</p>
                     </div>
@@ -208,12 +210,12 @@
 
                 <div class="row">
                     <div class="col-md text-center">
-                        <img src="assets/imgs/robotsummer-assets/nesting-for-lasercut.png" alt="Coil Gun" class="img-fluid" style="max-width: 60%; height: auto;">
-                        <p class="caption">Testing Burger Serving</p>
+                        <img src="assets/imgs/robotsummer-assets/nesting-for-lasercut.png" alt="Nesting For Laser Cutting" class="img-fluid"  style="height: 375px; object-fit: contain;">
+                        <p class="caption">Nesting Claw Components for Laser Cutting</p>
                     </div>
                     <div class="col-md text-center">
-                        <img src="assets/imgs/robotsummer-assets/manufacturing-chassis.jpg" alt="Coil Gun" class="img-fluid" style="max-width: 60%; height: auto;">
-                        <p class="caption">Testing Burger Serving</p>
+                        <img src="assets/imgs/robotsummer-assets/manufacturing-chassis.jpg" alt="Halfway Assembled Chassis" class="img-fluid"  style="height: 375px; object-fit: contain;">
+                        <p class="caption">Partially Assembled Drivetrain</p>
                     </div>
                 </div> 
 
@@ -223,7 +225,7 @@
                             <source src="assets/imgs/robotsummer-assets/chute-testing.mp4" type="video/mp4">
                             Your browser does not support the video tag.
                         </video>
-                        <p class="caption">Testing Burger Serving</p>
+                        <p class="caption">Testing Burger Serving Mechanism</p>
                     </div>
                 </div> 
             </div>
@@ -240,7 +242,7 @@
                     <div class="col-md text-left">
                         <h4>Microcontroller Selection</h4>
                         <p>We chose to use ESP32's over bluepills as ESP32's come with built in wireless communication capabilities, namely WiFi, Bluetooth, and ESP-NOW. I also just happened to have a bunch lying around :3</p>
-                                                
+                        <p>One thing to note is that on a lot of ESP32 dev boards, some analog pins share hardware with the WiFi/wireless communication which renders them unusable when ESP-NOW/WiFi is in use! We learned this the hard way D:</p>            
                         <h6>What is ESP-NOW?</h6>
                         <ul>
                             <li>An efficient peer-to-peer communication protocol developed by Espressif specifically for ESP32 devices</li>
@@ -256,7 +258,7 @@
                 <div class="row">
                     <div class="col-md text-left mt-5">
                         <h4>Initial System Design</h4>
-                        <p>This was our initial electrical block diagram generated during our planning phase. We ended up not using rotary encoders or the IR beacon sensors (though Brianna's prototype was still really cool!). We also chose not to include the limit switches and IR beam breaks in the interest of time.</p>
+                        <p>This was our initial electrical block diagram generated during our planning phase. We ended up not using rotary encoders or IR beacon sensors (though Brianna's prototype was still really cool!). We also chose not to include the limit switches and IR beam breaks in the interest of time.</p>
                         <p>We chose give our motors a seperate ground as we didn't want the electrical noise to couple to our sensitive sensors and microcontroller. </p>
                     </div>
                 </div> 
