@@ -37,6 +37,7 @@
 		border-radius: $card-border-radius;
 	}
 
+	//grey stuff
 	.overlay {
 		position: absolute;
 		top: 0;
@@ -46,13 +47,15 @@
 		background: rgba($gray-800, .5);
 		@include transition(all, 1s);
 	}
+	
+	//text
 	.des {
 		position: absolute;
 		top: 80%;
 		left: 0;
 		width: 100%;
 		height: 100%;
-		@include transition(all ,.8s);
+		@include transition(all ,.6s);
 
 		.title {
 			font-weight: bold;
@@ -66,7 +69,7 @@
 		p {
 			margin-top: 100px;
 			opacity: 1;
-			@include transition(all, 1.2s);
+			@include transition(all, 1s);
 			opacity: 0;
 			visibility: hidden;
 		}
@@ -79,7 +82,7 @@
 			background: rgba($gray-900, .8);				
 		}
 		.des {
-			top: 40%;
+			top: 45%;
 
 			p {
 				margin-top: 0;

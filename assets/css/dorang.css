@@ -11996,7 +11996,7 @@ a:hover {
   left: 0;
   width: 100%;
   height: 100%;
-  transition: all, 0.8s;
+  transition: all, 0.6s;
 }
 @media (prefers-reduced-motion: reduce) {
   .overlay-img .des {
@@ -12013,7 +12013,7 @@ a:hover {
 .overlay-img .des p {
   margin-top: 100px;
   opacity: 1;
-  transition: all, 1.2s;
+  transition: all, 1s;
   opacity: 0;
   visibility: hidden;
 }
@@ -12026,7 +12026,7 @@ a:hover {
   background: rgba(33, 37, 41, 0.8);
 }
 .overlay-img:hover .des, .overlay-img:focus .des {
-  top: 40%;
+  top: 45%;
 }
 .overlay-img:hover .des p, .overlay-img:focus .des p {
   margin-top: 0;
@@ -12452,6 +12452,19 @@ body.light-theme .title {
   color: #000;
 }
 body.light-theme p {
+  color: #000;
+}
+body.light-theme h1, body.light-theme .h1,
+body.light-theme h2,
+body.light-theme .h2,
+body.light-theme h3,
+body.light-theme .h3,
+body.light-theme h4,
+body.light-theme .h4,
+body.light-theme h5,
+body.light-theme .h5,
+body.light-theme h6,
+body.light-theme .h6 {
   color: #000;
 }
 body.light-theme .theme-selector {
