@@ -27,17 +27,17 @@
     <!-- page navbar -->
     <nav id="navbar" class="navbar navbar-expand-sm fixed-top">
         <div class="container-fluid ">
-            <a class="navbar-brand" href="index.html">Home</a> <!-- me-auto pushes it to the left -->
+            <a class="navbar-brand fs-4" href="index.html">Home</a> <!-- me-auto pushes it to the left -->
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="index.html#projects">Projects</a>
+                        <a class="nav-link fs-5" href="index.html#projects">Projects</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="assets/resume/Resume-jan-2025.pdf">Resume</a>
+                        <a class="nav-link fs-5" href="assets/resume/Resume-jan-2025.pdf">Resume</a>
                     </li>
                 </ul>
             </div>
@@ -165,10 +165,10 @@
         <section class = "content-section">
             <div class="container my-4">
                 <h2 class="subtitle section-title text-center mb-3">Mechanical Design</h2>
+                <h4>Preliminary Design</h4>
                 <div class="row">
                     <!-- Text Column (Left) -->
                     <div class="col-md-7 text-left">
-                        <h4>Preliminary Design</h4>
                         <ul>
                             <li>We wanted something that was fool-proof/100% doable in 6 weeks by us, a team of students with next to no mechanical CAD experience :D</li>
                             <li>We wanted both robots to have a very similar design to reduce the amount of work we had to do/increase our chances of finishing on time</li>
@@ -200,9 +200,9 @@
                     </div>
                 </div> 
 
+                <h4>Detailed Design and Manufacturing</h4>
                 <div class="row mt-4">
                     <div class="col-md text-left">
-                        <h4>Detailed Design and Manufacturing</h4>
                         <p>One of my tasks during this project was to CAD the chassis, the claw and chute were designed by Tristan and Nathan </p>
                         <p>We decided to use two wheels, and two tennis balls for support. The tennis balls, though difficult to cut, worked surprisingly well! Their flexibility allows them to act as a suspension while the fuzziness lets them glide smoothly across the floor.</p>
                         <p>We designed the top half of our robot, holding the claw and chute, to rotate 180°. The reasoning was that we thought that operating a single servo would be easier than making our whole robot rotate (which runs the risk of becoming disoriented). In hindsight this feels a bit inelegant but hey, it still worked.</p>
@@ -244,10 +244,10 @@
         <section class = "content-section">
             <div class="container my-4">
                 <h2 class="subtitle section-title text-center mb-4">Electrical Design</h2>
+                <h4>Microcontroller Selection</h4>
                 <div class="row">
                     <!-- Text Column (Left) -->
-                    <div class="col-md text-left">
-                        <h4>Microcontroller Selection</h4>
+                    <div class="col-md text-left">        
                         <p>We chose to use ESP32's over bluepills as ESP32's come with built in wireless communication capabilities, namely WiFi, Bluetooth, and ESP-NOW. I also just happened to have a bunch lying around :3</p>
                         <p>One thing to note is that on a lot of ESP32 dev boards, some analog pins share hardware with the WiFi/wireless communication which renders them unusable when ESP-NOW/WiFi is in use! We learned this the hard way D:</p>            
                         <h6>What is ESP-NOW?</h6>
@@ -261,10 +261,10 @@
                         <img src="assets/imgs/robotsummer-assets/esp32-WROOM-pinout.png" alt="Coil Gun" class="img-fluid" style="max-width: 90%; height: auto;">
                     </div>
                 </div> 
-                
+
+                <h4>Initial System Design</h4>
                 <div class="row">
                     <div class="col-md text-left mt-5">
-                        <h4>Initial System Design</h4>
                         <p>This was our initial electrical block diagram generated during our planning phase. We ended up not using rotary encoders or IR beacon sensors (though Brianna's prototype was still really cool!). We also chose not to include the limit switches and IR beam breaks in the interest of time.</p>
                         <p>We chose give our motors a seperate ground as we didn't want the electrical noise to couple to our sensitive sensors and microcontroller. </p>
                     </div>
@@ -279,36 +279,67 @@
 
                 <div style="height: 25px;"></div> <!-- Spacer -->
 
-                <div class="row my-4">
-                    <div class="col-md text-left">
-                        <h4>H-Bridge Circuit</h4>
-                        <p>We made our own H-Bridge circuits to control our motors. On the right is a schematic showing how to control a motor using the LTC1161 motor driver IC. Our motor driver circuits were optoisolated from the rest of our circuit to contain noise.</p>
-                        <h6>How does an H-Bridge Work?</h6>
+                <h4>H-Bridge Motor Drivers</h4>
+                <div class="row">
+                    <div class="col-md text-left"> 
+                        <p>We made our own H-Bridge circuits to control our motors using LTC1161 motor driver ICs</p>
+                        <p> On the right is an example schematic showing how to control a motor using the LTC1161. Our motor driver circuits used MCT6 optocoupleres to optoisolate the motors from the rest of our circuit to contain noise.</p> 
+                    </div>
+                    <div class="col-md text-center">
+                        <img src="assets/imgs/robotsummer-assets/hbridge-circuit.png" alt="H-Bridge Sample Schematic" class="img-fluid" style="max-width: 90%; height: auto;">
+                        <p class="caption">H-Bridge Example Circuit</p>
+                    </div>
+                </div>
+
+                <h6>How does an H-Bridge Work?</h6>
+                <div class="row">
+                    <div class="col-md text-left"> 
                         <ul>
-                            <li>An efficient peer-to-peer communication protocol developed by Espressif specifically for ESP32 devices</li>
-                            <li>Does not require connection to an external central network</li>
-                            <li>Has low latency and low power consumption</li>
+                            <li>Consists of 4 switches, usually MOSFETs, arranged in an "H" </li>
+                            <li>By toggling which two switches are on, you can control the direction of current across the motor</li>
+                            <li>Be careful though, if you turn on switches in the wrong configuration, you could have a short!</li>
                         </ul>
-                        <h6>Completed PCB</h6>
-                        <p>This circuit was quite irritating to solder by hand and we had to make one for each robot, so we chose to make PCBs (also for the learning experience).</p>
+
+                    </div>
+                    <div class="col-md text-center">
+                        <img src="assets/imgs/robotsummer-assets/hbridge-switching.png" alt="H-Bridge Sample Schematic" class="img-fluid" style="max-width: 90%; height: auto;">
+                        <p class="caption">H-Bridge Swtiching Back and Forth</p>
+                    </div>
+                </div>  
+
+                <h6>Completed PCB</h6>
+                <div class="row">
+                    <div class="col-md text-left">
+                        <p>We chose to make PCBs to avoid having to solder multiple H-bridges by hand (and also for the learning experience).</p>
                         <p>The PCB features a circuit similar to the one shown above, but makes use of the fact that the LTC1161 can support two motors at once. It also featured testpoints and a power LED that came in real handy during debugging!</p>
                         <p>We chose to not use SMD components on our PCB, using only components available in our lab instead as we receive those components for free. This also made it a lot easier and cheaper to swap out faulty parts (cough cough MOSFETs).</p>
                         <p>My teammate Brianna made the PCBss while I reviewed them and gave her guidance/advice.</p>
                     </div>
                     <div class="col-md text-center">
-                        <img src="assets/imgs/robotsummer-assets/hbridge-circuit.png" alt="H-Bridge Sample Schematic" class="img-fluid" style="max-width: 90%; height: auto;">
-                        <p class="caption">H-Bridge Example Circuit</p>
                         <img src="assets/imgs/robotsummer-assets/hbridge-PCB.png" alt="H-Bridge PCB" class="img-fluid" style="max-width: 80%; height: auto;">
                         <p class="caption">H-Bridge PCB Made by Brianna</p>
                     </div>
                 </div>
-                
+
+                <h4>Reflectance Sensors</h4>
                 <div class="row my-4">
                     <div class="col-md text-left">
-                        <h4>Reflectance Sensors</h4>
                         <p>We used TCRT5000s to detect the black tape on the white competition surface.</p>
-                        <p>These sensors consist of an IR LED and a phototransistor. They essentially work by emitting IR light and then measure the amount of light that bounces back.</p></p>
+
+                        <h6>How do Reflecantce Sensors (TCRT5000) work?</h6>
+                        <ul>
+                            <li>These sensors consist of an IR LED and a phototransistor</li>
+                            <li>Effectively work by emitting IR light and then measure the amount of light that bounces back</li>
+                            <li>Pointing the sensor in the air means the light will never bounce back to the phototransistor</li>
+                            <li>Pointing the sensor on something black means the light will be absorbed and will not bounce back to the phototransistor</ll>
+                        </ul>
                         <p>In our application, we pointed the TCRT directly down on the competition surface to detect the tape. When the TCRT shone on the black tape, the light would be absorbed and we would read a very high analog value. When the TCRT shone on the white competition surface, we would read a very low analog value.</p>
+                        <h6>Why Analog Readings?</h6>
+                        <ul>
+                            <li>An efficient peer-to-peer communication protocol developed by Espressif specifically for ESP32 devices</li>
+                            <li>Does not require connection to an external central network</li>
+                            <li>Has low latency and low power consumption</li>
+                        </ul>
                         <p>We chose to use analog readings from our TCRT instead of a digital reading (on the tape vs off the tape). This was because we had 8 TCRTs per robot and we wanted to be able to easily tune the tape threshold We didn't want to painstakingly tune each potentiometer (16 total) each time we wanted to recalibrate! We also noticed that when the TCRT was placed directly in the middle of the black tape, we would read a very high value and as we moved the sensor further from the middle of the tape, we found that the readings would slowly decrease.</p> 
                     </div>
                     <div class="col-md text-center">
@@ -319,9 +350,9 @@
                     </div>
                 </div>
 
+                <h4>Power Distribution</h4>
                 <div class="row">
                     <div class="col-md text-left">
-                        <h4>Power Distribution</h4>
                         <p>TODO :3</p>
                     </div>
                     <div class="col-md text-center">

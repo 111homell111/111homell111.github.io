@@ -11934,6 +11934,15 @@ a:hover {
   color: #adb5bd;
 }
 
+ul, ol, li {
+  font-size: calc(16x + 2 * (100vw - 300px) / 1000);
+  opacity: 1;
+  font-weight: 400;
+  letter-spacing: 0.8px;
+  line-height: 1.6;
+  color: #fff;
+}
+
 .xs-font {
   font-size: 13px;
   opacity: 0.5;
@@ -12465,6 +12474,9 @@ body.light-theme h5,
 body.light-theme .h5,
 body.light-theme h6,
 body.light-theme .h6 {
+  color: #000;
+}
+body.light-theme ul, body.light-theme ol, body.light-theme li {
   color: #000;
 }
 body.light-theme .theme-selector {

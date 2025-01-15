@@ -69,6 +69,16 @@ a {
 	}
 }
 
+
+ul, ol, li {
+	font-size: calc(16x + (15 - 13) * ((100vw - 300px) / (1300 - 300)));
+	opacity: 1; 
+	font-weight: 400;
+	letter-spacing: .8px;
+	line-height: 1.6;
+	color: $white;
+}
+
 .xs-font {
 	font-size: 13px;
 	opacity: .5;
