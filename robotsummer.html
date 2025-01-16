@@ -34,10 +34,19 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
-                        <a class="nav-link fs-5" href="index.html#projects">Projects</a>
+                        <a class="nav-link fs-6" href="robotsummer.html#About">About</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link fs-5" href="assets/resume/Resume-jan-2025.pdf">Resume</a>
+                        <a class="nav-link fs-6" href="robotsummer.html#Rules">Rules</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link fs-6" href="robotsummer.html#Mechanical">Mechanical</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link fs-6" href="robots   ummer.html#Electrical">Electrical</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link fs-6" href="assets/resume/Resume-jan-2025.pdf">Resume</a>
                     </li>
                 </ul>
             </div>
@@ -68,7 +77,7 @@
         <div class="section-divider"></div>
 
         <!--About Section-->
-        <section class = "content-section">
+        <section id="About" class="content-section">
             <div class="container my-4">
                 <div class="row">
                     <!-- Text Column (Left) -->
@@ -104,7 +113,7 @@
 
         
         <!--Rules Section-->
-        <section class = "content-section">
+        <section id="Rules" class="content-section">
             <div class="container my-4">
                 <h2 class="subtitle section-title text-center">Competition Rules</h2>
                 <div class="row">
@@ -162,7 +171,7 @@
         <div class="section-divider"></div>
 
         <!--Mechanical Section-->
-        <section class = "content-section">
+        <section id="Mechanical" class="content-section">
             <div class="container my-4">
                 <h2 class="subtitle section-title text-center mb-3">Mechanical Design</h2>
                 <h4>Preliminary Design</h4>
@@ -241,7 +250,7 @@
         <div class="section-divider"></div>
 
         <!--Electrical Ideas Section-->
-        <section class = "content-section">
+        <section id="Electrical" class="content-section">
             <div class="container my-4">
                 <h2 class="subtitle section-title text-center mb-4">Electrical Design</h2>
                 <h4>Microcontroller Selection</h4>
@@ -331,21 +340,21 @@
                             <li>These sensors consist of an IR LED and a phototransistor</li>
                             <li>Effectively work by emitting IR light and then measure the amount of light that bounces back</li>
                             <li>Pointing the sensor in the air means the light will never bounce back to the phototransistor</li>
-                            <li>Pointing the sensor on something black means the light will be absorbed and will not bounce back to the phototransistor</ll>
+                            <li>Pointing the sensor on something black means the light will be absorbed and will not bounce back to the phototransistor</li>
                         </ul>
-                        <p>In our application, we pointed the TCRT directly down on the competition surface to detect the tape. When the TCRT shone on the black tape, the light would be absorbed and we would read a very high analog value. When the TCRT shone on the white competition surface, we would read a very low analog value.</p>
+                        <p>In our application, we pointed the TCRT directly down on the competition surface to detect the tape. When the TCRT shone on the black tape, the light would be absorbed and we would read a very high value. When the TCRT shone on the white competition surface, we would read a very low value.</p>
                         <h6>Why Analog Readings?</h6>
                         <ul>
-                            <li>An efficient peer-to-peer communication protocol developed by Espressif specifically for ESP32 devices</li>
-                            <li>Does not require connection to an external central network</li>
-                            <li>Has low latency and low power consumption</li>
+                            <li>Different environments could affect our TCRT readings so we wanted to be able to tune the tape threshold value easily in software</li>
+                            <li>We also do have potentiometers to tune each individual reflecantce sensor</li>
+                            <li>The TCRT reading is very high in the center of the tape, and then slowly tapers off which means we can tell how centered we are on the line with a single TCRT</li>
+                            <li>Warning! On ESP32s ADC2 shares hardware with WiFi/ESP-NOW and so you cannot use some analog pins while WiFi/ESP-NOW is in use</li>
                         </ul>
-                        <p>We chose to use analog readings from our TCRT instead of a digital reading (on the tape vs off the tape). This was because we had 8 TCRTs per robot and we wanted to be able to easily tune the tape threshold We didn't want to painstakingly tune each potentiometer (16 total) each time we wanted to recalibrate! We also noticed that when the TCRT was placed directly in the middle of the black tape, we would read a very high value and as we moved the sensor further from the middle of the tape, we found that the readings would slowly decrease.</p> 
                     </div>
                     <div class="col-md text-center">
                         <img src="assets/imgs/robotsummer-assets/reflectance-circuit.png" alt="Relfectance Circuit" class="img-fluid" style="max-width: 80%; height: auto;">
                         <p class="caption">TCRT5000 Ciruit</p>
-                        <img src="assets/imgs/robotsummer-assets/reflectance-pcb.jpg" alt="Relfectance Circuit" class="img-fluid" style="max-width: 80%; height: auto;">
+                        <img src="assets/imgs/robotsummer-assets/reflectance-pcb.jpg" alt="Relfectance Circuit" class="img-fluid" style="max-width: 70%; height: auto;">
                         <p class="caption">Reflecantce Sensor PCB</p>
                     </div>
                 </div>
@@ -356,7 +365,7 @@
                         <p>TODO :3</p>
                     </div>
                     <div class="col-md text-center">
-                        <img src="assets/imgs/robotsummer-assets/esp32-WROOM-pinout.png" alt="Coil Gun" class="img-fluid" style="max-width: 90%; height: auto;">
+                        <img src="assets/imgs/placeholder-cat.jpg" alt="Coil Gun" class="img-fluid" style="max-width: 90%; height: auto;">
                     </div>
                 </div>
 

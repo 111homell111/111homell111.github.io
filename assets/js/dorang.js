@@ -77,9 +77,12 @@ $(document).ready(function(){
 
             var hash = this.hash;
 
+            //console.log("Offset:",  $(hash).offset().top);
+
             $('html, body').animate({
-                scrollTop: $(hash).offset().top
-            }, 700, function(){
+                scrollTop: $(hash).offset().top -50
+            }, 90, function(){
+                $('html, body').scrollTop($(hash).offset().top - 50);
                 window.location.hash = hash;
             });
         } 
