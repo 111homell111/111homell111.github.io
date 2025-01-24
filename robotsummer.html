@@ -21,6 +21,9 @@
     <!-- Bootstrap + Dorang main styles -->
 	<link rel="stylesheet" href="assets/css/dorang.css">
 
+    <link rel="icon" type="image/png" href="assets/imgs/robotsummer-assets/burger-icon.png">
+
+
 </head>
 <body data-bs-spy="scroll" data-target=".navbar" data-offset="40" id="home"  data-bs-theme="dark">
     
@@ -379,12 +382,14 @@
         <!--Sofware Ideas Section-->
         <section id="Software" class="content-section">
             <div class="container my-4">
-                <h2 class="subtitle section-title text-center mb-4">Software Design</h2>
+                <h2 class="subtitle section-title text-center mb-2">Software Design</h2>
                 <h4>State Machine</h4>
                 <div class="row">
                     <div class="col-md text-left">        
-                        <p class>We originally used a state machine to organize our code. The list/order of tasks the robot needed to complete were very straightforward to implement with a state machine. On the right I have the general block diagram that the two robots followed. </p>      
-                        <p>We wanted to organize sensors and other items into classes. For example, we made a seperate class for the motor with speeed/frequencing setting functions to keep our code organized. Our code did end up becoming really messy at the end as we just cared about getting something working, rather than coding something maintainable, but the code was pretty well organized at the begnning which made rushing at the end easier.</p>
+                        <p class>We originally used a state machine to organize our code. The list/order of tasks the robot needed to complete were very straightforward to implement with a state machine.</p>
+                        <p>On the right I have the general block diagram that the two robots followed. </p>      
+                        <p>We wanted to organize sensors and other items into classes. For example, we made a seperate class for the motor with speeed/frequencing setting functions to keep our code organized. </p>
+                        <p>Our code did end up becoming really messy at the end as we just cared about getting something working, rather than coding something maintainable, but the code was pretty well organized at the begnning which made rushing at the end easier.</p>
                         
                     </div>
                     <div class="col-md text-center">
@@ -401,57 +406,13 @@
                         <p>We used PlatformIO flash code to the ESP32 over USB connection. Uploading code to the ESP32 was considerably slower than uploading code to the bluepill. This becomes a problem when you want to constantly adjust and tune parameters as you would have to wait 30s to reupload code each time you adjusted a parameter or wanted to add a print statement.</p>
                         <p>To circumvent this, I made a testing GUI using Tkinter to allow us to communicate with the ESP32 over WiFi. The ESP32 would connect to the school WiFi or a hotspot and then I could send HTTP post/get commands using the GUI on my computer.</p>
                         <p>This was extremely useful for tuning the driving control loop as we could simply send a new P error multiplyer over the WiFi and have it take affect instantaneously. We could also very easily write commands to the robot while it was in motion, allowing us to more easily characterize our robots behaviours.</p>
+                        <p>Sorry it's lowkey ugly but it worked!</p>
                     </div>
                     <div class="col-md text-center">
-                        <img src="assets/imgs/robotsummer-assets/wifi-gui.png" alt="H-Bridge Sample Schematic" class="img-fluid" style="max-width: 90%; height: auto;" loading="lazy">
+                        <img src="assets/imgs/robotsummer-assets/wifi-gui.png" alt="H-Bridge Sample Schematic" class="img-fluid" style="max-width: 92.5%; height: auto;" loading="lazy">
                         <p class="caption">Testing GUI</p>
                     </div>
-                </div> 
-
-                <div style="height: 25px;"></div> <!-- Spacer -->
-
-                <h4>H-Bridge Motor Drivers</h4>
-                <div class="row">
-                    <div class="col-md text-left"> 
-                        <p>We made our own H-Bridge circuits to control our motors using LTC1161 motor driver ICs</p>
-                        <p> On the right is an example schematic showing how to control a motor using the LTC1161. Our motor driver circuits used MCT6 optocoupleres to optoisolate the motors from the rest of our circuit to contain noise.</p> 
-                    </div>
-                    <div class="col-md text-center">
-                        <img src="assets/imgs/robotsummer-assets/hbridge-circuit.png" alt="H-Bridge Sample Schematic" class="img-fluid" style="max-width: 90%; height: auto;" loading="lazy">
-                        <p class="caption">H-Bridge Example Circuit</p>
-                    </div>
                 </div>
-
-                <h6>How does an H-Bridge Work?</h6>
-                <div class="row">
-                    <div class="col-md text-left"> 
-                        <ul>
-                            <li>Consists of 4 switches, usually MOSFETs, arranged in an "H" </li>
-                            <li>By toggling which two switches are on, you can control the direction of current across the motor</li>
-                            <li>Be careful though, if you turn on switches in the wrong configuration, you could have a short!</li>
-                        </ul>
-
-                    </div>
-                    <div class="col-md text-center">
-                        <img src="assets/imgs/robotsummer-assets/hbridge-switching.png" alt="H-Bridge Sample Schematic" class="img-fluid" style="max-width: 90%; height: auto;" loading="lazy">
-                        <p class="caption">H-Bridge Swtiching Back and Forth</p>
-                    </div>
-                </div>  
-
-                <h6>Completed PCB</h6>
-                <div class="row">
-                    <div class="col-md text-left">
-                        <p>We chose to make PCBs to avoid having to solder multiple H-bridges by hand (and also for the learning experience).</p>
-                        <p>The PCB features a circuit similar to the one shown above, but makes use of the fact that the LTC1161 can support two motors at once. It also featured testpoints and a power LED that came in real handy during debugging!</p>
-                        <p>We chose to not use SMD components on our PCB, using only components available in our lab instead as we receive those components for free. This also made it a lot easier and cheaper to swap out faulty parts (cough cough MOSFETs).</p>
-                        <p>My teammate Brianna made the PCBss while I reviewed them and gave her guidance/advice.</p>
-                    </div>
-                    <div class="col-md text-center">
-                        <img src="assets/imgs/robotsummer-assets/hbridge-PCB.png" alt="H-Bridge PCB" class="img-fluid" style="max-width: 80%; height: auto;" loading="lazy">
-                        <p class="caption">H-Bridge PCB Made by Brianna</p>
-                    </div>
-                </div>
-
             </div>
         </section><!--End of Software Section-->>
     </div> <!-- end of page container -->
