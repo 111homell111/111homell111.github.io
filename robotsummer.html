@@ -43,7 +43,7 @@
                         <a class="nav-link fs-6" href="robotsummer.html#Mechanical">Mechanical</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link fs-6" href="robots   ummer.html#Electrical">Electrical</a>
+                        <a class="nav-link fs-6" href="robotsummer.html#Electrical">Electrical</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link fs-6" href="assets/resume/Resume-jan-2025.pdf">Resume</a>
@@ -72,7 +72,7 @@
 
     <!-- page container -->
     <div class="container">
-        <h1 class="title my-4 text-center">ENPH353 - Overcooked Robot</h1>
+        <h1 class="title my-4 text-center">ENPH253 - Overcooked Robot</h1>
 
         <div class="section-divider"></div>
 
@@ -189,22 +189,22 @@
                         </ul>                         
                     </div>
                     <div class="col-md text-center">
-                        <img src="assets/imgs/robotsummer-assets/preliminary-serving-sketch.png" alt="Competition Surface Diagram" class="img-fluid" style="height: 350px; object-fit: contain;">
+                        <img src="assets/imgs/robotsummer-assets/preliminary-serving-sketch.png" alt="Competition Surface Diagram" class="img-fluid" style="height: 350px; object-fit: contain;" loading="lazy">
                         <p class="caption">Preliminary Sketch of Burger Being Served</p>
                     </div>
                 </div> 
                 
                 <div class="row">
                     <div class="col-md text-center">
-                        <img src="assets/imgs/robotsummer-assets/preliminary-chassis-config.png" alt="Competition Surface Diagram" class="img-fluid" style="height: 220px; object-fit: contain;">
+                        <img src="assets/imgs/robotsummer-assets/preliminary-chassis-config.png" alt="Competition Surface Diagram" class="img-fluid" style="height: 220px; object-fit: contain;" loading="lazy">
                         <p class="caption">Initial Chassis Layout With Tennis Balls for Suspension</p>
                     </div>
                     <div class="col-md text-center">
-                        <img src="assets/imgs/robotsummer-assets/preliminary-claw.gif" alt="Competition Surface Diagram" class="img-fluid" style="height: 220px; object-fit: contain;">
+                        <img src="assets/imgs/robotsummer-assets/preliminary-claw.gif" alt="Competition Surface Diagram" class="img-fluid" style="height: 220px; object-fit: contain;" loading="lazy">
                         <p class="caption">Initial Claw Proof of Concept</p>
                     </div>
                     <div class="col-md text-center">
-                        <img src="assets/imgs/robotsummer-assets/preliminary-ugly-diagram-sorry.jpg" alt="Competition Surface Diagram" class="img-fluid" style="height: 220px; object-fit: contain;">
+                        <img src="assets/imgs/robotsummer-assets/preliminary-ugly-diagram-sorry.jpg" alt="Competition Surface Diagram" class="img-fluid" style="height: 220px; object-fit: contain;" loading="lazy">
                         <p class="caption">Inital Sketches of Claw and Chute Idea</p>
                     </div>
                 </div> 
@@ -218,7 +218,7 @@
                         <p>I cadded everything using OnShape and made an assembly to allow us to visualize where to mount servos and PCBs</p>
                     </div>
                     <div class="col-md text-center">
-                        <img src="assets/imgs/robotsummer-assets/robot-chassis-assembly.png" alt="Coil Gun" class="img-fluid" style="max-width: 90%; height: auto;">
+                        <img src="assets/imgs/robotsummer-assets/robot-chassis-assembly.png" alt="Coil Gun" class="img-fluid" style="max-width: 90%; height: auto;" loading="lazy">
                         <p class="caption">Assembly of the Robot Chassis, Reusable for Both Robots!</p>
                     </div>
                 </div>
@@ -226,11 +226,11 @@
 
                 <div class="row">
                     <div class="col-md text-center">
-                        <img src="assets/imgs/robotsummer-assets/nesting-for-lasercut.png" alt="Nesting For Laser Cutting" class="img-fluid"  style="height: 380px; object-fit: contain;">
+                        <img src="assets/imgs/robotsummer-assets/nesting-for-lasercut.png" alt="Nesting For Laser Cutting" class="img-fluid"  style="height: 380px; object-fit: contain;" loading="lazy">
                         <p class="caption">Nesting Claw Components for Laser Cutting</p>
                     </div>
                     <div class="col-md text-center">
-                        <img src="assets/imgs/robotsummer-assets/manufacturing-chassis.jpg" alt="Halfway Assembled Chassis" class="img-fluid"  style="height: 380px; object-fit: contain;">
+                        <img src="assets/imgs/robotsummer-assets/manufacturing-chassis.jpg" alt="Halfway Assembled Chassis" class="img-fluid"  style="height: 380px; object-fit: contain;"> loading="lazy"
                         <p class="caption">Partially Assembled Drivetrain</p>
                     </div>
                 </div> 
@@ -267,22 +267,22 @@
                         </ul>
                     </div>
                     <div class="col-md text-center">
-                        <img src="assets/imgs/robotsummer-assets/esp32-WROOM-pinout.png" alt="Coil Gun" class="img-fluid" style="max-width: 90%; height: auto;">
+                        <img src="assets/imgs/robotsummer-assets/esp32-WROOM-pinout.png" alt="Coil Gun" class="img-fluid" style="max-width: 90%; height: auto;" loading="lazy">
                     </div>
                 </div> 
 
                 <h4>Initial System Design</h4>
                 <div class="row">
                     <div class="col-md text-left mt-5">
-                        <p>This was our initial electrical block diagram generated during our planning phase. We ended up not using rotary encoders or IR beacon sensors (though Brianna's prototype was still really cool!). We also chose not to include the limit switches and IR beam breaks in the interest of time.</p>
+                        <p>This was our initial draft electrical block diagram generated during our planning phase. We ended up not using rotary encoders or IR beacon sensors (though Brianna's prototype was still really cool!). We also chose not to include the limit switches and IR beam breaks in the interest of time. We also changed our power system as this configuration causes too much power to be wasted by the LDO leading to brownout scenarios.</p>
                         <p>We chose give our motors a seperate ground as we didn't want the electrical noise to couple to our sensitive sensors and microcontroller. </p>
                     </div>
                 </div> 
 
                 <div class="row">
                     <div class="col-md text-center">
-                        <img src="assets/imgs/robotsummer-assets/electronic-block-diagram.png" alt="Initial Electrical Block Diagram" class="img-fluid" style="max-width: 100%; height: auto;">
-                        <p class="caption">Initial Electrical System Design</p> 
+                        <img src="assets/imgs/robotsummer-assets/electronic-block-diagram.png" alt="Electrical Block Diagram" class="img-fluid" style="max-width: 100%; height: auto;" loading="lazy">
+                        <p class="caption">Initial Rough Electrical System Design</p> 
                     </div>
                 </div>
 
@@ -295,7 +295,7 @@
                         <p> On the right is an example schematic showing how to control a motor using the LTC1161. Our motor driver circuits used MCT6 optocoupleres to optoisolate the motors from the rest of our circuit to contain noise.</p> 
                     </div>
                     <div class="col-md text-center">
-                        <img src="assets/imgs/robotsummer-assets/hbridge-circuit.png" alt="H-Bridge Sample Schematic" class="img-fluid" style="max-width: 90%; height: auto;">
+                        <img src="assets/imgs/robotsummer-assets/hbridge-circuit.png" alt="H-Bridge Sample Schematic" class="img-fluid" style="max-width: 90%; height: auto;" loading="lazy">
                         <p class="caption">H-Bridge Example Circuit</p>
                     </div>
                 </div>
@@ -311,7 +311,7 @@
 
                     </div>
                     <div class="col-md text-center">
-                        <img src="assets/imgs/robotsummer-assets/hbridge-switching.png" alt="H-Bridge Sample Schematic" class="img-fluid" style="max-width: 90%; height: auto;">
+                        <img src="assets/imgs/robotsummer-assets/hbridge-switching.png" alt="H-Bridge Sample Schematic" class="img-fluid" style="max-width: 90%; height: auto;" loading="lazy">
                         <p class="caption">H-Bridge Swtiching Back and Forth</p>
                     </div>
                 </div>  
@@ -325,7 +325,7 @@
                         <p>My teammate Brianna made the PCBss while I reviewed them and gave her guidance/advice.</p>
                     </div>
                     <div class="col-md text-center">
-                        <img src="assets/imgs/robotsummer-assets/hbridge-PCB.png" alt="H-Bridge PCB" class="img-fluid" style="max-width: 80%; height: auto;">
+                        <img src="assets/imgs/robotsummer-assets/hbridge-PCB.png" alt="H-Bridge PCB" class="img-fluid" style="max-width: 80%; height: auto;" loading="lazy">
                         <p class="caption">H-Bridge PCB Made by Brianna</p>
                     </div>
                 </div>
@@ -352,9 +352,9 @@
                         </ul>
                     </div>
                     <div class="col-md text-center">
-                        <img src="assets/imgs/robotsummer-assets/reflectance-circuit.png" alt="Relfectance Circuit" class="img-fluid" style="max-width: 80%; height: auto;">
+                        <img src="assets/imgs/robotsummer-assets/reflectance-circuit.png" alt="Relfectance Circuit" class="img-fluid" style="max-width: 80%; height: auto;" loading="lazy">
                         <p class="caption">TCRT5000 Ciruit</p>
-                        <img src="assets/imgs/robotsummer-assets/reflectance-pcb.jpg" alt="Relfectance Circuit" class="img-fluid" style="max-width: 70%; height: auto;">
+                        <img src="assets/imgs/robotsummer-assets/reflectance-pcb.jpg" alt="Relfectance Circuit" class="img-fluid" style="max-width: 70%; height: auto;" loading="lazy">
                         <p class="caption">Reflecantce Sensor PCB</p>
                     </div>
                 </div>
@@ -362,15 +362,98 @@
                 <h4>Power Distribution</h4>
                 <div class="row">
                     <div class="col-md text-left">
-                        <p>TODO :3</p>
+                        <p>We used a combination of LM2596 buck converters alongside LM7805/LM7833 LDOs and 2s/4s LiPos to power our final system. Our motors were running off a 4s LiPo connected to a buck which stepped the voltage down to 12V. We also used a buck to step down a seperate 2s LiPo to ~5.5V for our servos. We then used LDOs to step the voltage further down to 5V and 3V3 for the rest of our circuitry. </p>
+                        <h6>Mistakes Were Made</h6>
+                        <p>We were initially so focused on other aspects of our robot that we made some very silly mistakes prototyping our power system. I don't know why we thought this was a good idea but we were stepping down ~16V to 5V and 3V3 only using LDOs. We didn't realize that the LDOs dropped voltage by wasting the excess power as heat. Our LDOs became insanely hot and shut down quickly. Here is a scope reading of our power board that haunts my dreams. If you're reading this please learn from our mistakes.</p>
                     </div>
                     <div class="col-md text-center">
-                        <img src="assets/imgs/placeholder-cat.jpg" alt="Coil Gun" class="img-fluid" style="max-width: 90%; height: auto;">
+                        <img src="assets/imgs/robotsummer-assets/nightmare-3v3.png" alt="Coil Gun" class="img-fluid" style="max-width: 90%; height: auto;" loading="lazy">
+                        <p class="caption">3V3 Line From My Nightmares</p>
+                    </div>
+                </div>
+            </div>
+        </section><!--End of Electrical Section-->
+
+        <div class="section-divider"></div>
+
+        <!--Sofware Ideas Section-->
+        <section id="Software" class="content-section">
+            <div class="container my-4">
+                <h2 class="subtitle section-title text-center mb-4">Software Design</h2>
+                <h4>State Machine</h4>
+                <div class="row">
+                    <div class="col-md text-left">        
+                        <p class>We originally used a state machine to organize our code. The list/order of tasks the robot needed to complete were very straightforward to implement with a state machine. On the right I have the general block diagram that the two robots followed. </p>      
+                        <p>We wanted to organize sensors and other items into classes. For example, we made a seperate class for the motor with speeed/frequencing setting functions to keep our code organized. Our code did end up becoming really messy at the end as we just cared about getting something working, rather than coding something maintainable, but the code was pretty well organized at the begnning which made rushing at the end easier.</p>
+                        
+                    </div>
+                    <div class="col-md text-center">
+                        <div class="scroll-container">
+                            <img src="assets/imgs/robotsummer-assets/state-machine.png" alt="Coil Gun" class="img-fluid" style="max-width: 90%; height: auto;" loading="lazy">
+                        </div>
+                        <p class="caption">State Machine Block Diagram</p>
+                    </div>
+                </div> 
+
+                <h4>Testing GUI</h4>
+                <div class="row">
+                    <div class="col-md text-left">
+                        <p>We used PlatformIO flash code to the ESP32 over USB connection. Uploading code to the ESP32 was considerably slower than uploading code to the bluepill. This becomes a problem when you want to constantly adjust and tune parameters as you would have to wait 30s to reupload code each time you adjusted a parameter or wanted to add a print statement.</p>
+                        <p>To circumvent this, I made a testing GUI using Tkinter to allow us to communicate with the ESP32 over WiFi. The ESP32 would connect to the school WiFi or a hotspot and then I could send HTTP post/get commands using the GUI on my computer.</p>
+                        <p>This was extremely useful for tuning the driving control loop as we could simply send a new P error multiplyer over the WiFi and have it take affect instantaneously. We could also very easily write commands to the robot while it was in motion, allowing us to more easily characterize our robots behaviours.</p>
+                    </div>
+                    <div class="col-md text-center">
+                        <img src="assets/imgs/robotsummer-assets/wifi-gui.png" alt="H-Bridge Sample Schematic" class="img-fluid" style="max-width: 90%; height: auto;" loading="lazy">
+                        <p class="caption">Testing GUI</p>
+                    </div>
+                </div> 
+
+                <div style="height: 25px;"></div> <!-- Spacer -->
+
+                <h4>H-Bridge Motor Drivers</h4>
+                <div class="row">
+                    <div class="col-md text-left"> 
+                        <p>We made our own H-Bridge circuits to control our motors using LTC1161 motor driver ICs</p>
+                        <p> On the right is an example schematic showing how to control a motor using the LTC1161. Our motor driver circuits used MCT6 optocoupleres to optoisolate the motors from the rest of our circuit to contain noise.</p> 
+                    </div>
+                    <div class="col-md text-center">
+                        <img src="assets/imgs/robotsummer-assets/hbridge-circuit.png" alt="H-Bridge Sample Schematic" class="img-fluid" style="max-width: 90%; height: auto;" loading="lazy">
+                        <p class="caption">H-Bridge Example Circuit</p>
+                    </div>
+                </div>
+
+                <h6>How does an H-Bridge Work?</h6>
+                <div class="row">
+                    <div class="col-md text-left"> 
+                        <ul>
+                            <li>Consists of 4 switches, usually MOSFETs, arranged in an "H" </li>
+                            <li>By toggling which two switches are on, you can control the direction of current across the motor</li>
+                            <li>Be careful though, if you turn on switches in the wrong configuration, you could have a short!</li>
+                        </ul>
+
+                    </div>
+                    <div class="col-md text-center">
+                        <img src="assets/imgs/robotsummer-assets/hbridge-switching.png" alt="H-Bridge Sample Schematic" class="img-fluid" style="max-width: 90%; height: auto;" loading="lazy">
+                        <p class="caption">H-Bridge Swtiching Back and Forth</p>
+                    </div>
+                </div>  
+
+                <h6>Completed PCB</h6>
+                <div class="row">
+                    <div class="col-md text-left">
+                        <p>We chose to make PCBs to avoid having to solder multiple H-bridges by hand (and also for the learning experience).</p>
+                        <p>The PCB features a circuit similar to the one shown above, but makes use of the fact that the LTC1161 can support two motors at once. It also featured testpoints and a power LED that came in real handy during debugging!</p>
+                        <p>We chose to not use SMD components on our PCB, using only components available in our lab instead as we receive those components for free. This also made it a lot easier and cheaper to swap out faulty parts (cough cough MOSFETs).</p>
+                        <p>My teammate Brianna made the PCBss while I reviewed them and gave her guidance/advice.</p>
+                    </div>
+                    <div class="col-md text-center">
+                        <img src="assets/imgs/robotsummer-assets/hbridge-PCB.png" alt="H-Bridge PCB" class="img-fluid" style="max-width: 80%; height: auto;" loading="lazy">
+                        <p class="caption">H-Bridge PCB Made by Brianna</p>
                     </div>
                 </div>
 
             </div>
-        </section>
+        </section><!--End of Software Section-->>
     </div> <!-- end of page container -->
 
     <div class="section-divider"></div>

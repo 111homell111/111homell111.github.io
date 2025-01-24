@@ -4,4 +4,9 @@
 	height: auto;    /* Maintain the aspect ratio of the video */
 }
 
-
+.scroll-container {
+    width: auto;
+    height: 400px;
+    overflow-y: auto;
+    overflow-x: hidden;
+}

@@ -88,3 +88,9 @@ $(document).ready(function(){
         } 
     });
 });
+
+//Custom
+window.onload = function() {
+    let loadTime = performance.timing.domContentLoadedEventEnd - performance.timing.navigationStart;
+    console.log("Page Load Time: " + loadTime + "ms");
+};
