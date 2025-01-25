@@ -49,6 +49,9 @@
                         <a class="nav-link fs-6" href="robotsummer.html#Electrical">Electrical</a>
                     </li>
                     <li class="nav-item">
+                        <a class="nav-link fs-6" href="robotsummer.html#Software">Software</a>
+                    </li>
+                    <li class="nav-item">
                         <a class="nav-link fs-6" href="assets/resume/Resume-jan-2025.pdf">Resume</a>
                     </li>
                 </ul>
@@ -88,6 +91,7 @@
                         <h2>About the Project</h2>
                         <p>The summer of second year at UBC's Engineering Physics program is fondly called robot summer, as every student must compete in an intense, robot competition.</p>
                         <p>This year the competition was based on the game overcooked. The task was to design and build two robots that would work together to assemble fake dishes in a timed setting, similar to the game overcooked.</p>
+                        <p>We placed 4th overall which we were somewhat satisfied with :)</p>
                         <p>Team Members: Ella Yan, Brianna Gopaul, Tristan Brown, Nathan Tourveille</p>
                         <p>Check out our robot in action below!</p>
                     </div>
@@ -229,11 +233,11 @@
 
                 <div class="row">
                     <div class="col-md text-center">
-                        <img src="assets/imgs/robotsummer-assets/nesting-for-lasercut.png" alt="Nesting For Laser Cutting" class="img-fluid"  style="height: 380px; object-fit: contain;" loading="lazy">
+                        <img src="assets/imgs/robotsummer-assets/nesting-for-lasercut.png" alt="Nesting For Laser Cutting" class="img-fluid" style="height: 380px; object-fit: contain;" loading="lazy">
                         <p class="caption">Nesting Claw Components for Laser Cutting</p>
                     </div>
                     <div class="col-md text-center">
-                        <img src="assets/imgs/robotsummer-assets/manufacturing-chassis.jpg" alt="Halfway Assembled Chassis" class="img-fluid"  style="height: 380px; object-fit: contain;"> loading="lazy"
+                        <img src="assets/imgs/robotsummer-assets/manufacturing-chassis.jpg" alt="Halfway Assembled Chassis" class="img-fluid" style="height: 380px; object-fit: contain;"> loading="lazy"
                         <p class="caption">Partially Assembled Drivetrain</p>
                     </div>
                 </div> 
@@ -382,9 +386,9 @@
         <!--Sofware Ideas Section-->
         <section id="Software" class="content-section">
             <div class="container my-4">
-                <h2 class="subtitle section-title text-center mb-2">Software Design</h2>
+                <h2 class="subtitle section-title text-center my-2">Software Design</h2>
                 <h4>State Machine</h4>
-                <div class="row">
+                <div class="row my-2">
                     <div class="col-md text-left">        
                         <p class>We originally used a state machine to organize our code. The list/order of tasks the robot needed to complete were very straightforward to implement with a state machine.</p>
                         <p>On the right I have the general block diagram that the two robots followed. </p>      
@@ -401,7 +405,7 @@
                 </div> 
 
                 <h4>Testing GUI</h4>
-                <div class="row">
+                <div class="row my-2">
                     <div class="col-md text-left">
                         <p>We used PlatformIO flash code to the ESP32 over USB connection. Uploading code to the ESP32 was considerably slower than uploading code to the bluepill. This becomes a problem when you want to constantly adjust and tune parameters as you would have to wait 30s to reupload code each time you adjusted a parameter or wanted to add a print statement.</p>
                         <p>To circumvent this, I made a testing GUI using Tkinter to allow us to communicate with the ESP32 over WiFi. The ESP32 would connect to the school WiFi or a hotspot and then I could send HTTP post/get commands using the GUI on my computer.</p>
@@ -413,11 +417,40 @@
                         <p class="caption">Testing GUI</p>
                     </div>
                 </div>
-            </div>
-        </section><!--End of Software Section-->>
-    </div> <!-- end of page container -->
 
-    <div class="section-divider"></div>
+                <h4>Line Following</h4>
+                <div class="row my-2">
+                    <div class="col-md text-left">
+                        <p>We played aroud with PID line following but we found that stting I and D to 0 sufficed for our competition. I believe we mainly used P to stay on the line.</p>
+                        <p>We also tracked where the last known location of the line was. If we went off the line, we would check if we went off to the right or left side of the line. Our algorithm was lowkey, "if on the line, don't be".</p>
+                        <p>Anyway here's some really cool videos of the robot line following!</p>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-8 text-center">
+                        <video class="video-fluid" controls style="height: 400px; object-fit: cover;">
+                            <source src="assets/imgs/robotsummer-assets/perturbed.mp4" type="video/mp4" loading="lazy" >
+                            Your browser does not support the video tag.
+                        </video>
+                        <p class="caption">Resistance to Perturbations</p>
+                    </div>
+                    <div class="col-md text-center">
+                        <video class="video-fluid" controls style="height: 400px; object-fit: cover;">
+                            <source src="assets/imgs/robotsummer-assets/POV-line-following.mp4" type="video/mp4" loading="lazy">
+                            Your browser does not support the video tag.
+                        </video>
+                        <p class="caption">POV Line Following</p>
+                    </div>
+                </div>
+            </div>
+        </section><!--End of Software Section-->
+
+        <div class="section-divider"></div>
+        
+        <!--Add Gallery Later-->
+
+    </div> <!-- end of page container -->
 
     <!-- Footer Section -->
     <footer class="footer">
