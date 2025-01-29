@@ -48,7 +48,7 @@
 		left: 0;
 		width: 100%;
 		height: 100%;
-		background: rgba($dark-theme-color, .1);
+		background: rgba($dark-theme-color, .2);
 		@include transition(all, 1s);
 	}
 	
@@ -83,7 +83,7 @@
 	&:hover,
 	&:focus {
 		.overlay {
-			background: rgba($gray-900, .5);				
+			background: rgba($gray-900, .6);				
 		}
 		.des {
 			top: 45%;
