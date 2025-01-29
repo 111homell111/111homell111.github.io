@@ -35,6 +35,11 @@
 	img {
 		width: 100%;
 		border-radius: $card-border-radius;
+
+		object-fit: cover; /* Crops instead of stretching */
+    	object-position: center; /* Centers the cropped area */
+		overflow: hidden;  /* Hides the parts that exceed 4:3 */
+		aspect-ratio: 4 / 3;
 	}
 
 	//grey stuff

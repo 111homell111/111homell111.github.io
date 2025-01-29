@@ -1,34 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-NCSQJKWYEF"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-NCSQJKWYEF');
+    </script>
 	<meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="Start your development with Dorang landing page.">
-    <meta name="author" content="Devcrud">
-    <title>ENPH353</title>
+    <meta name="description" content="Autonomous Driving AI Detective Project Blog Post.">
+    <meta name="author" content="Ella Yan">
+    <title>Autonomous Driving AI</title>
     <!-- font icons -->
     <link rel="stylesheet" href="assets/vendors/themify-icons/css/themify-icons.css">
 
     <!-- Bootstrap + Dorang main styles -->
 	<link rel="stylesheet" href="assets/css/dorang.css">
 
+    <link rel="icon" type="image/png" href="assets/imgs/enph353-assets/car-icon.png">
+
+
 </head>
 <body data-bs-spy="scroll" data-target=".navbar" data-offset="40" id="home"  data-bs-theme="dark">
     
     <!-- page navbar -->
-    <nav class="navbar navbar-expand-sm">
+    <nav id="navbar" class="navbar navbar-expand-sm fixed-top">
         <div class="container-fluid ">
-            <a class="navbar-brand" href="index.html">Home</a> <!-- me-auto pushes it to the left -->
+            <a class="navbar-brand fs-4" href="index.html">Home</a> <!-- me-auto pushes it to the left -->
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="index.html#projects">Projects</a>
+                        <a class="nav-link fs-6" href="enph353.html#About">About</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="assets/resume/Resume-oct-2024.pdf">Resume</a>
+                        <a class="nav-link fs-6" href="enph353.html#Introduction">Introduction</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link fs-6" href="enph353.html#PackageOverview">Package Overview</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link fs-6" href="enph353.html#ClueRecognition">Clue Recognition</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link fs-6" href="enph353.html#ImitationLearning">Imitation Learning</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link fs-6" href="enph353.html#StateMachine">State Machine</a>
                     </li>
                 </ul>
             </div>
@@ -48,329 +72,307 @@
     
     <!-- Add this right after the navigation bar -->
     <div class="container-fluid p-0" style="padding-top: 80px;">
-        <img src="assets/imgs/coilgun-assets/coilgun-header.png" alt="Wide Image" class="img-fluid w-100">
+        <img src="assets/imgs/enph353-assets/enph353-banner.gif" alt="Wide Image" class="img-fluid w-100">
     </div>
     
 
     <!-- page container -->
-    <div class="container">
-        <h1 class="title my-4 text-center">Multistage Coil Gun</h1>
+    <div class="container ">
+        <h1 class="title my-4 text-center">ENPH353 - Autonomous Driving AI Detective</h1>
 
         <div class="section-divider"></div>
 
-        <section class="content-section">
+        <!--About Section-->
+        <section id="About" class="content-section">
             <div class="container my-4">
                 <div class="row">
                     <!-- Text Column (Left) -->
                     <div class="col-md text-left">
                         <h2>About the Project</h2>
-                        <p>In our first year of engineering, my friend and I wanted to build a coil gun for fun :) </p>
-                        <p>The project features massive capacitors along with some really heavy hand wound solenoids. The result is a super powerful (and dangerous) turret capable of firing metal projectiles at terrifiying speeds.</p>
-                        <p>Shoutout to my friend <a href="https://rachad47.github.io/rwae/CoilGun.html">Rachad</a>, who I did this project with! </p>
-                        <p>See the gun in action here! --></p>
+                        <p>ENPH 353 is a machine learning project course where students must code an agent that autonomously navigates an obstacle course while reading clues off signs around the track.</p>
+                        <p>In this class we use Gazebo and the ROS framework. Our team coded everything in Python, using OpenCV for computer vision and Pytorch for machine learning. Our robot controller package is located <a href="https://github.com/111homell111/controller_pkg">here</a>.</p>
+                        <p>We chose to use imitation learning to drive as we thought it best aligned with the spirit of the course (and because line following is boring!). We we're the only team who managed to get imitation learning working, and we scored the best out of all the teams who tried machine learning for driving. </p>
+                        <p>We also wrote a final report for this project which you can check out <a href="assets/imgs/enph353-assets/ENPH353-Final-Report .pdf">here</a>.</p>
+                        <p>Here's a video of our robot navigating the course! --></p>
+                        <p style="opacity: 0.7">I forgot to reset the clue reader in the vid which is why it ignored the first clue :P</p>
                     </div>
+
                     <!-- Video Column (Right) -->
                     <div class="col-md">
                         <div class="ratio ratio-16x9">
                             <iframe 
-                                src="https://www.youtube.com/embed/8LhQAW-y8WM?si=PQNdhbqgj-fzKuKk" 
-                                allowfullscreen>
-                            </iframe>
+                            src="https://www.youtube.com/embed/1LDbDoa-DAM?si=a0MoCG5y-zmc0fn8" 
+                            allowfullscreen>
+                            </iframe>   
                         </div>
-                        
+                    <p class="caption">Full Run Using Imitation Learning for Driving and CNN for clue board detection</p>
                     </div>
-                </div>
-            </div>
-        </section>
-
-        <div class="section-divider"></div>
-
-        <section class="content-section">
-            <div class="container my-4">
-
-                <h2>About the Project</h2>
-                <div class="row">
-                    <!-- Text Column (Left) -->
-                    <div class="col-md text-left">
-                        
-                        <p>In our first year of engineering, my friend and I wanted to build a coil gun for fun :) </p>
-                        <p>The project features massive capacitors along with some really heavy hand wound solenoids. The result is a super powerful (and dangerous) turret capable of firing metal projectiles at terrifiying speeds.</p>
-                        <p>Shoutout to my friend <a href="https://rachad47.github.io/rwae/CoilGun.html">Rachad</a>, who I did this project with! </p>
-                        <p>See the gun in action here! --></p>
-                    </div>
-                    <!-- Video Column (Right) -->
-                    <div class="col-md">
-                        <div class="ratio ratio-16x9">
-                            <iframe 
-                                src="https://www.youtube.com/embed/8LhQAW-y8WM?si=PQNdhbqgj-fzKuKk" 
-                                allowfullscreen>
-                            </iframe>
-                        </div>
-                        
-                    </div>
-                </div>
-            </div>
-        </section>
-        <!-- How it Works -->
-        <div class="container my-4">
-            <h2 class="title mt-4">How It Works</h2> <!-- Adjusted margin classes -->
-                
-            <!-- Content: Bullet Points on Left, Image on Right -->
-            <div class="row">
-                <!-- Text Column (Left) -->
-                <div class="col-md text-left">
-                    <p>Coil guns utilize solenoids, which can be made from coils of magnetic wire. When a high current is passed through these wires, a strong magnetic field is generated. This magnetic field attract the bullet, accelerating it quickly forward. 
-                    <p>In our multistage coil gun, we have two solenoids placed in series. As the bullet passes the first solenoid, it passes an IR sensor which automatically triggers the second stage to fire.</p>
-                </div>
-                <!-- Image Column (Right) -->
-                <div class="col-md">
-                    <img src="assets/imgs/coilgun-assets/coilgun-animation.gif" alt="Coil Gun" class="img-fluid">
-                    <p></p>
-                </div>
-                <!-- Image (Centered) -->
-                <div> 
-                <img src="assets/imgs/coilgun-assets/coilgun-blockdiagram.png" alt="Coil Gun" class="img-fluid">
-                </div>
-            </div>
-        </div> 
-
-        <div class="section-divider"></div>
-
-        <!-- Electrical Components -->
- 
-        <h2 class="title my-4 text-center">Electrical Components</h2> <!-- Adjusted margin classes -->
-       
-        
-        <!-- Working Voltage -->
-        <section class="content-section">
-            <h3 class="subtitle section-title text-center mt-4">Working Voltage</h3>
-            
-            <div class="row">
-                <div class="col-12 text-left">
-                    <p>We wanted our coil gun to be super powerful so we bought the largest capacitors we could find at our Lee's electronics. We also bought a DC-DC buck booster to allow us to get a voltage of about 385V from our 12V power supply.  </p>
-                </div>  
-            </div>    
-
-            <div class="row">
-                <div class="col-md-6 text-center">
-                    <img src="assets/imgs/coilgun-assets/buckbooster.png" alt="Coil Gun" class="img-fluid" style="height: 300px; object-fit: contain;">
-                    <p class="caption">DC-DC Buck Boost, can boost 12V to 390V</p>
-                </div>
-                
-                <div class="col-md-6 text-center">
-                    <img src="assets/imgs/coilgun-assets/capacitor.png" alt="Coil Gun" class="img-fluid" style="height: 300px; object-fit: contain;">
-                    <p class="caption">3 x 450V, 850uF and 1 x 450V, 780uF total </p>
-                </div>
-            </div>
-
-
-            <div class="row">
-                <div class="col-md-6 text-center">
-                    <video class="video-fluid" controls style="height: 500px; object-fit: cover;">
-                        <source src="assets/imgs/coilgun-assets/capacitorfiring.mov" type="video/mp4">
-                        Your browser does not support the video tag.
-                    </video>
-                    <p class="caption">Preliminary Test with Bullet POW!</p>
-                </div>
-                <div class="col-md-6 text-center">
-                    <video class="video-fluid" controls style="height: 500px; object-fit: cover;">
-                        <source src="assets/imgs/coilgun-assets/earlyfiringtest.mp4" type="video/mp4" >
-                        Your browser does not support the video tag.
-                    </video>
-                    <p class="caption">Accidental Short! RIP Floor, Goodbye Security Deposit :(</p>
-                </div>
-            </div>
-        </section>
-
-        <div style="height: 25px;"></div> <!-- Spacer -->
-
-        <!-- Optocouplers Section -->
-        <section class="content-section">
-            <h3 class="subtitle section-title text-center mt-3">Optocouplers</h3>
-            <!-- Content: Bullet Points on Left, Image on Right -->
-            <div class="row">
-                <div class="col-md text-left">
-                    <p>We used optocouplers to protect our components from the extremely high voltages/currents present in our circuit.</p>
-                    <p>Optocouplers use an LED and a phototransistor to transmit signals as light. This allows us to electrically isolate our high and low voltage systems while still allowing them to communicate.</p>
-                    <p>Unfortunately I believe we accidentally damaged our optocoupler as it stopped working as intended. We ended up making our own optocoupler out of an IR LED and IR receiver. </p>
-                </div>
-                <div class="col-md">
-                    <img src="assets/imgs/coilgun-assets/optocoupler-diagram.png" alt="Coil Gun" class="img-fluid">
-                </div>
-            </div>
-        </section>
-
-        <div style="height: 25px;"></div> <!-- Spacer -->
-
-        <!-- Thyristors Section -->
-        <section class="content-section">
-            <h3 class="subtitle section-title mt-4 text-center">SCR - Thyristors</h3>
-
-            <div class="row">
-                <div class="col-12 text-left">
-                    <p>Thyristors can switch quickly and handle large currents/voltages. They also only require a brief trigger pulse to start conducting, and they don't stop conducting until no more current is flowing. This allows us to switch on our solenoid with a quick pulse (push button click) and lets the solenoids automatically turn off when the capacitor banks are depleted.  </p>
                 </div> 
-            </div>    
-
-            <div class="row">
-                <div class="col-md-6 text-center">
-                    <img src="assets/imgs/coilgun-assets/thrysitordatasheet.png" alt="Coil Gun" class="img-fluid" style="max-width: 80%; height: auto;">
-                    <p class="caption">Thyristor Datasheet</p>
-                </div>
-                <div class="col-md-6 text-center">
-                    <video class="video-fluid" controls>
-                        <source src="assets/imgs/coilgun-assets/earlytest.mp4" type="video/mp4">
-                        Your browser does not support the video tag.
-                    </video>
-                    <p class="caption">Early Test With Thyristor and Optocoupler</p>
-                </div>
             </div>
         </section>
 
-        <!-- Second Stage Section -->
-        <section class="content-section">
-            <h3 class="subtitle section-title mt-4 text-center">Second Stage</h3>
-
-            <!-- Content: Bullet Points on Left, Image on Right -->
-            <div class="row">
-                <div class="col-12 text-left">
-                    <p>To trigger the second stage, we use an IR emitter and receiver in a beam break configuration. Once the bullet passes through the IR beam an interrupt on the ESP32 triggers the second stage. We probably could have used a not gate but we didn't have those on hand, the ESP32 also allows us to log data regarding when the first/second stages are fired. </p>
-                </div>
-            </div>
-            <div class="row">
-                    <img src="assets/imgs/coilgun-assets/secondstage.png" alt="Coil Gun" class="img-fluid">
-            </div>
-
-            <div style="height: 25px;"></div> <!-- Spacer -->
-
-            <div class="row">
-                <div class="col-md-6 text-center">
-                    <img src="assets/imgs/coilgun-assets/IR-sensor-test.gif" alt="Coil Gun" class="img-fluid" style="max-width: 80%; height: auto;">
-                    <p class="caption">Test With the Automatic Second Stage</p>
-                </div>
-                <div class="col-md-6 text-center">
-                    <img src="assets/imgs/coilgun-assets/IR-sensor-cad.png" alt="Coil Gun" class="img-fluid" style="max-width: 80%; height: auto;">
-                    <p class="caption">CAD of the IR Sensor Mount</p>
-                </div>
-            </div>
-        </section>
-
-        <section class="content-section">
-            <h3 class="subtitle section-title mt-4 text-center">Full Circuit</h3>
-            <div class="row">
-                <div class="col-md-6">
-                    <p>We based our circuit off <a href="https://github.com/kakushinAU/coilgun/blob/main/Coil%20Gun%20Schematic.pdf"  style="color: rgb(22, 103, 255);">B.Sampson's circuit.</a> We've made small adjustments with certain components like replacing the optocoupler with an IR receiver and emitter when ours broke but everything else is pretty similar.</p>
-                    <p>Here on the right is our constructed circuit with the different voltage levels sectioned off/highlighted.</p>
-                </div>
-                <div class="col-md-6 text-center">
-                    <img src="assets/imgs/coilgun-assets/voltage-sections.jpg" alt="Coil Gun" class="img-fluid" style="max-width: 80%; height: auto;">
-                </div>
-            </div>
-
-            <div style="height: 25px;"></div> <!-- Spacer -->
-
-            <div class="row">
-                <div class="col-md-12 text-center">
-                    <img src="assets/imgs/coilgun-assets/BSampsons-circuit.jpg" alt="Coil Gun" class="img-fluid" style="max-width: 80%; height: auto;">
-                    <p class="caption"><a href="https://github.com/kakushinAU/coilgun/blob/main/Coil%20Gun%20Schematic.pdf"  style="color: rgb(22, 103, 255);">B.Sampson's circuit.</a></p>
-                </div>
-            </div>
-        </section>
-        
         <div class="section-divider"></div>
 
-        <div class="container my-4">
-            <!-- Center-Aligned Title -->
-            <div class="row">
-                <div class="col-12 text-center">
-                    <h2 class="title mb-3">Manufacturing and Assembly</h2> <!-- Adjusted margin classes -->
+        <!--Introduction Section-->
+        <section id="Introduction" class="content-section">
+            <div class="container my-4">
+                <h2 class="subtitle section-title text-center my-2">Introduction</h2>
+                <h4>Overview</h4>
+                <div class="row">
+                    <div class="col-md text-left">
+                        <p>In this project, we developed code for an autonomous robot to compete in a simulated virtual environment.</p>
+                        <p>The robot, acting as a detective, must navigate through the environment to identify and collect clues related to a fictional crime scenario while adhering to traffic laws. The robot also had to avoid obstacles, namely the pedestrian, the truck, and Baby Yoda.</p>
+                        <p>The robot's performance was evaluated on three main criteria</p>
+                        <ol>
+                            <li>Its ability to quickly navigate the course.</li>
+                            <li>Its ability to stay on track and avoid obstacles.</li>
+                            <li>Its accuracy in reading messages off the clue boards stationed around the track.</li>
+                        </ol> 
+                        <p>A diagram of the track is shown on the right.</p>
+                    </div>
+                    <div class="col-md text-center">
+                        <img src="assets/imgs/enph353-assets/track-diagram.png" alt="Diagram of the Competition Track" class="img-fluid" style="max-width: 95%; height: auto;" loading="lazy">
+                        <p class="caption">Diagram of the Competition Track</p>
+                    </div>
+                </div>
+
+                <div style="height: 20px;"></div> <!-- Spacer -->
+
+                <h4>Scoring</h4>
+                <div class="row">
+                    <div class="col-md text-left">
+                        <p>The first six clues are worth 6 points and the last two are worth 8. This results in a maximum of 52 points from clues alone. There's also 5 bonus points you can get from reaching the tunnel area. This adds up to a total of 57 points. </p>
+                        <p>Alongside points, there are many penalties that teams can acquire. In fact, some teams get negative points. The penalites are as follows: </p>
+                        <ul>
+                            <li>Penalty of -5 for colliding with the pedestrian/truck/baby Yoda.</li>
+                            <li>Penalty of -2 for going offroad.</li>
+                            <li>Penalty of -2 for respawning/teleporting.</li>
+                        </ul> 
+                        <p>Speaking of respawning/teleporting, teams are allowed to teleport/respawn at the pink lines. It is good to teleport if you're robot cannot consistently navigate a section of the course.</p>
+                    </div>
+                    <div class="col-md text-center">
+                        <img src="assets/imgs/enph353-assets/fizz-score-tracker-full-score.png" alt="Fizz Score Tracker Full Points" class="img-fluid" style="max-width: 95%; height: auto;" loading="lazy">
+                        <p class="caption">Fizz Score Tracker with Full Points</p>
+                    </div>
                 </div>
             </div>
+        </section><!--End of Introduction Section-->
 
-            <div class="row">
-                <div class="col-md-3 text-center">
-                    <img src="assets/imgs/coilgun-assets/ellaworking.jpg" alt="Ella Working" class="img-fluid" style="max-width: 90%; height: auto;">
-                    <p class="caption">Fiddling With the Caps</p>
+        <div class="section-divider"></div>
+
+        <!--Package Overview Section-->
+        <section id="PackageOverview" class="content-section">
+            <div class="container my-4">
+                <h2 class="subtitle section-title text-center my-2">Package Overview</h2>
+                <h4>Topics</h4>
+                <div class="row">
+                    <div class="col-md text-left">
+                        <p>There are four main topics that our robot subscribes/publishes to.</p>
+                        <ol>
+                            <li><b>/B1/rrbot/camera1/image_raw:</b> This topic contains camera footage from the front facing camera.</li>
+                            <li><b>/B1/rrbot/camera2/image_raw:</b> This topic contains camera footage from the left facing camera.</li>
+                            <li><b>/score_tracker:</b> This topic is where we send our clue guesses. It's related to the score tracking GUI.</li>
+                            <li><b>/B1/cmd_vel:</b> This topic is responsible for controlling the robots movements.</li>
+                        </ol>  
+                        <p>All of the robot control logic is located in the same files as the GUI's. Perhaps it would have been better to seperate the robot logic from the GUIs, but we didn't think it was worth thinking about given the time constraints.</p>
+                    </div>
+                </div>
+                
+                <div class="row">
+                    <div class="col-md text-center">
+                        <img src="assets/imgs/enph353-assets/ros-architecture.png" alt="Controller Package Overview" class="img-fluid" style="max-width: 95%; height: auto;" loading="lazy">
+                        <p class="caption">ROS Controller Package Overview</p>
+                    </div>
+                </div>
+
+            </div>
+        </section><!--Package Overview End-->
+
+        <div class="section-divider"></div>
+
+        <!--Clue Recognition Section-->
+        <section id="ClueRecognition" class="content-section">
+            <div class="container my-4">
+                <h2 class="subtitle section-title text-center my-2">Clue Recognition</h2>
+
+                <h4>Goal</h4>
+                <div class="row">
+                    <div class="col-md text-left">
+                        <p>The goal here was to take a raw image, search it for a clue board, read the clue off the clue board and then publish our best guess. We needed an algorithm that was fast, reliable (and cool)!</p>
+                    </div>
+                </div>
+                
+                <div style="height: 25px;"></div> <!-- Spacer -->
+
+                <h4>Clue Board Detection - SIFT</h4>
+                <div class="row">
+                    <div class="col-md text-left">
+                        <p>First things first, we needed a way of extracting the clue board from the camera footage. We went through quite a few ideas before arriving at our final algorithm. </p>
+                        <p>Our first idea was to use SIFT (Scale-Invariant Feature Transform). SIFT is a computer vision algorithm that detects keypoints in a template image by finding distinctive, scale- and rotation-invariant features, which it then located in a target image.</p>
+                        <p>The clue boards always have a FIZZ logo in the top left. The idea was to use SIFT to locate the FIZZ emblem which would then allow us to get the homography and perform an inverse perspective transform.</p>
+                        <p>We can see that this worked quite well on the right! Or at least it looks like it does. As it turns out, SIFT is incredibly computationally expensive and slow :(. It was highkey overkill here, but still really fun to try out. </p>
+                    </div>
                 </div>  
-        
-                <div class="col-md-3 text-center">
-                    <img src="assets/imgs/coilgun-assets/rachad-plexiglass2.jpg" alt="Rachad Working with Plexiglass" class="img-fluid" style="max-width: 90%; height: auto;">
-                    <p class="caption">Rachad With the Bent Plexiglass</p>
+
+                <div class="row">
+                    <div class="col-md text-center">
+                        <video class="video-fluid" controls style="height: 390px; object-fit: cover;">
+                            <source src="assets/imgs/enph353-assets/steven-SIFT.mp4" type="video/mp4" loading="lazy" >
+                            Your browser does not support the video tag.
+                        </video>
+                        <p class="caption">Example of SIFT in Action</p>
+                    </div>
+                    <div class="col-md text-center">                        
+                        <img src="assets/imgs/enph353-assets/SIFT-clueboard.png" alt="Identifiying Clue Board using SIFT" class="img-fluid" style="height: 390px; object-fit: contain;" loading="lazy">
+                        <p class="caption">Clue Board Detection Using SIFT Algorithm</p>
+                    </div>  
                 </div>
 
-                <div class="col-md-3 text-center">
-                    <img src="assets/imgs/coilgun-assets/bullets.jpg" alt="Bullets" class="img-fluid" style="max-width: 90%; height: auto;">
-                    <p class="caption">Metal "Bullets" from Home Depot</p>
+                <div style="height: 25px;"></div> <!-- Spacer -->
+
+                <h4>Clue Board Detection - HSV Mask</h4>
+                <div class="row">
+                    <div class="col-md text-left">
+                        <p>After realizing SIFT was too slow (and overkill) we went back to the drawing board. I decided to play around with HSV masks. In hindsight we probably should have started with this, I just didn't feel like it haha. </p>
+                        <p>Our clue board detection algorithm first uses a gray HSV mask and the morphological closing operation to make out the largest gray contour on screen.</p>
+                        <p>It then tries to find 4 corners and then uses that to perform an inverse perspective transform. The result is a nice clean head-on image of our clue board.</p>
+                        <p>We originally tried using a blue HSV mask but encountered issues when the camera was super close to the clue board, namely parts of the blue clue board outline would get clipped and lead to weird inverse perpsective transforms.</p>
+                        <p>I also want to note that before we do any kind of clue board detection, we use a blue mask to check the area of the largest blue contour. This was to check whether we were close enough to the clue board as images taken from far away would become quite fuzzy :( </p>
+                        <p>The robot has bad eyesight just like me >_></p>
+                    </div>
+                    <div class="col-md text-center">
+                        <img src="assets/imgs/enph353-assets/clue-board-detection-block-diagram.png" alt="Clue Board Detection Block Diagram" class="img-fluid" style="max-width: 90%; height: auto;" loading="lazy">
+                        <p class="caption">Clue Board Detection Block Diagram</p>
+                    </div>
+                </div>  
+
+                <div class="row mt-2">
+                    <div class="col-md text-center">
+                        <img src="assets/imgs/enph353-assets/grey-mask-horizontal.png" alt="Grey Masks Being Applied" class="img-fluid" style="max-width: 90%; height: auto;" loading="lazy">
+                        <p class="caption">Grey Mask to Inverse Perspective Transform</p>
+                    </div>
+                </div>
+                
+                <div style="height: 25px;"></div> <!-- Spacer -->
+
+                <h4>Letter Segmentation</h4>
+                <div class="row">                    
+                    <div class="col-md text-left">
+                        <p>After we detect a clueboard and perform the inverse perspective transform we then try to extract the two types of text from the board:</p>
+                        <ul>
+                            <li><b>Context:</b> Text on the top half of the board. Tells you the type of clue.</li>
+                            <li><b>Clue:</b> Text on the bottom half of the board.</li>
+                        </ul>  
+                        <p>We do this by splitting the clue board into a top and bottom half. We then mask for the blue letters, we erode (horiziontally) to prevent the letters from merging into each other, we find contours, and then draw bounding boxes around them and cut them out.</p>
+                    </div>
                 </div>
 
-                <div class="col-md-3 text-center">
-                    <img src="assets/imgs/coilgun-assets/voltage-measurement.jpg" alt="Voltage Measurement" class="img-fluid" style="max-width: 90%; height: auto;">
-                    <p class="caption">Voltage Measurement</p>
+                <div class="row">
+                    <div class="col-md text-center">
+                        <img src="assets/imgs/enph353-assets/letter-segmentation-block-diagram.png" alt="Letter Segmentation Block Diagram" class="img-fluid" style="max-width: 90%; height: auto;" loading="lazy">
+                        <p class="caption">Letter Segmentation Block Diagram</p>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md text-left">
+                        <p><b>Issue:</b> At competition, we lost points because the text letters "OO" bleed into each other when read from afar and get read as one massive letter. We could have fixed this using a constant cropping technique (simple) or by checking to see if the aspect ratio made sense (letters should be more tall than wide, otherwise they should be cut)</p>
+                        <p>Anyway, this worked very well on clear images or letters that were skinny. Below is an image of the cropped letters.</p>
+                    </div>
+                </div>
+               
+                <div class="row">
+                    <div class="col-md text-center">
+                        <img src="assets/imgs/enph353-assets/cropped-images-far.png" alt="Letters Cropped From Distant Clue Board" class="img-fluid" style="max-width: 90%; height: auto;" loading="lazy">
+                        <p class="caption">Letters Cropped From Distant Clue Board</p>
+                    </div>
+                </div>
+
+                <div style="height: 25px;"></div> <!-- Spacer -->
+
+                <h4>CNN Model</h4>
+                <div class="row">
+                    <div class="col-md text-left">
+                        <p>Our clue readng CNN takes 25x35 greyscale images. </p>
+                        <p>It contains three convolution layers with ReLU activation functions. Each convolution layer is followed by a pooling layer. The output is then fed to two fully connected layers. </p>
+                        <p>The final layer contains 36 output neurons which correspond to the 26 possible letters + 10 possible digits.</p>
+                        <p><b>Initial Mistake:</b> I was a goofy goober and intially gave our first FC layer 4096 parameters. This meant that we originally had ~6.5 million parameters in our model :| The model was approx 25Mb in size ;w;. I fixed this by reducing the number of neurons to 200 which resulted in about 400k parameters and a ~2Mb model size.  </p>
+                        <p>There was likely room to improve the model more but we moved on in the interest of time.</p>
+                    </div>
+                    <div class="col-md text-center">
+                        <img src="assets/imgs/enph353-assets/clue-CNN-summary.png" alt="Summary of Clue Reading CNN" class="img-fluid" style="max-width: 100%; height: auto;" loading="lazy">
+                        <p class="caption">Autogenerated Summary of Clue CNN</p>
+                    </div>
+                </div>
+
+                <div style="height: 25px;"></div> <!-- Spacer -->
+
+                <h4>Data Generation</h4>
+                <div class="row">
+                    <div class="col-md text-left">
+                        <p>We trained our model on artificially generated data. We generated 25x35 images of letters, and applied a variety of transformations on the data.</p>
+                        <p>We changed lighting, wobblyness, rotation, position, noise and blurriness. Since the clue boards would usually be viewed from the left or right, we added extra examples of images blurred horizontally. We also added extra examples for 'B', '8', 'O' and 'Q' because it's hard to tell the difference.</p>
+                    </div>
+            
+                    <div class="col-md text-center">
+                        <img src="assets/imgs/enph353-assets/auto-generated-images.png" alt="Summary of Clue Reading CNN" class="img-fluid" style="max-width: 100%; height: auto;" loading="lazy">
+                        <p class="caption">Autogenerated Summary of Clue CNN</p>
+                    </div>
+                </div>
+
+                <div style="height: 25px;"></div> <!-- Spacer -->
+
+                <h4>Training and Result</h4>
+                <div class="row">
+                    <div class="col-md text-left">
+                        <p>As this was a classification problem, we used Cross Entropy Loss as our criterion and Stochastic Gradient Descent as our optimizer. </p>
+                        <p>Our learning rate was 0.001, our momentum was 0.9, and our weight decay was 0.0001. We typically trained for about 10 epochs at a time. </p>
+                        <p>Our final validation accuracy was 99.80% :D</p>
+                    </div>
+
+
+                    <div class="col-md text-center">
+                        <img src="assets/imgs/enph353-assets/CNN-confusion-matrix.png" alt="Confusion Matrix for Letter Classifier" class="img-fluid" style="max-width: 90%; height: auto;" loading="lazy">
+                        <p class="caption">Confusion Matrix for Letter Classifier CNN Model</p>
+                    </div>
                 </div>
             </div>
-
-            <div class="row"> 
-                <div class="col-md-12 text-center">
-                    <img src="assets/imgs/coilgun-assets/assembled-circuit.png" alt="Ella Working" class="img-fluid" style="max-width: 90%; height: auto;">
-                    <p class="caption">Fully Assembled Circuit!</p>
-                </div>
-            </div>
-        </div>
+        </section><!--Clue Recognition Section End-->
 
         <div class="section-divider"></div>
 
-        <section class="content-section">
-            <h3 class="subtitle section-title mt-4 mb-2 text-center">Optimization</h3>
-            <div class="row">
-                <div class="col-md-6">
-                    <p>The final step of our coil gun project was optimizing the solenoid placement and the bullet's starting position for maximum speed.</p>
-                    <p>The diagram on the right shows the two parameters we were trying to optimize for. d1: the location of the first solenoid, and d2: the location of the second solenoid</p>
-                    <p>We tried to load the bullet in the same starting location each time.</p>
-                    <p>To optimize for bullet exit speed, we built a speedometer using two IR emitter-receiver pairs set at a fixed distance to measure the bullet's velocity. 
-                        A custom CAD-mounted fixture secured the IR sensors at a fixed distance to the end of the gun.</p>
-                    </p>
-                </div>
-                <div class="col-md-6 text-center">
-                    <img src="assets/imgs/coilgun-assets/distance-diagram.png" alt="Ella Working" class="img-fluid" style="max-width: 90%; height: auto;">
+        <!--Imitation Learning Section-->
+        <section id="ImitationLearning" class="content-section">
+            <div class="container my-4">
+                <h2 class="subtitle section-title text-center my-2">Driving - Imitation Learning</h2>
+                <h4>Topics</h4>
+                <div class="row">
+                    <div class="col-md text-left">
+                    </div>
                 </div>
             </div>
+        </section><!--Imitation Learning Section End-->
 
-            <div class="row">
-                <div class="col-md-6 text-center">
-                    <img src="assets/imgs/coilgun-assets/speedometer.png" alt="Ella Working" class="img-fluid" style="max-width: 90%; height: auto;">
-                    <p class="caption">3D Printed Speedometer</p>
-                </div>
-                <div class="col-md-6 text-center">
-                    <img src="assets/imgs/coilgun-assets/position-measurement.png" alt="Ella Working" class="img-fluid" style="max-width: 90%; height: auto;">
-                    <p class="caption">Taking position Measurements</p>
-                </div>
-            </div>
+        <div class="section-divider"></div>
 
-            <div class="row">
-                <div class="col-md-12 text-left">
-                    <p>First we took various measurements of the bullets speed while we varied the location of the first solenoid (d1). For each test, we took multiple measurements and then recorded the average value. We then plotted the data and glued the first solenoid to its most optimal loation.</p>
-                    <p>We then repeated this process but varied the location of the second solenoid (d2). The second solenoid was then glued to sit in its most optimal location</p>
+        <!--State Machine Section-->
+        <section id="StateMachine" class="content-section">
+            <div class="container my-4">    
+                <h2 class="subtitle section-title text-center my-2">StateMachine</h2>
+                <h4>Topics</h4>
+                <div class="row">
+                    <div class="col-md text-left">
+                    </div>
                 </div>
             </div>
+        </section><!--State Machine Section End-->
 
-
-            <div class="row">
-                <div class="col-md-6 text-center">
-                    <img src="assets/imgs/coilgun-assets/d1-graph.png" alt="Ella Working" class="img-fluid" style="max-width: 90%; height: auto;">
-                    <p class="caption">d1: Location of First Solenoid</p>
-                </div>
-                <div class="col-md-6 text-center">
-                    <img src="assets/imgs/coilgun-assets/d2-graph.png" alt="Ella Working" class="img-fluid" style="max-width: 90%; height: auto;">
-                    <p class="caption">d2: Location of First Solenoid</p>
-                </div>
-            </div>
-
-
-        </section>
+        <div class="section-divider"></div>
 
     </div> <!-- end of page container -->
 
-    <div class="section-divider"></div>
+
+
 
     <!-- Footer Section -->
     <footer class="footer">
