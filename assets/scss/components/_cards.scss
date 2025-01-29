@@ -35,7 +35,6 @@
 	img {
 		width: 100%;
 		border-radius: $card-border-radius;
-
 		object-fit: cover; /* Crops instead of stretching */
     	object-position: center; /* Centers the cropped area */
 		overflow: hidden;  /* Hides the parts that exceed 4:3 */
@@ -49,7 +48,7 @@
 		left: 0;
 		width: 100%;
 		height: 100%;
-		background: rgba($gray-800, .5);
+		background: rgba($dark-theme-color, .1);
 		@include transition(all, 1s);
 	}
 	
@@ -84,7 +83,7 @@
 	&:hover,
 	&:focus {
 		.overlay {
-			background: rgba($gray-900, .8);				
+			background: rgba($gray-900, .5);				
 		}
 		.des {
 			top: 45%;
