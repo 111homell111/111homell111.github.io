@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-NCSQJKWYEF"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-NCSQJKWYEF');
+    </script>
+	<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Aerodesign Blog Post.">
+    <meta name="author" content="UBC Ella Yan">
+    <title>Ella's UBC Aerodesign</title>
+    <!-- font icons -->
+    <link rel="stylesheet" href="assets/vendors/themify-icons/css/themify-icons.css">
+
+    <!-- Bootstrap + Dorang main styles -->
+	<link rel="stylesheet" href="assets/css/dorang.css">
+
+    <link rel="icon" type="image/png" href="assets/imgs/aerodesign-assets/aerodesign-logo.png">
+
+
+</head>
+<body data-bs-spy="scroll" data-target=".navbar" data-offset="40" id="home"  data-bs-theme="dark">
+    
+    <!-- page navbar -->
+    <nav id="navbar" class="navbar navbar-expand-sm fixed-top">
+        <div class="container-fluid ">
+            <a class="navbar-brand fs-4" href="index.html">Home</a> <!-- me-auto pushes it to the left -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link fs-6" href="robotsummer.html#About">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link fs-6" href="robotsummer.html#2024-2025">2025</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link fs-6" href="robotsummer.html#2023-2024">2024</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link fs-6" href="robotsummer.html#2022-2023">2023</a>
+                    </li>
+                
+                </ul>
+            </div>
+        </div>
+    </nav>
+     <!-- page navbar end -->
+
+    <div class="theme-selector">
+        <a href="javascript:void(0)" class="spinner">
+            <i class="ti-paint-bucket"></i>
+        </a>
+        <div class="body">
+            <a href="javascript:void(0)" class="light"></a>
+            <a href="javascript:void(0)" class="dark"></a>
+        </div>
+    </div>  
+    
+    <!-- Add this right after the navigation bar -->
+    <div class="container-fluid p-0" style="padding-top: 80px;">
+        <img src="assets/imgs/aerodesign-assets/aero-comp-2024-banner.jpg" alt="Wide Image" class="img-fluid w-100">
+    </div>
+    
+
+    <!-- page container -->
+    <div class="container">
+        <h1 class="title my-4 text-center">UBC Aerodesign</h1>
+
+        <div class="section-divider"></div>
+
+        <!--About Section-->
+        <section id="About" class="content-section">
+            <div class="container my-4">
+                <div class="row">
+                    <div class="col-md text-left">
+                        <h2>About UBC Aerodesign</h2>
+                        <p>UBC Aerodesign, founded in 1992, is a student run engineering design team that competes in the annual SAE Aerodesign competiton. </p>
+                        <p>The SAE aerodesign compeititon is an international collegiate design compeition with three categories to compete in, Advanced, Micro and Regular. </p>
+                        <p>I've always worked on the avionics subteams here at UBC Aerodesign. I've been on Power and Controls, who are responsible for the plane's typical flight electronics and power circuitry, the power plant (motor and propellor combination) and trimming of the control surfaces. I'm currently on Sensors and Communications, a subteam who's role is to design hardware and firmware to collect clean and reliable sensor data to be used by our software teams algorithms.</p>
+                        <p>Here's a link to our website! <a href="https://www.ubcaerodesign.com/"  style="color: rgb(35, 111, 252);">UBC Aerodesign Website.</a></p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="section-divider"></div>
+
+        <!--2024-2025-->
+        <section id="2024-2025" class="content-section">
+            <div class="container my-4">
+                <h2 class="text-center">Year 2024-2025</h2>
+                <h4>Competition Overview</h4>
+                <div class="row">
+                    <div class="col-md text-left">
+                        <p>In 2025 UBC Aerodesign Competed in the ADV Class Division and Micro Class Division</p>
+                        <p><b>ADV Goal: </b>This year the ADV ruleset changed. The goal for ADV now is to build a plane that can either capture or deliver a target from a specified pick up location, fully autonomously. Ideally the plane can take off, capture payload, and land all autonomously.</p>
+                        <p><b>MCR Goal: </b>Micro class's goal was once again to design the smallest (shortest wingspan) airplane with the lightest empy weight that could also carry the most payload and take off in the shortest distance.</p>
+                    </div>
+                </div>
+
+                <div style="height: 20px;"></div> <!-- Spacer -->
+
+                <h4>RTK (Real Time Kinematics)</h4>
+                <div class="row">
+                    <div class="col-md-7 text-left">
+                        <p>RTK (Real Time Kinematics) allows for centimeter-level accuracy and sub-centimeter precision on positional data measurements.</p>
+                        <p style="margin-bottom: 0;">The system involves:</p>
+                        <ul>
+                            <li> A stationary base that sits and acquires a highly accurate GNSS lock</li>
+                            <li>A moving rover (with its own GNSS module) that receives RTCM correction data from the base station</li>
+                        </ul>
+                        <p style="margin-bottom: 0;">Testing RTK:</p>
+                        <ul>
+                            <li>I conducted the test by setting up the base station and having me (the rover) walk laps on a predetermined path with the rover antenna </li>
+                            <li><b>Before RTK correction (left): </b> the data shows significant variation between laps despite following a consistent route</li>
+                            <li><p><b>After RTK correction (right): </b> the has much higher precision, the variation in position measurement between paths is almost nonexistent</p></li>
+                        </ul>
+                    </div>
+                    <div class="col-md-5 text-center">
+                        <img src="assets/imgs/aerodesign-assets/2025/RTK-diagram.png" alt="RTK Diagram" class="img-fluid" style="max-width: 70%; height: auto;" loading="lazy">
+                        <p class="caption">RTK Example Setup</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md text-center">
+                        <img src="assets/imgs/aerodesign-assets/2025/no-RTK.png" alt="GNSS Data no RTK" class="img-fluid"  style="height: 300px; object-fit: contain;" loading="lazy">
+                        <p class="caption">GNSS Data with No RTK</p>
+                    </div>
+                    <div class="col-md text-center">
+                        <img src="assets/imgs/aerodesign-assets/2025/RTK.png" alt="GNSS Data RTK" class="img-fluid"  style="height: 300px; object-fit: contain;" loading="lazy">
+                        <p class="caption">GNSS Data with RTK</p>
+                    </div>
+                </div>
+
+                <div style="height: 20px;"></div> <!-- Spacer -->
+
+                <h4>Airspeed Sensor PCB</h4>
+                <div class="row">
+                    <div class="col-md text-left">
+                        <p>I designed an airspeed sensor board so that the mechanical teams could have more data to aid in their design and analysis. </p>
+                        <p style="margin-bottom: 0px;">These boards are designed to collect data from a pitot tube and either save the data to an SD card, or to our main flight controller. Two versions of the board were made, one mini and one full. Both boards feature: </p>
+                        <ul>
+                            <li>An MS4525DO airspeed sensor</li>
+                            <li>An STM32F103 read data from the airspeed sensor via I2C and to act as a CAN controller</li>
+                            <li>A CAN Transciever</li>
+                            <li>Broken out SPI, I2C, CANRX/TX, and UART pins</li>
+                        </ul>
+                        
+                        <p>The full board additionally includes:</p>
+                        <ul>
+                            <li>A USB-UART converter (FDTI chip)</li>
+                            <li>An SD card connected to SPI</li>
+                        </ul>
+                        
+                        <p>Everything was designed in Altium Designer. I spent a good amount of time optimizing the BOM to reduce costs. All boards on our team, including this one, are ordered through JLCPCB (please sponsor us!). Here are pictures of the boards below.</p>
+                    </div>
+                </div>
+
+                <div style="height: 20px;"></div> <!-- Spacer -->
+
+                <div class="row">
+                    <div class="col-md text-center">
+                        <img src="assets/imgs/aerodesign-assets/2025/airspeed-PCB1.png" alt="Airspeed Sensor PCB 2D Routing" class="img-fluid"  style="height: 300px; object-fit: contain;" loading="lazy">
+                        <p class="caption">Airspeed Sensor Full</p>
+                    </div>
+                    <div class="col-md text-center">
+                        <img src="assets/imgs/aerodesign-assets/2025/airspeed-PCB-3D.png" alt="Airspeed Sensor PCB 3D" class="img-fluid"  style="height: 300px; object-fit: contain;" loading="lazy">
+                        <p class="caption">Airspeed Sensor Full 3D</p>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md text-center">
+                        <img src="assets/imgs/aerodesign-assets/2025/airspeed-PCB-real.jpg" alt="Airspeed Sensor Mini" class="img-fluid"  style="height: 320px; object-fit: contain;" loading="lazy">
+                        <p class="caption">Airspeed Sensor Mini (BOOT Pins Not Soldered)</p>
+                    </div>
+                    <div class="col-md text-center">
+                        <img src="assets/imgs/aerodesign-assets/2025/airspeed-PCB-mini.png" alt="Airspeed Sensor Mini" class="img-fluid"  style="height: 320px; object-fit: contain;" loading="lazy">
+                        <p class="caption">Airspeed Sensor Mini 3D</p>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md text-center">
+                        <img src="assets/imgs/aerodesign-assets/2025/CAN-AD2.png" alt="Probing CAN" class="img-fluid"  style="height: 400px; object-fit: contain;" loading="lazy">
+                        <p class="caption">Probing CAN Bus</p>
+                    </div>
+                    <div class="col-md text-center">
+                        <img src="assets/imgs/aerodesign-assets/2025/CAN-DIFF-PAIR.png" alt="Probing CANH and CANL" class="img-fluid"  style="height: 400px; object-fit: contain;" loading="lazy">
+                        <p class="caption">Probing CANH and CANL</p>
+                    </div>
+                </div>
+
+
+                <div style="height: 25px;"></div> <!-- Spacer -->
+
+                <h4>Test Flight</h4>
+                <div class="row">
+                    <div class="col-md text-left">
+                        <p>Our team recently had a very successful test flight! This is more of a win for the other subteams but I think it's too awesome not to share</p>
+                        <p>Thank you to Renegade Flyers Club for piloting our plane and allowing us to use their field!</p>
+                        <img src="assets/imgs/aerodesign-assets/2025/test-flight-group-photo.JPG" alt="Test Flight" class="img-fluid"  style="height: 400px; object-fit: contain;" loading="lazy">
+                        <p class="caption">Test Flight Team Photo</p>
+                    </div>
+                    <div class="col-md text-center">
+                        <iframe width="360" height="640" src="https://www.youtube.com/embed/LqHa6rfXMKo" 
+                        title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+                    </iframe>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <div class="section-divider"></div>
+
+        <!--2023-2024-->
+        <section id="2023-2024" class="content-section">
+            <div class="container my-4">
+                <h2 class="text-center">Year 2023-2024</h2>
+                <h4>Competition Overview</h4>
+                <div class="row">
+                    <div class="col-md text-left">
+                        <p>In 2024 UBC Aerodesign Competed in the ADV Class Division and Micro Class Division</p>
+                        <p><b>ADV Goal: </b>The objective of the ADV class was once again to design an aircraft that could carry the maximum payload while also detecting colored ground targets. Upon identifying a target, the main aircraft would deploy a smaller autonomous plane, which would then navigate and land at the designated location.</p>
+                        <p><b>MCR Goal: </b>Micro class's goal was to design the smallest (shortest wingspan) airplane with the lightest empty weight that could carry the most payload and take off in the shortest distance.</p>
+                    </div>
+                </div>
+
+                <div style="height: 25px;"></div> <!-- Spacer -->
+
+                <h4>Prelim: Power Sensing PCB</h4>
+                <div class="row">
+                    <div class="col-md text-left">
+                        <p>The goal was to measure the current and voltage going to our propulsion circuit. We wanted to be able to see how much power our motor was consuming for a given power plant configuration, and how close we were to the power limit.</p>
+                        <p>The board was specced to be able to handle 30A coming from a 6s Lipo I chose a hall effect sensor for current sensing and a voltage divider for voltage sensing. I chose a hall effect sensor to avoid power losses in the propulsion circuit. I used differential amplifiers to amplify the output of the hall effect sensor, and put buffers on the voltage divider to ensure our output values matched our calculations.</p>
+                        <p>I also designed the current and voltage sensing circuits for our initial flight controller board which used a shunt resistor instead.</p>
+                    </div>
+                    <div class="col-md-5 text-center">
+                        <img src="assets/imgs/aerodesign-assets/2024/power-sensing-pcb1.png" alt="Power Sensing PCB" class="img-fluid" style="max-width: 99%; height: auto;" loading="lazy">
+                        <p class="caption">Power Sensing PCB</p>
+                    </div>
+                </div>
+
+                <div style="height: 25px;"></div> <!-- Spacer -->
+
+                <h4>Power Boards and Wiring Hubs</h4>
+                <div class="row">
+                    <div class="col-md text-left">
+                        <p>Our subteam also designed power boards and wiring hubs. The power board had a buck converter on it and was specced to convert ~16V (4s Lipo) to 5V while having a max output current of 15A. The wiring hub was designed to house our flight controller, the Cube Orange, while also reducing the rats nest of wires in the plane.</p>
+                        <p>Our wiring hub supports hot swapping, has reverse polarity protection, and a fuse. We simulated parts of our circuit such as the hot swapping functionnality in LTSpice before adding them to our schematic.</p>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md text-center">
+                        <img src="assets/imgs/aerodesign-assets/2024/assortment-of-boards.jpg" alt="Assortment of PCBs" class="img-fluid" style="height: 350px; object-fit: contain;" loading="lazy">
+                        <p class="caption">Assortment of PCBs Designed by Our Subteam</p>
+                    </div>   
+                    <div class="col-md text-center">
+                        <img src="assets/imgs/aerodesign-assets/2024/illusion.jpg" alt="Zoomed in Photo of PCB" class="img-fluid" style="height: 350px; object-fit: contain;" loading="lazy">
+                        <p class="caption">Picture I Took While Soldering</p>
+                    </div>
+                    <div class="col-md text-center">
+                        <img src="assets/imgs/aerodesign-assets/2024/work-session.jpg" alt="Work Session" class="img-fluid" style="height: 350px; object-fit: contain;" loading="lazy">
+                        <p class="caption">Late Night Work Session</p>
+                    </div>
+                </div>
+
+                <div style="height: 25px;"></div> <!-- Spacer -->
+
+                <h4>Competition</h4>
+                <div class="row">
+                    <div class="col-md text-left">
+                        <p>Competition this year was in Van Nuys in California. It rained really hard half the time we were there but we still got in some good flight attempts. This year was more relaxed for our subteam as we had more members at comp ths year (four of us instead of one). Wiring everything was relatively simple compared to last year as we had our custom wiring hub which helped reduce the rats nest of wires in the plane. Here's some photos from the competition!</p>        
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md text-center">
+                        <img src="assets/imgs/aerodesign-assets/2024/securing-prop.jpg" alt="Securing the Motor" class="img-fluid" style="height: 260px; object-fit: contain;" loading="lazy">
+                        <p class="caption">Securing the Motor</p>
+                    </div>   
+                    <div class="col-md text-center">
+                        <img src="assets/imgs/aerodesign-assets/2024/friends-assembling-plane.jpg" alt="Friends Assembling Plane" class="img-fluid" style="height: 260px; object-fit: contain;" loading="lazy">
+                        <p class="caption">Friends Assembling the ADV Plane</p>
+                    </div>
+                    <div class="col-md text-center">
+                        <img src="assets/imgs/aerodesign-assets/2024/team-photo.jpg" alt="Team Photo" class="img-fluid" style="height: 260px; object-fit: contain;" loading="lazy">
+                        <p class="caption">Team Photo at Competition</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="section-divider"></div>
+
+        <!--2022-2023-->
+        <section id="2022-2023" class="content-section">
+            <div class="container my-4">
+                <h2 class="text-center">Year 2022-2023</h2>
+                <h4>Competition Overview</h4>
+                <div class="row">
+                    <div class="col-md text-left">
+                        <p>In 2023 UBC Aerodesign competed in the ADV Class Division and Regular Class Division.</p>
+                        <p><b>ADV Goal: </b>The objective of the ADV class was to design an aircraft that could carry the maximum payload while also detecting colored ground targets. Upon identifying a target, the main aircraft would deploy a smaller autonomous plane, which would then navigate and land at the designated location.</p>
+                        <p><b>REG Goal: </b>REG class's goal was to build a huge airplane that could carry plenty of payload while operating with an extremely low power limit.</p>
+                        <p>This year I was a member on the Power and Propulsions subteam. We're in charge of keeping the plane powered as well as selecting a powerplant that will give us the best thrust. This was my first year on Aero!</p>
+                    </div>
+                    <div class="col-md text-center">
+                        <video class="video-fluid" controls style="height: 400px; object-fit: cover;">
+                            <source src="assets/imgs/aerodesign-assets/2023/maiden_flight.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                        <p class="caption">ADV Hop Test in Intense Winds</p>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md text-center">
+                        <img src="assets/imgs/aerodesign-assets/2023/reg-plane.jpg" alt="Regular Class Plane 2023" class="img-fluid" style="height: 400px; object-fit: contain;" loading="lazy">
+                        <p class="caption">Regular Class Plane 2023</p>
+                    </div>
+                    <div class="col-md text-center">
+                        <img src="assets/imgs/aerodesign-assets/2023/adv-plane.jpg" alt="Advanced Class Plane 2023" class="img-fluid" style="height: 400px; object-fit: contain;" loading="lazy">
+                        <p class="caption">Advanced Class Plane 2023</p>
+                    </div>
+                </div>
+
+                <div style="height: 25px;"></div> <!-- Spacer -->
+
+                <h4>Wind Tunnel Testing</h4>
+                <div class="row">
+                    <div class="col-md-7 text-left">
+                        <p>One of Power and Propulsion's responsiblities is selecting the optimal motor and propellor combination for each plane. </p>
+                        <p>Our planes are given a 750 Watt power limit (which is very low) so any extra bit of thrust we can get matters.</p>
+                        <p>To select the optimal power plant configuration, we test various combinations in the wind tunnel. We had a lot of spare propellors and motors this year, so rather than buying new ones, we tested whatever was in our current inventory. </p>
+                        <p>In some years we do some calculations based on Gudmundsson's General Aviation Aircraft Design textbook to decied which props/motors but we still always conduct wind tunnel tests to confirm our choice. </p>
+                        <p>Out thrust stand consists of a load cell connected to an Arduino Uno. In future years we planned to add more load cells to get data on the torsion from the motor and propellor.</p>
+                    </div>
+                    <div class="col-md-5 text-center">
+                        <video class="video-fluid" controls style="height: 400px; object-fit: cover;">
+                            <source src="assets/imgs/aerodesign-assets/2023/windtunnel.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                        <p class="caption">Wind Tunnel Testing</p>
+                    </div>
+                </div>
+
+                <div style="height: 20px;"></div> <!-- Spacer -->
+
+                <h4>Altium, Soldering, and Python</h4>
+                <div class="row">
+                    <div class="col-md text-left">
+                      <p><b>Altium:</b> I learned the basics of Altium this year (my first year of university). We were designing a custom flight controller carrier board and so I learned how to read and create schematics, how to create Altium components and their footprints, and how to route PCBs.</p>
+                      <p><b>Soldering:</b> I also learned how to solder on my first year on the team. I soldered various wiring harnesses here and their. I believe I am currently very proficient at soldering.</p>
+                      <p><b>Python:</b> I also did some general data analysis of the wind tunnel data using Python. I also worked on a GUI in Tkinter to automate wind tunnel testing.</p>
+                    </div>
+                </div>
+
+                <div style="height: 20px;"></div> <!-- Spacer -->
+
+                <h4>Competition</h4>
+                <div class="row">
+                    <div class="col-md text-left">
+                        <p>This competition was super busy for me since I was the only person on my subteam who went (my lead didn't attend)!</p>
+                        <p>I was responsible for ensuring both planes were powered, trimmed, and good to fly meaning our role was very critical on the field. I was responsible for running through all the pre-flight checks and ensuring we passed inspection. There's also the fact that I had to manage two planes that added to the stress.</p>
+                        <p>Regardless, I enjoyed the challenge and had a wonderful time at competition! Here are some pictures from comp!</p>
+                    </div>
+                </div>
+                <div class="row">    
+                    <div class="col-md text-center">
+                        <img src="assets/imgs/aerodesign-assets/2023/me-soldering.jpg" alt="Soldering Electronics" class="img-fluid" style="height: 400px; object-fit: contain;" loading="lazy">
+                        <p class="caption">Last Minute Soldering Repairs</p>
+                    </div>
+                    <div class="col-md text-center">
+                        <img src="assets/imgs/aerodesign-assets/2023/inspection.jpg" alt="Passing Inspection" class="img-fluid" style="height: 400px; object-fit: contain;" loading="lazy">
+                        <p class="caption">Passing Inspection</p>
+                    </div>
+                </div>
+
+                <div class="row">    
+                    <div class="col-md text-center">
+                        <img src="assets/imgs/aerodesign-assets/2023/comp-tuning.JPG" alt="Me Getting the Plane Ready to Fly" class="img-fluid" style="height: 400px; object-fit: contain;" loading="lazy">
+                        <p class="caption">Preparing the Flight Electronics for Flight</p>
+                    </div>
+                    <div class="col-md text-center">
+                        <img src="assets/imgs/aerodesign-assets/2023/comp-runway.JPG" alt="Plane on the Runway" class="img-fluid" style="height: 400px; object-fit: contain;" loading="lazy">
+                        <p class="caption">Talking to the Pilot Before Flight</p>
+                    </div>
+                </div>
+                <div class="row">    
+                    <div class="col-md text-center">
+                        <img src="assets/imgs/aerodesign-assets/2023/team-photo.jpg" alt="ADV Division Team Photo" class="img-fluid" style="max-width: 99%; height: auto;" loading="lazy">
+                        <p class="caption">Team Photo at Competition</p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <div class="section-divider"></div>
+        
+
+
+    </div> <!-- end of page container -->
+
+    <!-- Footer Section -->
+    <footer class="footer">
+        <div class="container text-center">
+            <div class="row">
+                <!-- Email Icon -->
+                <div class="col-md-4">
+                    <a href="mailto:ellayan0303@gmail.com">
+                        <i class="ti-email"></i> ellayan0303@gmail.com
+                    </a>
+                </div>
+
+                <!-- LinkedIn Icon in the Center -->
+                <div class="col-md-4">
+                    <a href="https://www.linkedin.com/in/ella-yan-2a7421288/" target="_blank">
+                        <i class="ti-linkedin"></i>
+                    </a>
+                </div>
+
+                <!-- GitHub Icon -->
+                <div class="col-md-4">
+                    <a href="https://github.com/111homell111" target="_blank">
+                        <i class="ti-github"></i>
+                    </a>
+                </div>
+            </div>
+            <!-- Footer Credits -->
+            <div class="mt-3">
+                <p>Ella Yan</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- core  -->
+    <script src="assets/vendors/jquery/jquery-3.4.1.js"></script>
+    <script src="assets/vendors/bootstrap/bootstrap.bundle.js"></script>
+
+    <!-- Dorang js -->
+    <script src="assets/js/dorang.js"></script>
+
+</body>
+</html>

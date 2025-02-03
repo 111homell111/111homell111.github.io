@@ -38,10 +38,10 @@ h6 {
 	font-size: calc(22px + (28 - 20) * ((100vw - 300px) / (1300 - 300)));		
 }
 p {
-	font-size: calc(16x + (15 - 13) * ((100vw - 300px) / (1300 - 300)));
+	font-size: calc(18x + (15 - 13) * ((100vw - 300px) / (1300 - 300)));
 	opacity: 1; 
 	font-weight: 400;
-	letter-spacing: .8px;
+	letter-spacing: 0.9px;
 	line-height: 1.6;
 	color: $white;
 } 
@@ -52,6 +52,11 @@ p.caption {
     //font-style: italic; /* Optional stylistic choice */
     text-align: center; /* Center the caption below media */
     margin-top: 5px; /* Add spacing above the caption */
+}
+
+p.heading {
+    margin-bottom: 0px; /* Add spacing above the caption */
+	font-weight: bold;
 }
 
 a {
@@ -77,6 +82,11 @@ ul, ol, li {
 	letter-spacing: .8px;
 	line-height: 1.6;
 	color: $white;
+	
+}
+
+li{
+	margin: 7px 0;
 }
 
 .xs-font {

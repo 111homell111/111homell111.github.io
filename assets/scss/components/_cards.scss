@@ -39,6 +39,7 @@
     	object-position: center; /* Centers the cropped area */
 		overflow: hidden;  /* Hides the parts that exceed 4:3 */
 		aspect-ratio: 4 / 3;
+		transition: filter 0.5s ease;
 	}
 
 	//grey stuff
@@ -48,7 +49,7 @@
 		left: 0;
 		width: 100%;
 		height: 100%;
-		background: rgba($dark-theme-color, .2);
+		background: rgba($dark-theme-color, .15);
 		@include transition(all, 1s);
 	}
 	
@@ -93,6 +94,9 @@
 				opacity: 1;
 				visibility: visible;
 			}
+		}
+		img {
+			filter: blur(2px);
 		}
 	}
 }
