@@ -7,7 +7,10 @@ body {
 .page-container {
     text-align: center;
     padding: 50px 0;
+    width: 100%;
+    max-width: 100%;
 }
+
 @include media-breakpoint-down(sm){
     .row {
         margin-left: 0;

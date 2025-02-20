@@ -327,15 +327,46 @@
                     <div class="col-md text-left">
                         <p>As this was a classification problem, we used Cross Entropy Loss as our criterion and Stochastic Gradient Descent as our optimizer. </p>
                         <p>Our learning rate was 0.001, our momentum was 0.9, and our weight decay was 0.0001. We typically trained for about 10 epochs at a time. </p>
+                        <p>Our confusion matrix on the right shows that the model appears to be performing very well. We added extra examples of letters like "O", "P", "B", and "8" as the model originally often got those confused.</p>
                         <p>Our final validation accuracy was 99.80% :D</p>
                     </div>
-
 
                     <div class="col-md text-center">
                         <img src="assets/imgs/enph353-assets/CNN-confusion-matrix.png" alt="Confusion Matrix for Letter Classifier" class="img-fluid" style="max-width: 90%; height: auto;" loading="lazy">
                         <p class="caption">Confusion Matrix for Letter Classifier CNN Model</p>
                     </div>
                 </div>
+
+                <div style="height: 25px;"></div> <!-- Spacer -->
+
+                <h4>Integration</h4>
+                <div class="row">
+                    <div class="col-md text-left">
+                        <p>All of aforementioned image processing algorithms are called by the clue GUI. Here is the general workflow.</p>
+                        <ul>
+                            <li>The GUI first looks for a clueboard by searching for large grey rectangles.</li>
+                            <li>If found, an inverse perspective transform is performed and the clue board is split into a top and bottom half.</li>
+                            <li>The top and bottom half have their letters cut out and fed into a CNN which ultimately converts the letter segment images into a string</li>
+                            <li>The context and clue (top and bottom text) are then saved into a hashmap which records how many times that specific context/clue pair has been guessed.</li>
+                            <li>Once the clue board has not been seen for 5 consecutive clues, or a context/clue pair has been guessed 20 times, the most frequently guessed clue/context pair is sent to the score tracker topic.</li>
+                        <ul>
+                    </div>
+
+                    <div class="col-md text-center">
+                        <div class="scroll-container">
+                            <img src="assets/imgs/enph353-assets/clue-prediction-flow-chart.png" alt="Clue Prediction Flow Chart" class="img-fluid" style="max-width: 90%; height: auto;" loading="lazy">
+                        </div>
+                        <p class="caption">Clue Prediction Flow Chart</p>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md text-center">
+                        <img src="assets/imgs/enph353-assets/integration.png" alt="Clue GUI in Action" class="img-fluid" style="max-width: 90%; height: auto;" loading="lazy">
+                        <p class="caption">Clue GUI in Action</p>
+                    </div>
+                </div>
+
             </div>
         </section><!--Clue Recognition Section End-->
 
@@ -345,10 +376,64 @@
         <section id="ImitationLearning" class="content-section">
             <div class="container my-4">
                 <h2 class="subtitle section-title text-center my-2">Driving - Imitation Learning</h2>
-                <h4>Topics</h4>
+                <h4>Data Acquisition</h4>
                 <div class="row">
                     <div class="col-md text-left">
+                        <p>One of the biggest challenges with imitaiton learning is getting high quality examples for the model to learn from.</p>
+                        <p> A basic driving controller is provided to us students, however, the quality of the controls is quite poor. You can only really input left, right, backwards, forwards, and diagonal, with no way to fine tune your movements. This make driving feel really awkward and unnatural to the user, which results in poor quality data.</p>
+                        <p>To solve this issue, I created another GUI to test imitation learning!</p>
+                        <p>I created an area for the user to click and steer on using their mouse. I also added exponentials to the controller, allowing the user to do fine movements in the middle area, and large coarse movements at the edges of the controller area. This was inspired by my time tuning the RC controllers for our pilots on UBC Aerodesign :D</p>
+                        <p>The GUI has a button that clears any previously built-up data, and then tells the GUI to begin logging data. The GUI records the current camera frame (at a low resolution) and the robots current linear and angular velocity, and then appends this data to a list. Any data points where the robot is perfectly still are discarded.</p>
+                        <p>Once the user hits the stop recording button, a pop-up appears allowing the user to save the data as a gzipped pickle file (wacky I know, I'm sorry).</p>
                     </div>
+                    <div class="col-md text-center">
+                        <img src="assets/imgs/enph353-assets/driving-controller.png" alt="Imitation Learning GUI DAQ" class="img-fluid" style="max-width: 90%; height: auto;" loading="lazy">
+                        <p class="caption">Imitation Learning GUI - Robot Controller</p>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md text-left">
+                        <p>I found that when it came to data, we found quality beat quantity. There are actually only a few full runs in our final dataset!</p>
+                        <p>Most of the footage is of me driving slowly past the sign boards in a manner so that they're visible to the camera. There's also lots of footage of me driving on trickier areas of the track. </p>
+                        <p>I also trained the model to avoid collisions. I froze obstables like the truck or baby Yoda, plopped the car super close to them, and recorded myself backing up. I also collected data of myself waiting for the truck or baby Yoda to pass and following it from a safe distance.</p>
+                    </div>
+                </div>
+
+                <div style="height: 25px;"></div> <!-- Spacer -->
+
+                <h4>Imitation Learning Model</h4>
+                <div class="row">
+                    <div class="col-md text-left">
+                        <p>Here's the rundown of our convolutional neural network for end-to-end driving:</p>
+                        <ul>
+                            <li>Takes 150x200 colour images</li>
+                            <li>Contains three convolution layers each followed by a ReLU activation function</li>
+                            <li>Pooling layer after the last convolution layer</li>
+                            <li>That layer is flattened and passed to a fully coonnected layer, which then splits into two seperate fully conncted layers, one for linear velocity and one for angular velocity</li>
+                            <li>The final layer for each branch is a single neuron which outputs a float representing a linear or angular velocity</li>
+                        </ul>
+                        <div style="height: 15px;"></div> <!-- Spacer -->
+                        <p>For training:</p>
+                        <ul>
+                            <li>We used mean square error as our criterion for this regression task</li>
+                            <li>We used SGD as our optimizer again with a learning rate of 0.001</li>
+                            <li>I didn't bother with a validation set as collecting data was more time consuming/frustrating than just testing the model itself</li>
+                        </ul>
+                    </div>
+                    <div class="col-md text-center">
+                        <img src="assets/imgs/enph353-assets/imitation-learning-model.png" alt="Imitation Learning Model Summary" class="img-fluid" style="max-width: 90%; height: auto;" loading="lazy">
+                        <p class="caption">Imitation Learning Model Summary</p>
+                    </div>
+                </div>
+
+
+                <div style="height: 25px;"></div> <!-- Spacer -->
+
+                <h4>Testing</h4>
+                <div class="row">
+                    <div class="col-md text-left">
+                        <p>TO BE WRITTEN LATER. See the final report linked in the "about" to hear the rest of the story if you can't wait!</p>
                 </div>
             </div>
         </section><!--Imitation Learning Section End-->
