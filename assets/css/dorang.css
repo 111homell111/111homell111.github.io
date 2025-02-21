@@ -11997,7 +11997,7 @@ li {
   margin-bottom: 25px;
   border-radius: var(--bs-border-radius);
 }
-.overlay-img img {
+.overlay-img img, .overlay-img video {
   width: 100%;
   border-radius: var(--bs-border-radius);
   object-fit: cover; /* Crops instead of stretching */
