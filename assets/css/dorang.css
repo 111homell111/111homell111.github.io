@@ -12355,7 +12355,7 @@ li {
   min-height: 600px;
   text-align: center;
   color: #fff;
-  background-image: url(../imgs/header.jpg);
+  background-image: url(../imgs/header.webp);
   background-size: cover;
   background-position: center;
   transition: 0.2s;
@@ -12512,7 +12512,7 @@ body.light-theme .theme-selector .spinner i {
   color: #343a40;
 }
 body.light-theme .header {
-  background-image: url(../imgs/header-light.jpg);
+  background-image: url(../imgs/header-light.webp);
 }
 body.light-theme .header .overlay {
   background-image: radial-gradient(140% 110% at 48% 42%, rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.65), rgba(255, 255, 255, 0.75), rgba(255, 255, 255, 0.93), #fff 55%, #fff 200%);
