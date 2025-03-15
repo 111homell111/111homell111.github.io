@@ -109,6 +109,33 @@
 
                 <div style="height: 20px;"></div> <!-- Spacer -->
 
+                <h4>System Overview</h4>
+                <div class="row">
+                    <div class="col-md text-left">
+                        <p>Avionics' goal this year is to design custom hardware to enable autonomous flight. This year the hardware stackup consists of an integrated power distribution/carrier board, and a custom flight controller to house and interface with various sensors.</p>
+                        <p>The custom hardware allows us to have total control over our system, allowing us to tailor it to suit our specific needs. It also has the added bonus of making our wiring much cleaner than connecting a bunch of off the shelf modules, saving us time during setup.</p>
+                        <p>Our flight controller runs an RTOS to continously read sensor data and update the control surface positions, while an interrupt receives data from the pilot's transmitter.</p>
+                        <p>I'd like to stress that this is a group effort, and could not have been made possible without the passionate team behind the project. I just wanted to show off the entire system in this website because it's cool AF.</p>
+                    </div>
+                    <div class="col-md text-center">
+                        <img src="assets/imgs/aerodesign-assets/2025/hardware_stackup.png" alt="Hardware Stackup" class="img-fluid" style="max-width: 90%; height: auto;" loading="lazy">
+                        <p class="caption">Hardware Stackup</p>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md text-center">
+                        <img src="assets/imgs/aerodesign-assets/2025/hardware_block_diagram.png" alt="Hardware Block Diagram" class="img-fluid"  style="max-width: 80%; height: auto;" loading="lazy">
+                        <p class="caption">Hardware Block Diagram</p>
+                    </div>
+                </div> 
+
+   
+                </div>
+
+
+                <div style="height: 20px;"></div> <!-- Spacer -->
+
                 <h4>RTK (Real Time Kinematics)</h4>
                 <div class="row">
                     <div class="col-md-7 text-left">
@@ -160,7 +187,8 @@
                             <li>A USB-UART converter (FDTI chip)</li>
                             <li>An SD card connected to SPI</li>
                         </ul>
-                        
+
+                        <p>Schematics can be found <a href="https://github.com/111homell111/Airspeed-Sensor-PCBs/tree/main">here.</a></p>
                         <p>Everything was designed in Altium Designer. I spent a good amount of time optimizing the BOM to reduce costs. All boards on our team, including this one, are ordered through JLCPCB (please sponsor us!). Here are pictures of the boards below.</p>
                     </div>
                 </div>
