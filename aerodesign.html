@@ -119,14 +119,15 @@
                     </div>
                     <div class="col-md text-center">
                         <img src="assets/imgs/aerodesign-assets/2025/hardware_stackup.png" alt="Hardware Stackup" class="img-fluid" style="max-width: 90%; height: auto;" loading="lazy">
-                        <p class="caption">Hardware Stackup</p>
+                        <p class="caption">Avionics System Hardware Stacukup (ZED-F9P: Top, Flight Controller: Middle, Power/Carrier Board: Bottom) </p>
+
                     </div>
                 </div>
 
                 <div class="row">
                     <div class="col-md text-center">
                         <img src="assets/imgs/aerodesign-assets/2025/hardware_block_diagram.png" alt="Hardware Block Diagram" class="img-fluid"  style="max-width: 80%; height: auto;" loading="lazy">
-                        <p class="caption">Hardware Block Diagram</p>
+                        <p class="caption">Hardware Block Diagram I Made for Our Design Report</p>
                     </div>
                 </div> 
 
@@ -173,8 +174,9 @@
                 <h4>Airspeed Sensor PCB</h4>
                 <div class="row">
                     <div class="col-md text-left">
-                        <p>I designed an airspeed sensor board so that the mechanical teams could have more data to aid in their design and analysis. </p>
-                        <p style="margin-bottom: 0px;">These boards are designed to collect data from a pitot tube and either save the data to an SD card, or to our main flight controller. Two versions of the board were made, one mini and one full. Both boards feature: </p>
+                        <p>For the longest time, our mechanical teams have been using 30 ft/s in their mechanical analysis. This number was estimated long ago and has been working for many years but has never been formally validated. Additionally one of the goals this year is to be able to deploy payload midair to land on a designated target. It's for these reasons that I decided to design an airspeed sensor module for the team.</p>
+                        <p>The airspeed PCB features CAN communication to send data from the pitot tube to the main flight controller. Historically, our ADV planes have been rather large and since the pitot tube has to mounted away from the propwash, it needed to be mounted far away from the flight controller. Our team had been wanting to experiment with using a CAN bus to facilitate communication between various sensor modules along our plane, and thought that the airspeed sensor module PCB project could be good for a proof of concept for CAN. </p>
+                        <p style="margin-bottom: 0px;">I made two versions of the board for fun, one mini and one full. Both boards feature: </p>
                         <ul>
                             <li>An MS4525DO airspeed sensor</li>
                             <li>An STM32F103 read data from the airspeed sensor via I2C and to act as a CAN controller</li>
@@ -187,6 +189,7 @@
                             <li>A USB-UART converter (FDTI chip)</li>
                             <li>An SD card connected to SPI</li>
                         </ul>
+                        <p>I'm especially excited for the UBS-UART converter because I have been using an USB-TTL convert plugged into my PCB with wires pluggeed into the PCB in order to conduct wind tunnel tests and it has been quite a nightmare of wires to work with!</p>
 
                         <p>Schematics can be found <a href="https://github.com/111homell111/Airspeed-Sensor-PCBs/tree/main">here.</a></p>
                         <p>Everything was designed in Altium Designer. I spent a good amount of time optimizing the BOM to reduce costs. All boards on our team, including this one, are ordered through JLCPCB (please sponsor us!). Here are pictures of the boards below.</p>
@@ -225,6 +228,25 @@
                     <div class="col-md text-center">
                         <img src="assets/imgs/aerodesign-assets/2025/CAN-DIFF-PAIR.webp" alt="Probing CANH and CANL" class="img-fluid"  style="height: 400px; object-fit: contain;" loading="lazy">
                         <p class="caption">Probing CANH and CANL</p>
+                    </div>
+                </div>
+
+
+                <div class="row">
+                    <div class="col-md text-center">
+                        <img src="assets/imgs/aerodesign-assets/2025/wind-tunnel.png" alt="Wind Tunnel Test" class="img-fluid"  style="height: 450px; object-fit: contain;" loading="lazy">
+                        <p class="caption">Wind Tunnel Test</p>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md text-center">
+                        <img src="assets/imgs/aerodesign-assets/2025/airspeed-graph-bad.png" alt="Bad Airspeed Graph" class="img-fluid"  style="height: 300px; object-fit: contain;" loading="lazy">
+                        <p class="caption">Airspeed Graph: Not Ridigly Mounted</p>
+                    </div>
+                    <div class="col-md text-center">
+                        <img src="assets/imgs/aerodesign-assets/2025/airspeed-graph-good.png" alt="Good Airspeed gRAPH" class="img-fluid"  style="height: 300px; object-fit: contain;" loading="lazy">
+                        <p class="caption">Airspeed Graph: Rigidly Mounted</p>
                     </div>
                 </div>
 
