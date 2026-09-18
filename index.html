@@ -37,21 +37,32 @@
     <main class="w-[min(1100px,92vw)] mx-auto my-12 flex flex-col gap-12">
         
         <!-- Hero Section -->
-        <section class="mt-8">
-            <h1 class="text-5xl md:text-7xl font-extrabold leading-tight mb-4 max-w-[17ch]">Engineering Wahoo!</h1>
-            <p class="max-w-[62ch] text-muted text-lg mb-6">
-                I enjoy multidisciplinary projects in the realm of embedded systems, software, and photonics. Enjoy the tour of all my past projects meow!
-            </p>
-            <a href="#projects" class="inline-block font-bold text-ink border border-purple-900/20 rounded px-5 py-3 bg-gradient-to-r from-pink-300/40 to-blue-300/40 shadow-sm hover:-translate-y-1 transition-transform">
-                Explore Projects
-            </a>
+        <section class="mt-8 flex flex-col md:flex-row items-center justify-between gap-10">
+            <!-- Left Side: Your Text & Button -->
+            <!-- (flex-1 allows this side to take up the remaining space) -->
+            <div class="flex-1">
+                <h1 class="text-5xl md:text-7xl font-extrabold leading-tight mb-4 max-w-[17ch]">Engineering Wahoo!</h1>
+                <p class="max-w-[62ch] text-muted text-lg mb-6">
+                    I enjoy multidisciplinary projects in the realm of embedded systems, software, and photonics. Enjoy the tour of all my past projects meow!
+                </p>
+                <a href="#projects" class="inline-block font-bold text-ink border border-purple-900/20 rounded px-5 py-3 bg-gradient-to-r from-pink-300/40 to-blue-300/40 shadow-sm hover:-translate-y-1 transition-transform">
+                    Explore Projects
+                </a>
+            </div>
+
+            <!-- Right Side: Circular Profile Image -->
+            <!-- (flex-shrink-0 prevents the image from getting squished by the text) -->
+            <div class="flex-shrink-0">
+                <!-- Make sure to replace the src with your actual photo path! -->
+                <img src="assets\imgs\ella-assets\ella-heart.jpg" alt="Ella Yan" class="w-48 h-48 md:w-80 md:h-80 shape-heart object-cover shadow-md border-4 border-line">
+            </div>
         </section>
 
         <!-- Projects Section -->
         <section id="projects">
             <div class="mb-6">
                 <h2 class="text-3xl font-bold">Featured Projects</h2>
-                <p class="text-muted">A curated set of builds, experiments, and competition work.</p>
+                <p class="text-muted">A curated set of yummy work I've done.</p>
             </div>
 
             <!-- The Grid (1 col on mobile, 2 on tablet, 3 on desktop) -->
@@ -68,14 +79,13 @@
                 </a>
 
                 <!-- Project Card 2 -->
-                <a href="robotsummer.html" class="project-card">
-                    <img src="assets/imgs/robotsummer-assets/robotsummer-43.webp" alt="Robot Summer" class="project-media w-full h-56 object-cover">
+                <a class="project-card" href="assets/IEEE_Conference_Template (6).pdf">
+                    <img src="assets/imgs/elec-413/defected-chip.png" alt="Silicon photonics project image">
                     <div class="project-meta">
-                        <h3 class="font-bold text-lg mb-1">Robot Summer Competition</h3>
-                        <p class="text-muted text-sm mb-4">Autonomous cooking robots with CAD, C++, and circuits</p>
-                        <span class="project-date">Summer 2024</span>
+                        <h3>Silicon Photonics</h3>
+                        <p>Mach-Zehnder Interferometer PIC Design </p>
+                        <span class="project-date">Winter 2025</span>
                     </div>
-                </a>
 
                 <!-- Project Card 3 -->
                 <a href="enph353.html" class="project-card">
@@ -89,6 +99,14 @@
                     </div>
                 </a>
 
+                <a href="robotsummer.html" class="project-card">
+                    <img src="assets/imgs/robotsummer-assets/robotsummer-43.webp" alt="Robot Summer" class="project-media w-full h-56 object-cover">
+                    <div class="project-meta">
+                        <h3 class="font-bold text-lg mb-1">Robot Summer Competition</h3>
+                        <p class="text-muted text-sm mb-4">Autonomous cooking robots with CAD, C++, and circuits</p>
+                        <span class="project-date">Summer 2024</span>
+                    </div>
+                </a>
 
                 <a class="project-card" href="coilgun.html">
                     <img src="assets/imgs/coilgun-assets/coil-gun-43.webp" alt="Multistage coil gun project">
@@ -108,13 +126,6 @@
                     </div>
                 </a>
 
-                <a class="project-card" href="assets/IEEE_Conference_Template (6).pdf">
-                    <img src="assets/imgs/elec-413/defected-chip.png" alt="Silicon photonics project image">
-                    <div class="project-meta">
-                        <h3>Silicon Photonics</h3>
-                        <p>Mach-Zehnder interferometer PIC design and analysis</p>
-                        <span class="project-date">Winter 2025</span>
-                    </div>
 
 
             </div>
