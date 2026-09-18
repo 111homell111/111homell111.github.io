@@ -1,0 +1,207 @@
+/* site.css - Theme Core & Animations Only */
+:root {
+    --project-media-filter: saturate(0.90) sepia(0.12) hue-rotate(-12deg) brightness(1.02);
+}
+
+body {
+    /* Kept your custom paper background texture! */
+    background-color: #fdf8f1;
+    background-image:
+        linear-gradient(100deg, rgba(255, 247, 238, 0.55) 0%, rgba(247, 241, 232, 0.55) 45%, rgba(244, 238, 230, 0.55) 100%),
+        url("../theme/paper.png");
+    background-size: cover, cover;
+    background-attachment: fixed, fixed;
+}
+
+
+
+/* =========================================
+   Floating Orbs
+   ========================================= */
+.bg-orb {
+    position: fixed;
+    filter: blur(10px);
+    opacity: 0.75;
+    z-index: -2;
+    animation: drift 14s ease-in-out infinite alternate;
+}
+
+.bg-orb-1 {
+    width: 22rem;
+    height: 22rem;
+    background: rgba(255, 151, 188, 0.32);
+    clip-path: polygon(50% 0%, 61% 34%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 34%);
+    top: -5rem;
+    left: -5rem;
+}
+
+.bg-orb-2 {
+    width: 18rem;
+    height: 18rem;
+    background: rgba(175, 224, 125, 0.32);
+    clip-path: polygon(50% 1%, 58% 25%, 84% 16%, 73% 40%, 97% 50%, 73% 60%, 84% 84%, 58% 75%, 50% 99%, 42% 75%, 16% 84%, 27% 60%, 3% 50%, 27% 40%, 16% 16%, 42% 25%);
+    right: -4rem;
+    top: 30vh;
+    animation-delay: 0.4s;
+}
+
+@keyframes drift {
+    from { transform: translateY(0) translateX(0); }
+    to { transform: translateY(20px) translateX(15px); }
+}
+
+/* =========================================
+    Images
+   ========================================= */
+
+.shape-heart {
+    /* The invisible heart vector that crops your image */
+    mask-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z' fill='black'/%3E%3C/svg%3E");
+    -webkit-mask-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z' fill='black'/%3E%3C/svg%3E");
+    
+    /* Makes sure the heart fits perfectly inside the image box */
+    mask-size: contain;
+    -webkit-mask-size: contain;
+    mask-repeat: no-repeat;
+    -webkit-mask-repeat: no-repeat;
+    mask-position: center;
+    -webkit-mask-position: center;
+}
+
+/* =========================================
+   Project Cards
+   ========================================= */
+.project-card {
+    display: flex; 
+    flex-direction: column; 
+    border-radius: 0.5rem; 
+    border: 1px solid var(--line); 
+    background: rgba(249, 244, 244, 0.565); /* Fixed the double semicolon here! */
+    backdrop-filter: blur(12px); 
+    
+    transition: all 300ms cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05); 
+    
+    overflow: hidden; 
+    text-decoration: none; 
+    color: inherit;
+}
+
+.project-card:hover {
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04); 
+    transform: translateY(-6px); 
+}
+
+.project-card img,
+.project-card video {
+    width: 100%;
+    height: 220px;
+    object-fit: cover; 
+    border-bottom: 1px solid var(--line); 
+}
+
+.project-meta {
+    padding: 1.5rem; 
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1; 
+}
+
+.project-meta h3 {
+    font-family: 'Space Grotesk', sans-serif; 
+    font-weight: 700;
+    font-size: 1.25rem;
+    margin-bottom: 0.5rem;
+    color: var(--ink);
+}
+
+.project-meta p {
+    color: var(--muted);
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+/* Re-added the missing date rule! */
+.project-date {
+    font-size: 0.875rem;
+    line-height: 1.25rem; 
+    font-weight: 700; 
+    color: #dc216c; 
+    margin-top: auto; /* This forces the date to the bottom! */
+    padding-top: 1rem; 
+}
+
+/* =========================================
+   Paragraph Stuff
+   ========================================= */
+.section-divider {
+    border: none;
+    
+    /* 1. MAKE IT DARKER */
+    /* I increased the opacity from 0.18 to 0.45. You can also change the 1px to 2px if you want it thicker! */
+    border-top: 2px solid rgba(95, 76, 119, 0.45); 
+    
+    /* 2. STOP IT FROM TOUCHING THE EDGES */
+    /* This makes the line only take up 75% of the container */
+    width: 95%; 
+    
+    /* 3. CENTER IT */
+    /* When you shrink the width, it will snap to the left. These two lines force it into the middle. */
+    margin-left: auto;
+    margin-right: auto;
+    
+    /* Keep your vertical spacing */
+    margin-top: 1rem;    
+    margin-bottom: 1rem; 
+}
+
+
+/* =========================================
+   Typography Components
+   ========================================= */
+.text-block {
+    /* text-muted */
+    color: #5d556b; 
+    
+    /* mb-10 (Margin Bottom 10 is 2.5rem) */
+    margin-bottom: 2.5rem; 
+    
+    /* space-y-4 (Creates a 1rem gap between all <p> tags inside) */
+    display: flex;
+    flex-direction: column;
+    gap: 1rem; 
+}
+
+.page-title {
+    font-weight: 800; /* Extra bold */
+    text-align: center;
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+    
+    /* Bonus: clamp() makes the font shrink on phones and grow on desktops automatically! */
+    font-size: clamp(2rem, 5vw, 3.5rem); 
+    line-height: 1.1;
+}
+
+.section-title {
+    font-weight: 700;
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+    color: #483d59; /* A slightly darker muted purple */
+}
+
+.subsection-title1 {
+    font-weight: 700;
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+    color: #5e546f; /* A slightly darker muted purple */
+}
+
+.caption {
+    font-size: 0.9rem; /* Equivalent to Tailwind's text-sm */
+    font-style: italic;
+    color: var(--muted); 
+    text-align: center;
+    margin-top: 0.5rem;
+}
+

@@ -7,388 +7,303 @@
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
-
     gtag('config', 'G-NCSQJKWYEF');
     </script>
-	<meta charset="utf-8">
+    
+    <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="Coil Gun Blog Post">
     <meta name="author" content="Ella Yan">
     <title>Ella's Coil Gun</title>
-    <!-- font icons -->
-    <link rel="stylesheet" href="assets/vendors/themify-icons/css/themify-icons.css">
-
-    <!-- Bootstrap + Dorang main styles -->
-	<link rel="stylesheet" href="assets/css/dorang.css">
-
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&family=Space+Grotesk:wght@500;700;800&display=swap" rel="stylesheet">
+    
     <link rel="icon" type="image/png" href="assets/imgs/coilgun-assets/gun-icon.png">
 
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="assets/css/site.css">
 
+    <!-- Load Tailwind and Theme -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="assets/js/tailwind-theme.js"></script>
 </head>
-<body data-bs-spy="scroll" data-target=".navbar" data-offset="40" id="home"  data-bs-theme="dark">
+
+<body class="font-sans text-ink min-h-screen overflow-x-hidden">
     
-    <!-- page navbar -->
-    <nav id="navbar" class="navbar navbar-expand-sm fixed-top">
-        <div class="container-fluid ">
-            <a class="navbar-brand fs-4" href="index.html">Home</a> <!-- me-auto pushes it to the left -->
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <a class="nav-link fs-5" href="index.html#projects">Projects</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link fs-5" href="assets/resume/Main-Resume.pdf">Resume</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
-     <!-- page navbar end -->
+    <!-- Background Orbs -->
+    <div class="bg-orb bg-orb-1" aria-hidden="true"></div>
+    <div class="bg-orb bg-orb-2" aria-hidden="true"></div>
 
-    <div class="theme-selector">
-        <a href="javascript:void(0)" class="spinner">
-            <i class="ti-paint-bucket"></i>
-        </a>
-        <div class="body">
-            <a href="javascript:void(0)" class="light"></a>
-            <a href="javascript:void(0)" class="dark"></a>
-        </div>
-    </div>  
-    
-    <!-- Add this right after the navigation bar -->
-    <div class="container-fluid p-0" style="padding-top: 80px;">
-        <img src="assets/imgs/coilgun-assets/coilgun-header.webp" alt="Wide Image" class="img-fluid w-100">
-    </div>
-    
+    <!-- Sticky Topbar -->
+    <header class="top-4 z-50 w-[min(1400px,92vw)] mx-auto p-4 flex flex-wrap justify-between items-center border border-line rounded-lg bg-surface backdrop-blur-md shadow-sm">
+        <a class="font-title font-extrabold tracking-wide text-xl text-ink" href="index.html">Ella Yan</a>
+        <nav class="flex flex-wrap gap-4 font-semibold text-muted text-sm md:text-base">
+            <a href="index.html#projects" class="hover:text-ink transition-colors">Projects</a>
+            <a href="#About" class="hover:text-ink transition-colors">About</a>
+            <a href="#HowItWorks" class="hover:text-ink transition-colors">How It Works</a>
+            <a href="#Electrical" class="hover:text-ink transition-colors">Electrical</a>
+            <a href="#Manufacturing" class="hover:text-ink transition-colors">Manufacturing</a>
+            <a href="#Optimization" class="hover:text-ink transition-colors">Optimization</a>
+            <a href="assets/resume/Main-Resume.pdf" class="hover:text-ink transition-colors">Resume</a>
+        </nav>
+    </header>
 
-    <!-- page container -->
-    <div class="container">
-        <h1 class="title my-4 text-center">Multistage Coil Gun</h1>
+    <main class="w-[min(1400px,92vw)] mx-auto my-8 flex flex-col gap-12">
 
-        <div class="section-divider"></div>
+        <!-- Main Content Box -->
+        <section class="border border-line rounded-lg bg-surface backdrop-blur-md shadow-sm overflow-hidden">
+            
+            <!-- Hero Banner -->
+            <img src="assets/imgs/coilgun-assets/coilgun-header.webp" alt="Wide Image" class="w-full h-[60vh] object-cover mb-10" loading="lazy">
+            
+            <!-- Padding Wrapper -->
+            <div class="p-6 md:p-10 pt-0">
+                <h1 class="page-title">Multistage Coil Gun</h1>
 
-        <div class="container my-4">
-            <div class="row">
-                <!-- Text Column (Left) -->
-                <div class="col-md text-left">
-                    <h2>About the Project</h2>
-                    <p>In our first year of engineering, my friend and I wanted to build a coil gun for fun :) </p>
-                    <p>I learned to work with <b>thyristors, solenoids, optocouplers, ESP32s, boost converters, and soldering irons</b> in this project.<p></p>
-                    <p>The project features massive capacitors along with some really heavy hand wound solenoids. The result is a super powerful (and dangerous) turret capable of firing metal projectiles at terrifiying speeds.</p>
-                    <p>Shoutout to my friend <a href="https://rachad47.github.io/rwae/CoilGun.html">Rachad</a>, who I did this project with! </p>
-                    <p>See the gun in action here! --></p>
-                </div>
-                <!-- Video Column (Right) -->
-                <div class="col-md">
-                    <div class="ratio ratio-16x9">
-                        <iframe 
-                            src="https://www.youtube.com/embed/8LhQAW-y8WM?si=PQNdhbqgj-fzKuKk" 
-                            allowfullscreen>
-                        </iframe>
+                <hr class="section-divider">
+
+                <!-- =========================================
+                     ABOUT SECTION
+                     ========================================= -->
+                <div id="About" class="mb-12 scroll-mt-24">
+                    <h2 class="section-title">About the Project</h2>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-12 gap-6 items-stretch">
+                        <div class="text-block !mb-0 md:col-span-7 flex flex-col justify-center">
+                            <p>In our first year of engineering, my friend and I wanted to build a coil gun for fun :)</p>
+                            <p>I learned to work with <b>thyristors, solenoids, optocouplers, ESP32s, boost converters, and soldering irons</b> in this project.</p>
+                            <p>The project features massive capacitors along with some really heavy hand wound solenoids. The result is a super powerful (and dangerous) turret capable of firing metal projectiles at terrifying speeds.</p>
+                            <p>Shoutout to my friend <a href="https://rachad47.github.io/rwae/CoilGun.html" class="text-blue-500 hover:underline font-semibold">Rachad</a>, who I did this project with!</p>
+                            <p>See the gun in action here! ➔</p>
+                        </div>
+
+                        <!-- Video Column -->
+                        <div class="md:col-span-5 flex flex-col justify-center">
+                            <iframe class="w-full aspect-video rounded-lg shadow-sm border border-line" src="https://www.youtube.com/embed/8LhQAW-y8WM?si=PQNdhbqgj-fzKuKk" allowfullscreen></iframe>
+                        </div>
                     </div>
                 </div>
-            </div>
-        </div>
 
-        <div class="section-divider"></div>
+                <hr class="section-divider">
 
-        <!-- How it Works -->
-        <div class="container my-4">
-            <h2 class="title mt-4">How It Works</h2> <!-- Adjusted margin classes -->
+                <!-- =========================================
+                     HOW IT WORKS SECTION
+                     ========================================= -->
+                <div id="HowItWorks" class="mb-12 scroll-mt-24">
+                    <h2 class="section-title text-center mb-8">How It Works</h2>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-12 gap-6 mb-10 items-stretch">
+                        <div class="text-block !mb-0 md:col-span-7 flex flex-col justify-center">
+                            <p>Coil guns utilize solenoids, which can be made from coils of magnetic wire. When a high current is passed through these wires, a strong magnetic field is generated. This magnetic field attract the bullet, accelerating it quickly forward.</p>
+                            <p>In our multistage coil gun, we have two solenoids placed in series. As the bullet passes the first solenoid, it passes an IR sensor which automatically triggers the second stage to fire.</p>
+                        </div>
+                        <div class="md:col-span-5 flex flex-col justify-center items-center">
+                            <img src="assets/imgs/coilgun-assets/coilgun-animation.gif" alt="Coil Gun Animation" class="w-full rounded-lg shadow-sm border border-line bg-white" loading="lazy">
+                        </div>
+                    </div>
+                    
+                    <div class="flex flex-col items-center mb-10">
+                        <img src="assets/imgs/coilgun-assets/coilgun-blockdiagram.webp" alt="Coil Gun Block Diagram" class="w-full md:w-3/4 rounded-lg shadow-sm border border-line bg-white" loading="lazy">
+                    </div>
+                </div>
+
+                <hr class="section-divider">
+
+                <!-- =========================================
+                     ELECTRICAL COMPONENTS SECTION
+                     ========================================= -->
+                <div id="Electrical" class="mb-12 scroll-mt-24">
+                    <h2 class="section-title text-center mb-8">Electrical Components</h2>
+                    
+                    <h4 class="subsection-title1">Working Voltage</h4>
+                    <div class="text-block">
+                        <p>We wanted our coil gun to be super powerful so we bought the largest capacitors we could find at our Lee's electronics. We also bought a DC-DC buck booster to allow us to get a voltage of about 385V from our 12V power supply.</p>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-10">
+                        <div class="flex flex-col justify-center items-center">
+                            <!-- max-h-64 prevents these images from being massive while w-auto keeps aspect ratio intact -->
+                            <img src="assets/imgs/coilgun-assets/buckbooster.webp" alt="Buck Booster" class="max-h-64 w-auto object-contain rounded-lg shadow-sm border border-line bg-white" loading="lazy">
+                            <p class="caption">DC-DC Buck Boost, can boost 12V to 390V</p>
+                        </div>
+                        <div class="flex flex-col justify-center items-center">
+                            <img src="assets/imgs/coilgun-assets/capacitor.webp" alt="Capacitors" class="max-h-64 w-auto object-contain rounded-lg shadow-sm border border-line bg-white" loading="lazy">
+                            <p class="caption">3 x 450V, 850uF and 1 x 450V, 780uF total</p>
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-10">
+                        <div class="flex flex-col items-center">
+                            <video class="w-full aspect-[4/3] object-cover rounded-lg shadow-sm border border-line" controls loading="lazy">
+                                <source src="assets/imgs/coilgun-assets/capacitorfiring.mov" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                            <p class="caption">Preliminary Test with Bullet POW!</p>
+                        </div>
+                        <div class="flex flex-col items-center">
+                            <video class="w-full aspect-[4/3] object-cover rounded-lg shadow-sm border border-line" controls loading="lazy">
+                                <source src="assets/imgs/coilgun-assets/earlyfiringtest.mp4" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                            <p class="caption">Accidental Short! RIP Floor, Goodbye Security Deposit :(</p>
+                        </div>
+                    </div>
+
+                    <h4 class="subsection-title1">Optocouplers</h4>
+                    <div class="grid grid-cols-1 md:grid-cols-12 gap-6 mb-10 items-stretch">
+                        <div class="text-block !mb-0 md:col-span-7 flex flex-col justify-center">
+                            <p>We used optocouplers to protect our components from the extremely high voltages/currents present in our circuit.</p>
+                            <p>Optocouplers use an LED and a phototransistor to transmit signals as light. This allows us to electrically isolate our high and low voltage systems while still allowing them to communicate.</p>
+                            <p>Unfortunately I believe we accidentally damaged our optocoupler as it stopped working as intended. We ended up making our own optocoupler out of an IR LED and IR receiver.</p>
+                        </div>
+                        <div class="md:col-span-5 flex flex-col justify-center items-center">
+                            <img src="assets/imgs/coilgun-assets/optocoupler-diagram.webp" alt="Optocoupler Diagram" class="w-full rounded-lg shadow-sm border border-line bg-white" loading="lazy">
+                        </div>
+                    </div>
+
+                    <h4 class="subsection-title1">SCR - Thyristors</h4>
+                    <div class="text-block">
+                        <p>Thyristors can switch quickly and handle large currents/voltages. They also only require a brief trigger pulse to start conducting, and they don't stop conducting until no more current is flowing. This allows us to switch on our solenoid with a quick pulse (push button click) and lets the solenoids automatically turn off when the capacitor banks are depleted.</p>
+                    </div>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-10 items-stretch">
+                        <div class="flex flex-col justify-center items-center">
+                            <img src="assets/imgs/coilgun-assets/thrysitordatasheet.webp" alt="Thyristor Datasheet" class="w-full max-w-sm rounded-lg shadow-sm border border-line bg-white" loading="lazy">
+                            <p class="caption">Thyristor Datasheet</p>
+                        </div>
+                        <div class="flex flex-col justify-center items-center">
+                            <video class="w-full aspect-[4/3] object-cover rounded-lg shadow-sm border border-line" controls loading="lazy">
+                                <source src="assets/imgs/coilgun-assets/earlytest.mp4" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                            <p class="caption">Early Test With Thyristor and Optocoupler</p>
+                        </div>
+                    </div>
+
+                    <h4 class="subsection-title1">Second Stage</h4>
+                    <div class="text-block">
+                        <p>To trigger the second stage, we use an IR emitter and receiver in a beam break configuration. Once the bullet passes through the IR beam an interrupt on the ESP32 triggers the second stage. We probably could have used a not gate but we didn't have those on hand, the ESP32 also allows us to log data regarding when the first/second stages are fired.</p>
+                    </div>
+                    
+                    <div class="flex flex-col items-center mb-10">
+                        <img src="assets/imgs/coilgun-assets/secondstage.webp" alt="Second Stage Circuit" class="w-full md:w-3/4 rounded-lg shadow-sm border border-line bg-white" loading="lazy">
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-10">
+                        <div class="flex flex-col justify-center items-center">
+                            <img src="assets/imgs/coilgun-assets/IR-sensor-test.gif" alt="IR Sensor Test" class="w-full max-w-sm rounded-lg shadow-sm border border-line" loading="lazy">
+                            <p class="caption">Test With the Automatic Second Stage</p>
+                        </div>
+                        <div class="flex flex-col justify-center items-center">
+                            <img src="assets/imgs/coilgun-assets/IR-sensor-cad.webp" alt="IR Sensor CAD" class="w-full max-w-sm rounded-lg shadow-sm border border-line bg-white" loading="lazy">
+                            <p class="caption">CAD of the IR Sensor Mount</p>
+                        </div>
+                    </div>
+
+                    <h4 class="subsection-title1">Full Circuit</h4>
+                    <div class="grid grid-cols-1 md:grid-cols-12 gap-6 mb-10 items-stretch">
+                        <div class="text-block !mb-0 md:col-span-6 flex flex-col justify-center">
+                            <p>We based our circuit off <a href="https://github.com/kakushinAU/coilgun/blob/main/Coil%20Gun%20Schematic.pdf" class="text-blue-500 hover:underline font-semibold">B.Sampson's circuit.</a> We've made small adjustments with certain components like replacing the optocoupler with an IR receiver and emitter when ours broke but everything else is pretty similar.</p>
+                            <p>Here on the right is our constructed circuit with the different voltage levels sectioned off/highlighted.</p>
+                        </div>
+                        <div class="md:col-span-6 flex flex-col justify-center items-center">
+                            <img src="assets/imgs/coilgun-assets/voltage-sections.webp" alt="Voltage Sections Highlighted" class="w-full rounded-lg shadow-sm border border-line bg-white" loading="lazy">
+                        </div>
+                    </div>
+
+                    <div class="flex flex-col items-center mb-10">
+                        <img src="assets/imgs/coilgun-assets/BSampsons-circuit.webp" alt="B.Sampson's Circuit" class="w-full md:w-3/4 rounded-lg shadow-sm border border-line bg-white" loading="lazy">
+                        <p class="caption"><a href="https://github.com/kakushinAU/coilgun/blob/main/Coil%20Gun%20Schematic.pdf" class="text-blue-500 hover:underline font-semibold">B.Sampson's circuit.</a></p>
+                    </div>
+                </div>
                 
-            <!-- Content: Bullet Points on Left, Image on Right -->
-            <div class="row">
-                <!-- Text Column (Left) -->
-                <div class="col-md text-left">
-                    <p>Coil guns utilize solenoids, which can be made from coils of magnetic wire. When a high current is passed through these wires, a strong magnetic field is generated. This magnetic field attract the bullet, accelerating it quickly forward. 
-                    <p>In our multistage coil gun, we have two solenoids placed in series. As the bullet passes the first solenoid, it passes an IR sensor which automatically triggers the second stage to fire.</p>
-                </div>
-                <!-- Image Column (Right) -->
-                <div class="col-md">
-                    <img src="assets/imgs/coilgun-assets/coilgun-animation.gif" alt="Coil Gun" class="img-fluid">
-                    <p></p>
-                </div>
-                <!-- Image (Centered) -->
-                <div> 
-                <img src="assets/imgs/coilgun-assets/coilgun-blockdiagram.webp" alt="Coil Gun" class="img-fluid">
-                </div>
-            </div>
-        </div> 
+                <hr class="section-divider">
 
-        <div class="section-divider"></div>
+                <!-- =========================================
+                     MANUFACTURING SECTION
+                     ========================================= -->
+                <div id="Manufacturing" class="mb-12 scroll-mt-24">
+                    <h2 class="section-title text-center mb-8">Manufacturing and Assembly</h2>
+                    
+                    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 mb-10">
+                        <div class="flex flex-col items-center">
+                            <img src="assets/imgs/coilgun-assets/ellaworking.webp" alt="Ella Working" class="h-48 w-full object-cover rounded-lg shadow-sm border border-line" loading="lazy">
+                            <p class="caption">Fiddling With the Caps</p>
+                        </div>  
+                        <div class="flex flex-col items-center">
+                            <img src="assets/imgs/coilgun-assets/rachad-plexiglass2.webp" alt="Rachad Working with Plexiglass" class="h-48 w-full object-cover rounded-lg shadow-sm border border-line" loading="lazy">
+                            <p class="caption">Rachad With the Bent Plexiglass</p>
+                        </div>
+                        <div class="flex flex-col items-center">
+                            <img src="assets/imgs/coilgun-assets/bullets.webp" alt="Bullets" class="h-48 w-full object-cover rounded-lg shadow-sm border border-line" loading="lazy">
+                            <p class="caption">Metal "Bullets" from Home Depot</p>
+                        </div>
+                        <div class="flex flex-col items-center">
+                            <img src="assets/imgs/coilgun-assets/voltage-measurement.webp" alt="Voltage Measurement" class="h-48 w-full object-cover rounded-lg shadow-sm border border-line" loading="lazy">
+                            <p class="caption">Voltage Measurement</p>
+                        </div>
+                    </div>
 
-        <!-- Electrical Components -->
- 
-        <h2 class="title my-4 text-center">Electrical Components</h2> <!-- Adjusted margin classes -->
-       
-        
-        <!-- Working Voltage -->
-        <section class="content-section">
-            <h3 class="subtitle section-title text-center mt-4">Working Voltage</h3>
-            
-            <div class="row">
-                <div class="col-12 text-left">
-                    <p>We wanted our coil gun to be super powerful so we bought the largest capacitors we could find at our Lee's electronics. We also bought a DC-DC buck booster to allow us to get a voltage of about 385V from our 12V power supply.  </p>
-                </div>  
-            </div>    
-
-            <div class="row">
-                <div class="col-md-6 text-center">
-                    <img src="assets/imgs/coilgun-assets/buckbooster.webp" alt="Coil Gun" class="img-fluid" style="height: 300px; object-fit: contain;">
-                    <p class="caption">DC-DC Buck Boost, can boost 12V to 390V</p>
-                </div>
-                
-                <div class="col-md-6 text-center">
-                    <img src="assets/imgs/coilgun-assets/capacitor.webp" alt="Coil Gun" class="img-fluid" style="height: 300px; object-fit: contain;">
-                    <p class="caption">3 x 450V, 850uF and 1 x 450V, 780uF total </p>
-                </div>
-            </div>
-
-
-            <div class="row">
-                <div class="col-md-6 text-center">
-                    <video class="video-fluid" controls style="height: 500px; object-fit: cover;">
-                        <source src="assets/imgs/coilgun-assets/capacitorfiring.mov" type="video/mp4">
-                        Your browser does not support the video tag.
-                    </video>
-                    <p class="caption">Preliminary Test with Bullet POW!</p>
-                </div>
-                <div class="col-md-6 text-center">
-                    <video class="video-fluid" controls style="height: 500px; object-fit: cover;">
-                        <source src="assets/imgs/coilgun-assets/earlyfiringtest.mp4" type="video/mp4" >
-                        Your browser does not support the video tag.
-                    </video>
-                    <p class="caption">Accidental Short! RIP Floor, Goodbye Security Deposit :(</p>
-                </div>
-            </div>
-        </section>
-
-        <div style="height: 25px;"></div> <!-- Spacer -->
-
-        <!-- Optocouplers Section -->
-        <section class="content-section">
-            <h3 class="subtitle section-title text-center mt-3">Optocouplers</h3>
-            <!-- Content: Bullet Points on Left, Image on Right -->
-            <div class="row">
-                <div class="col-md text-left">
-                    <p>We used optocouplers to protect our components from the extremely high voltages/currents present in our circuit.</p>
-                    <p>Optocouplers use an LED and a phototransistor to transmit signals as light. This allows us to electrically isolate our high and low voltage systems while still allowing them to communicate.</p>
-                    <p>Unfortunately I believe we accidentally damaged our optocoupler as it stopped working as intended. We ended up making our own optocoupler out of an IR LED and IR receiver. </p>
-                </div>
-                <div class="col-md">
-                    <img src="assets/imgs/coilgun-assets/optocoupler-diagram.webp" alt="Coil Gun" class="img-fluid">
-                </div>
-            </div>
-        </section>
-
-        <div style="height: 25px;"></div> <!-- Spacer -->
-
-        <!-- Thyristors Section -->
-        <section class="content-section">
-            <h3 class="subtitle section-title mt-4 text-center">SCR - Thyristors</h3>
-
-            <div class="row">
-                <div class="col-12 text-left">
-                    <p>Thyristors can switch quickly and handle large currents/voltages. They also only require a brief trigger pulse to start conducting, and they don't stop conducting until no more current is flowing. This allows us to switch on our solenoid with a quick pulse (push button click) and lets the solenoids automatically turn off when the capacitor banks are depleted.  </p>
-                </div> 
-            </div>    
-
-            <div class="row">
-                <div class="col-md-6 text-center">
-                    <img src="assets/imgs/coilgun-assets/thrysitordatasheet.webp" alt="Coil Gun" class="img-fluid" style="max-width: 80%; height: auto;">
-                    <p class="caption">Thyristor Datasheet</p>
-                </div>
-                <div class="col-md-6 text-center">
-                    <video class="video-fluid" controls>
-                        <source src="assets/imgs/coilgun-assets/earlytest.mp4" type="video/mp4">
-                        Your browser does not support the video tag.
-                    </video>
-                    <p class="caption">Early Test With Thyristor and Optocoupler</p>
-                </div>
-            </div>
-        </section>
-
-        <!-- Second Stage Section -->
-        <section class="content-section">
-            <h3 class="subtitle section-title mt-4 text-center">Second Stage</h3>
-
-            <!-- Content: Bullet Points on Left, Image on Right -->
-            <div class="row">
-                <div class="col-12 text-left">
-                    <p>To trigger the second stage, we use an IR emitter and receiver in a beam break configuration. Once the bullet passes through the IR beam an interrupt on the ESP32 triggers the second stage. We probably could have used a not gate but we didn't have those on hand, the ESP32 also allows us to log data regarding when the first/second stages are fired. </p>
-                </div>
-            </div>
-            <div class="row">
-                    <img src="assets/imgs/coilgun-assets/secondstage.webp" alt="Coil Gun" class="img-fluid">
-            </div>
-
-            <div style="height: 25px;"></div> <!-- Spacer -->
-
-            <div class="row">
-                <div class="col-md-6 text-center">
-                    <img src="assets/imgs/coilgun-assets/IR-sensor-test.gif" alt="Coil Gun" class="img-fluid" style="max-width: 80%; height: auto;">
-                    <p class="caption">Test With the Automatic Second Stage</p>
-                </div>
-                <div class="col-md-6 text-center">
-                    <img src="assets/imgs/coilgun-assets/IR-sensor-cad.webp" alt="Coil Gun" class="img-fluid" style="max-width: 80%; height: auto;">
-                    <p class="caption">CAD of the IR Sensor Mount</p>
-                </div>
-            </div>
-        </section>
-
-        <section class="content-section">
-            <h3 class="subtitle section-title mt-4 text-center">Full Circuit</h3>
-            <div class="row">
-                <div class="col-md-6">
-                    <p>We based our circuit off <a href="https://github.com/kakushinAU/coilgun/blob/main/Coil%20Gun%20Schematic.pdf"  style="color: rgb(22, 103, 255);">B.Sampson's circuit.</a> We've made small adjustments with certain components like replacing the optocoupler with an IR receiver and emitter when ours broke but everything else is pretty similar.</p>
-                    <p>Here on the right is our constructed circuit with the different voltage levels sectioned off/highlighted.</p>
-                </div>
-                <div class="col-md-6 text-center">
-                    <img src="assets/imgs/coilgun-assets/voltage-sections.webp" alt="Coil Gun" class="img-fluid" style="max-width: 80%; height: auto;">
-                </div>
-            </div>
-
-            <div style="height: 25px;"></div> <!-- Spacer -->
-
-            <div class="row">
-                <div class="col-md-12 text-center">
-                    <img src="assets/imgs/coilgun-assets/BSampsons-circuit.webp" alt="Coil Gun" class="img-fluid" style="max-width: 80%; height: auto;">
-                    <p class="caption"><a href="https://github.com/kakushinAU/coilgun/blob/main/Coil%20Gun%20Schematic.pdf"  style="color: rgb(22, 103, 255);">B.Sampson's circuit.</a></p>
-                </div>
-            </div>
-        </section>
-        
-        <div class="section-divider"></div>
-
-        <div class="container my-4">
-            <!-- Center-Aligned Title -->
-            <div class="row">
-                <div class="col-12 text-center">
-                    <h2 class="title mb-3">Manufacturing and Assembly</h2> <!-- Adjusted margin classes -->
-                </div>
-            </div>
-
-            <div class="row">
-                <div class="col-md-3 text-center">
-                    <img src="assets/imgs/coilgun-assets/ellaworking.webp" alt="Ella Working" class="img-fluid" style="max-width: 90%; height: auto;">
-                    <p class="caption">Fiddling With the Caps</p>
-                </div>  
-        
-                <div class="col-md-3 text-center">
-                    <img src="assets/imgs/coilgun-assets/rachad-plexiglass2.webp" alt="Rachad Working with Plexiglass" class="img-fluid" style="max-width: 90%; height: auto;">
-                    <p class="caption">Rachad With the Bent Plexiglass</p>
+                    <div class="flex flex-col items-center mb-10">
+                        <img src="assets/imgs/coilgun-assets/assembled-circuit.webp" alt="Fully Assembled Circuit" class="w-full rounded-lg shadow-sm border border-line" loading="lazy">
+                        <p class="caption">Fully Assembled Circuit!</p>
+                    </div>
                 </div>
 
-                <div class="col-md-3 text-center">
-                    <img src="assets/imgs/coilgun-assets/bullets.webp" alt="Bullets" class="img-fluid" style="max-width: 90%; height: auto;">
-                    <p class="caption">Metal "Bullets" from Home Depot</p>
+                <hr class="section-divider">
+
+                <!-- =========================================
+                     OPTIMIZATION SECTION
+                     ========================================= -->
+                <div id="Optimization" class="mb-12 scroll-mt-24">
+                    <h2 class="section-title text-center mb-8">Optimization</h2>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-12 gap-6 mb-10 items-stretch">
+                        <div class="text-block !mb-0 md:col-span-6 flex flex-col justify-center">
+                            <p>The final step of our coil gun project was optimizing the solenoid placement and the bullet's starting position for maximum speed.</p>
+                            <p>The diagram on the right shows the two parameters we were trying to optimize for. <b>d1</b>: the location of the first solenoid, and <b>d2</b>: the location of the second solenoid.</p>
+                            <p>We tried to load the bullet in the same starting location each time.</p>
+                            <p>To optimize for bullet exit speed, we built a speedometer using two IR emitter-receiver pairs set at a fixed distance to measure the bullet's velocity. A custom CAD-mounted fixture secured the IR sensors at a fixed distance to the end of the gun.</p>
+                        </div>
+                        <div class="md:col-span-6 flex flex-col justify-center items-center">
+                            <img src="assets/imgs/coilgun-assets/distance-diagram.webp" alt="Distance Diagram" class="w-full rounded-lg shadow-sm border border-line bg-white" loading="lazy">
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-10">
+                        <div class="flex flex-col justify-center items-center">
+                            <img src="assets/imgs/coilgun-assets/speedometer.webp" alt="3D Printed Speedometer" class="w-full aspect-[4/3] object-cover rounded-lg shadow-sm border border-line" loading="lazy">
+                            <p class="caption">3D Printed Speedometer</p>
+                        </div>
+                        <div class="flex flex-col justify-center items-center">
+                            <img src="assets/imgs/coilgun-assets/position-measurement.webp" alt="Position Measurement" class="w-full aspect-[4/3] object-cover rounded-lg shadow-sm border border-line" loading="lazy">
+                            <p class="caption">Taking position Measurements</p>
+                        </div>
+                    </div>
+
+                    <div class="text-block">
+                        <p>First we took various measurements of the bullet's speed while we varied the location of the first solenoid (d1). For each test, we took multiple measurements and then recorded the average value. We then plotted the data and glued the first solenoid to its most optimal location.</p>
+                        <p>We then repeated this process but varied the location of the second solenoid (d2). The second solenoid was then glued to sit in its most optimal location.</p>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-10">
+                        <div class="flex flex-col justify-center items-center">
+                            <img src="assets/imgs/coilgun-assets/d1-graph.webp" alt="d1 Graph" class="w-full rounded-lg shadow-sm border border-line bg-white" loading="lazy">
+                            <p class="caption">d1: Location of First Solenoid</p>
+                        </div>
+                        <div class="flex flex-col justify-center items-center">
+                            <img src="assets/imgs/coilgun-assets/d2-graph.webp" alt="d2 Graph" class="w-full rounded-lg shadow-sm border border-line bg-white" loading="lazy">
+                            <p class="caption">d2: Location of Second Solenoid</p>
+                        </div>
+                    </div>
                 </div>
 
-                <div class="col-md-3 text-center">
-                    <img src="assets/imgs/coilgun-assets/voltage-measurement.webp" alt="Voltage Measurement" class="img-fluid" style="max-width: 90%; height: auto;">
-                    <p class="caption">Voltage Measurement</p>
-                </div>
-            </div>
-
-            <div class="row"> 
-                <div class="col-md-12 text-center">
-                    <img src="assets/imgs/coilgun-assets/assembled-circuit.webp" alt="Ella Working" class="img-fluid" style="max-width: 95%; height: auto;">
-                    <p class="caption">Fully Assembled Circuit!</p>
-                </div>
-            </div>
-        </div>
-
-        <div class="section-divider"></div>
-
-        <section class="content-section">
-            <h3 class="subtitle section-title mt-4 mb-2 text-center">Optimization</h3>
-            <div class="row">
-                <div class="col-md-6">
-                    <p>The final step of our coil gun project was optimizing the solenoid placement and the bullet's starting position for maximum speed.</p>
-                    <p>The diagram on the right shows the two parameters we were trying to optimize for. d1: the location of the first solenoid, and d2: the location of the second solenoid</p>
-                    <p>We tried to load the bullet in the same starting location each time.</p>
-                    <p>To optimize for bullet exit speed, we built a speedometer using two IR emitter-receiver pairs set at a fixed distance to measure the bullet's velocity. 
-                        A custom CAD-mounted fixture secured the IR sensors at a fixed distance to the end of the gun.</p>
-                    </p>
-                </div>
-                <div class="col-md-6 text-center">
-                    <img src="assets/imgs/coilgun-assets/distance-diagram.webp" alt="Ella Working" class="img-fluid" style="max-width: 90%; height: auto;">
-                </div>
-            </div>
-
-            <div class="row">
-                <div class="col-md-6 text-center">
-                    <img src="assets/imgs/coilgun-assets/speedometer.webp" alt="Ella Working" class="img-fluid" style="max-width: 90%; height: auto;">
-                    <p class="caption">3D Printed Speedometer</p>
-                </div>
-                <div class="col-md-6 text-center">
-                    <img src="assets/imgs/coilgun-assets/position-measurement.webp" alt="Ella Working" class="img-fluid" style="max-width: 90%; height: auto;">
-                    <p class="caption">Taking position Measurements</p>
-                </div>
-            </div>
-
-            <div class="row">
-                <div class="col-md-12 text-left">
-                    <p>First we took various measurements of the bullets speed while we varied the location of the first solenoid (d1). For each test, we took multiple measurements and then recorded the average value. We then plotted the data and glued the first solenoid to its most optimal loation.</p>
-                    <p>We then repeated this process but varied the location of the second solenoid (d2). The second solenoid was then glued to sit in its most optimal location</p>
-                </div>
-            </div>
-
-
-            <div class="row">
-                <div class="col-md-6 text-center">
-                    <img src="assets/imgs/coilgun-assets/d1-graph.webp" alt="Location of First Solenoid" class="img-fluid" style="max-width: 90%; height: auto;">
-                    <p class="caption">d1: Location of First Solenoid</p>
-                </div>
-                <div class="col-md-6 text-center">
-                    <img src="assets/imgs/coilgun-assets/d2-graph.webp" alt="Location of Second Solenoid" class="img-fluid" style="max-width: 90%; height: auto;">
-                    <p class="caption">d2: Location of Second Solenoid</p>
-                </div>
-            </div>
-
-
-        </section>
-
-    </div> <!-- end of page container -->
-
-    <div class="section-divider"></div>
-
-    <!-- Footer Section -->
-    <footer class="footer">
-        <div class="container text-center">
-            <div class="row">
-                <!-- Email Icon -->
-
-                <!-- LinkedIn Icon in the Center -->
-                <div class="col-md-4">
-                    <a href="https://www.linkedin.com/in/ella-yan-2a7421288/" target="_blank">
-                        <i class="ti-linkedin"></i>
-                    </a>
-                </div>
-
-                <!-- GitHub Icon -->
-                <div class="col-md-4">
-                    <a href="https://github.com/111homell111" target="_blank">
-                        <p>GitHub <i class="ti-github"></i></p>
-                    </a>
-                </div>
-            </div>
-            <!-- Footer Credits -->
-            <div class="mt-3">
-                <p>Ella Yan</p>
-            </div>
-        </div>
-    </footer>
-
-    <!-- core  -->
-    <script src="assets/vendors/jquery/jquery-3.4.1.js"></script>
-    <script src="assets/vendors/bootstrap/bootstrap.bundle.js"></script>
-
-    <!-- Dorang js -->
-    <script src="assets/js/dorang.js"></script>
+            </div> <!-- end of Padding Wrapper -->
+        </section> <!-- end of Main Content Box -->
+    </main>
 
 </body>
 </html>
