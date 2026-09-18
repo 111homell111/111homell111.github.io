@@ -1,215 +1,131 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-NCSQJKWYEF"></script>
     <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-
-    gtag('config', 'G-NCSQJKWYEF');
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-NCSQJKWYEF');
     </script>
-	<meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="Ella Yan's Portfolio">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Ella Yan's engineering portfolio.">
     <meta name="author" content="Ella Yan">
-    <title>Ella Yan's Portfolio</title>
-    <!-- font icons -->
-    <link rel="stylesheet" href="assets/vendors/themify-icons/css/themify-icons.css">
-
-    <!-- Bootstrap + Dorang main styles -->
-	<link rel="stylesheet" href="assets/css/dorang.css">
+    <title>Ella Yan | Engineering Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&display=swap" rel="stylesheet">
     <link rel="icon" type="image/png" href="assets/imgs/placeholder-cat.jpg">
-
-
+    <link rel="stylesheet" href="assets/css/site.css">
 </head>
-<body data-bs-spy="scroll" data-target=".navbar" data-offset="40" id="home" data-bs-theme="dark">
-    
-    <!-- page navbar -->
-    <nav id="navbar" class="navbar navbar-expand-sm fixed-top">
-        <div class="container-fluid ">
-            <a class="navbar-brand fs-4" href="index.html">Home</a> <!-- me-auto pushes it to the left -->
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <a class="nav-link fs-5" href="index.html#projects">Projects</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link fs-5" href="">Research Contributions (TBD)</a>
-                    </li>
-                    
-                </ul>
-            </div>
-        </div>
-    </nav>
-     <!-- page navbar end -->
+<body>
+    <div class="bg-orb bg-orb-1" aria-hidden="true"></div>
+    <div class="bg-orb bg-orb-2" aria-hidden="true"></div>
 
-    <div class="theme-selector">
-        <a href="javascript:void(0)" class="spinner">
-            <i class="ti-paint-bucket"></i>
-        </a>
-        <div class="body">
-            <a href="javascript:void(0)" class="light"></a>
-            <a href="javascript:void(0)" class="dark"></a>
-        </div>
-    </div>  
+    <header class="topbar">
+        <a class="brand" href="index.html">Ella Yan</a>
+        <nav class="nav-links">
+            <a href="#projects">Projects</a>
+            <a href="#about">About</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
 
-    <!-- page header -->
-    <header class="header">
-        <div class="overlay"></div>
-        <div class="header-content">
-            <h1 class="header-title">Hi! I'm Ella Yan</h1>
-            <p class="header-subtitle">I'm a 3rd year student studying engineering physics at UBC. I love working on multidiscplinary projects with special interests in elec, software, and physics. Welcome to my portfolio!</p>
-        </div>
-    </header><!-- end of page header -->
-    
-    <div class="container page-container">
-        <!-- Technical Projects Section -->
-        <section id="projects" class="container my-2">
-            <h2 class="title mb-4">Technical Projects</h2>
-            <div class="row">
-                <!-- Project 1 -->
-                <div class="col-md">
-                    <a href="aerodesign.html">
-                        <div class="overlay-img">
-                            <img src="assets/imgs/aerodesign-assets/2025/airspeed-PCB1-cropped.webp" class="img-fluid" alt="UBC Aerodesign">
-                            <div class="overlay">
-                                <div class="des">
-                                    <h3 class="title">UBC Aerodesign</h3>
-                                    <p>Avionics Systems for SAE Aerodesign Competition - PCB/Hardware Design</p>
-                                    <p>2022-2025</p>
-                                </div>
-                            </div>
-                        </div>
-                    </a>
-                </div>
+    <main>
+        <section class="hero reveal">
+            <h1>Engineering Wahoo!</h1>
 
-                
-                <!-- Project 2 -->
-                <div class="col-md">
-                    <a href="robotsummer.html">
-                        <div class="overlay-img">
-                            <img src="assets/imgs/robotsummer-assets/robotsummer-43.webp" class="img-fluid" alt="Robot Summer">
-                            <div class="overlay">
-                                <div class="des">
-                                    <h3 class="title">Robot Summer Competition</h3>
-                                    <p>ENPH 253 Autonomous "Cooking" Robots - CAD, C++, Circuits</p>
-                                    <p>Summer of 2024</p>
-                                </div>
-                            </div>
-                        </div>
-                    </a>
-                </div>
+            <p class="lead">
+                I enjoy multidisciplinary projects in the realm of embedded systems, software, and photonics.
+                Enjoy the tour of all my past projects meow!
+            </p>
+            <a class="cta" href="#projects">Explore Projects</a>
+        </section>
+
+        <section id="projects" class="projects reveal">
+            <div class="section-heading">
+                <h2>Featured Projects</h2>
+                <p>A curated set of builds, experiments, and competition work.</p>
             </div>
 
-            <!--Row 2-->
-            <div class="row">
-                <div class="col-md">
-                    <a href="enph353.html">
-                        <div class="overlay-img">
-                            <video class="img-fluid w-100" autoplay loop muted playsinline>
-                                <source src="assets/imgs/enph353-assets/enph353-cropped.mp4" type="video/mp4">
-                            </video>
-                            
-                            <div class="overlay">
-                                <div class="des">
-                                    <h3 class="title">Autonomous Driving AI Detective (WIP)</h3>
-                                    <p>Pytorch, Imitation Learning and CNNs</p>
-                                    <p>Fall 2024</p>
-                                </div>
-                            </div>
-                        </div>
-                    </a>
-                </div>  
+            <div class="project-grid">
+                <a class="project-card" href="aerodesign.html">
+                    <img src="assets/imgs/aerodesign-assets/2025/airspeed-PCB1-cropped.webp" alt="UBC Aerodesign avionics board">
+                    <div class="project-meta">
+                        <h3>UBC Aerodesign</h3>
+                        <p>Avionics systems, PCB design, hardware integration</p>
+                        <span>2022-2025</span>
+                    </div>
+                </a>
 
-                <div class="col-md">
-                    <a href="coilgun.html">
-                        <div class="overlay-img">
-                            <img src="assets/imgs/coilgun-assets/coil-gun-43.webp" class="img-fluid" alt="Coil Gun Project">
-                            <div class="overlay">
-                                <div class="des">
-                                    <h3 class="title">Multistage Coil Gun</h3>
-                                    <p>A Fun and Dangerous Gun - High Voltage, E&M, ESP32s</p>
-                                    <p>Early Winter of 2023</p>
-                                </div>
-                            </div>
-                        </div>
-                    </a>
-                </div>  
+                <a class="project-card" href="robotsummer.html">
+                    <img src="assets/imgs/robotsummer-assets/robotsummer-43.webp" alt="Robot Summer competition robot">
+                    <div class="project-meta">
+                        <h3>Robot Summer Competition</h3>
+                        <p>Autonomous cooking robots with CAD, C++, and circuits</p>
+                        <span>Summer 2024</span>
+                    </div>
+                </a>
 
-            <!--Row 3-->
-            <div class="row">
-                <div class="col-md">
-                    <a href="gesture-controlled-laser-turret.html">
-                        <div class="overlay-img">
-                            <img src="assets/imgs/gesture-controlled-laser-turret/laser-turret-card.jpg" class="img-fluid" alt="Gesture Controlled Laser Turret">
-                            <div class="overlay">
-                                <div class="des">
-                                    <h3 class="title">Gesture Controlled Laser Turret</h3>
-                                    <p>My Highschool Capstone Project - Computer Vision, Python, C++</p>
-                                    <p>Fall 2021</p>
-                                </div>
-                            </div>
-                        </div>
-                    </a>
-                </div>  
+                <a class="project-card" href="enph353.html">
+                    <video autoplay loop muted playsinline>
+                        <source src="assets/imgs/enph353-assets/enph353-cropped.mp4" type="video/mp4">
+                    </video>
+                    <div class="project-meta">
+                        <h3>Autonomous Driving AI Detective</h3>
+                        <p>Imitation learning, CNNs, and Pytorch</p>
+                        <span>Fall 2024</span>
+                    </div>
+                </a>
 
-                <div class="col-md">
-                    <a href="assets/IEEE_Conference_Template (6).pdf">
-                        <div class="overlay-img">
-                            <img src="assets/imgs/elec-413/defected-chip.png" class="img-fluid" alt="Silicon Photonics">
-                            <div class="overlay">
-                                <div class="des">
-                                    <h3 class="title">Silicon Photonics</h3>
-                                    <p>Design and Analysis of Mach-Zehnder Interferometer Photonic IC</p>
-                                    <p>Winter 2025</p>
-                                </div>
-                            </div>
-                        </div>
-                    </a>
-                </div>  
+                <a class="project-card" href="coilgun.html">
+                    <img src="assets/imgs/coilgun-assets/coil-gun-43.webp" alt="Multistage coil gun project">
+                    <div class="project-meta">
+                        <h3>Multistage Coil Gun</h3>
+                        <p>High voltage switching, E&amp;M, embedded control</p>
+                        <span>Winter 2023</span>
+                    </div>
+                </a>
+
+                <a class="project-card" href="gesture-controlled-laser-turret.html">
+                    <img src="assets/imgs/gesture-controlled-laser-turret/laser-turret-card.jpg" alt="Gesture controlled laser turret">
+                    <div class="project-meta">
+                        <h3>Gesture Controlled Laser Turret</h3>
+                        <p>Computer vision, Python, and C++ integration</p>
+                        <span>Fall 2021</span>
+                    </div>
+                </a>
+
+                <a class="project-card" href="assets/IEEE_Conference_Template (6).pdf">
+                    <img src="assets/imgs/elec-413/defected-chip.png" alt="Silicon photonics project image">
+                    <div class="project-meta">
+                        <h3>Silicon Photonics</h3>
+                        <p>Mach-Zehnder interferometer PIC design and analysis</p>
+                        <span>Winter 2025</span>
+                    </div>
+                </a>
             </div>
         </section>
-    
-  
-    <div class="section-divider"></div>
-    
-    <!-- Footer Section -->
-    <footer class="footer">
-        <div class="container text-center">
-            <div class="row">
-                <!-- Email Icon -->
-                <!-- LinkedIn Icon in the Center -->
-                <div class="col-md-4">
-                    <a href="https://www.linkedin.com/in/ella-yan-2a7421288/" target="_blank">
-                        <i class="ti-linkedin"></i>
-                    </a>
-                </div>
 
-                <!-- GitHub Icon -->
-                <div class="col-md-4">
-                    <a href="https://github.com/111homell111" target="_blank">
-                        <p>GitHub <i class="ti-github"></i></p>
-                    </a>
-                </div>
-            </div>
-            <!-- Footer Credits -->
-            <div class="mt-3">
-                <p>Ella Yan</p>
-            </div>
+        <section id="about" class="about reveal">
+            <h2>About</h2>
+            <p>
+                I was born at a young age in a city in a province in Canada. I grew up spending my days drawing, playing video games, and beating up my sister. I have an adorable tabby cat named muffin and I enjoy spending my free time knitting. I
+                also love being able to help and mentor others so if you're just starting your engineering journey and have questions feel free to reach out <3   
+            </p>
+        </section>
+    </main>
+
+    <footer id="contact" class="footer reveal">
+        <p>Connect with me:</p>
+        <div class="footer-links">
+            <a href="https://www.linkedin.com/in/ella-yan-2a7421288/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+            <a href="https://github.com/111homell111" target="_blank" rel="noopener noreferrer">GitHub</a>
         </div>
+        <small>Ella Yan</small>
     </footer>
 
-    <!-- core  -->
-    <script src="assets/vendors/jquery/jquery-3.4.1.js"></script>
-    <script src="assets/vendors/bootstrap/bootstrap.bundle.js"></script>
-
-    <!-- Dorang js -->
-    <script src="assets/js/dorang.js"></script>
-
+    <script src="assets/js/site.js"></script>
 </body>
 </html>
