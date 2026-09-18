@@ -7,495 +7,384 @@
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
-
     gtag('config', 'G-NCSQJKWYEF');
     </script>
-	<meta charset="utf-8">
+    
+    <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="Autonomous Driving AI Detective Project Blog Post.">
     <meta name="author" content="Ella Yan">
     <title>Autonomous Driving AI</title>
-    <!-- font icons -->
-    <link rel="stylesheet" href="assets/vendors/themify-icons/css/themify-icons.css">
 
-    <!-- Bootstrap + Dorang main styles -->
-	<link rel="stylesheet" href="assets/css/dorang.css">
-
+    <!-- Google Fonts (Manrope for body, Space Grotesk for titles) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&family=Space+Grotesk:wght@500;700;800&display=swap" rel="stylesheet">
+    
     <link rel="icon" type="image/png" href="assets/imgs/enph353-assets/car-icon.png">
 
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="assets/css/site.css">
 
+    <!-- Load Tailwind and our Custom Theme -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="assets/js/tailwind-theme.js"></script>
 </head>
-<body data-bs-spy="scroll" data-target=".navbar" data-offset="40" id="home"  data-bs-theme="dark">
-    
-    <!-- page navbar -->
-    <nav id="navbar" class="navbar navbar-expand-sm fixed-top">
-        <div class="container-fluid ">
-            <a class="navbar-brand fs-4" href="index.html">Home</a> <!-- me-auto pushes it to the left -->
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <a class="nav-link fs-6" href="enph353.html#About">About</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link fs-6" href="enph353.html#Introduction">Introduction</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link fs-6" href="enph353.html#PackageOverview">Package Overview</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link fs-6" href="enph353.html#ClueRecognition">Clue Recognition</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link fs-6" href="enph353.html#ImitationLearning">Imitation Learning</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link fs-6" href="enph353.html#StateMachine">State Machine</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
-     <!-- page navbar end -->
 
-    <div class="theme-selector">
-        <a href="javascript:void(0)" class="spinner">
-            <i class="ti-paint-bucket"></i>
-        </a>
-        <div class="body">
-            <a href="javascript:void(0)" class="light"></a>
-            <a href="javascript:void(0)" class="dark"></a>
-        </div>
-    </div>  
-    
-    <!-- Add this right after the navigation bar -->
-    <div class="container-fluid p-0" style="padding-top: 80px;">
-        <video class="img-fluid w-100" autoplay loop muted playsinline style="height: 800px; object-fit: cover;">
-            <source src="assets/imgs/enph353-assets/enph353-banner.mp4" type="video/mp4" >
-            Your browser does not support the video tag.
-        </video>
-    </div>
-    
+<body class="font-sans text-ink min-h-screen overflow-x-hidden">
+    <!-- Background Orbs -->
+    <div class="bg-orb bg-orb-1" aria-hidden="true"></div>
+    <div class="bg-orb bg-orb-2" aria-hidden="true"></div>
 
-    <!-- page container -->
-    <div class="container ">
-        <h1 class="title my-4 text-center">ENPH353 - Autonomous Driving AI Detective</h1>
+    <!-- Topbar (Sticky so it stays visible while reading!) -->
+    <header class="top-4 z-50 w-[min(1400px,92vw)] mx-auto p-4 flex flex-wrap justify-between items-center border border-line rounded-lg bg-surface backdrop-blur-md shadow-sm">
+        <a class="font-title font-extrabold tracking-wide text-xl text-ink" href="index.html">Ella Yan</a>
+        <nav class="flex flex-wrap gap-4 font-semibold text-muted text-sm md:text-base">
+            <a href="#About" class="hover:text-ink transition-colors">About</a>
+            <a href="#Introduction" class="hover:text-ink transition-colors">Introduction</a>
+            <a href="#PackageOverview" class="hover:text-ink transition-colors">Package Overview</a>
+            <a href="#ClueRecognition" class="hover:text-ink transition-colors">Clue Recognition</a>
+            <a href="#ImitationLearning" class="hover:text-ink transition-colors">Imitation Learning</a>
+        </nav>
+    </header>
 
-        <div class="section-divider"></div>
+    <main class="w-[min(1400px,92vw)] mx-auto my-8 flex flex-col gap-12">
 
-        <!--About Section-->
-        <section id="About" class="content-section">
-            <div class="container my-4">
-                <div class="row">
-                    <!-- Text Column (Left) -->
-                    <div class="col-md text-left">
-                        <h2>About the Project</h2>
-                        <p>ENPH 353 is a machine learning project course where students must code an agent that autonomously navigates an obstacle course while reading clues off signs around the track.</p>
-                        <p>In this class we use Gazebo and the ROS framework. Our team coded everything in Python, using OpenCV for computer vision and Pytorch for machine learning. Our robot controller package is located <a href="https://github.com/111homell111/controller_pkg">here</a>.</p>
-                        <p>We chose to use imitation learning to drive as we thought it best aligned with the spirit of the course (and because line following is boring!). We we're the only team who managed to get imitation learning working, and we scored the best out of all the teams who tried machine learning for driving. </p>
-                        <p>We also wrote a final report for this project which you can check out <a href="assets/imgs/enph353-assets/ENPH353-Final-Report .pdf">here</a>.</p>
-                        <p>Here's a video of our robot navigating the course! --></p>
-                        <p style="opacity: 0.7">I forgot to reset the clue reader in the vid which is why it ignored the first clue :P</p>
-                    </div>
+        <!-- Main Content Box -->
+        <section class="border border-line rounded-lg bg-surface backdrop-blur-md shadow-sm overflow-hidden">
+            
+            <!-- Hero Video Banner -->
+            <video class="w-full h-[60vh] object-cover mb-10" autoplay loop muted playsinline>
+                <source src="assets/imgs/enph353-assets/enph353-banner.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            
+            <!-- Content Wrapper -->        
+            <div class="p-6 md:p-10 pt-0">
+                <h1 class="page-title">ENPH353 - Autonomous Driving AI Detective</h1>
+                
+                <hr class="section-divider">
 
-                    <!-- Video Column (Right) -->
-                    <div class="col-md">
-                        <div class="ratio ratio-16x9">
-                            <iframe 
-                            src="https://www.youtube.com/embed/1LDbDoa-DAM?si=a0MoCG5y-zmc0fn8" 
-                            allowfullscreen>
-                            </iframe>   
+                <!-- =========================================
+                     ABOUT SECTION
+                     ========================================= -->
+                <div id="About" class="mb-12 scroll-mt-24">
+                    <h2 class="section-title">About the Project</h2>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-12 gap-6 items-stretch">
+                        <div class="text-block !mb-0 md:col-span-7 flex flex-col justify-center">
+                            <p>ENPH 353 is a machine learning project course where students must code an agent that autonomously navigates an obstacle course while reading clues off signs around the track.</p>
+                            <p>In this class we use Gazebo and the ROS framework. Our team coded everything in Python, using OpenCV for computer vision and Pytorch for machine learning. Our robot controller package is located <a href="https://github.com/111homell111/controller_pkg" class="text-blue-500 hover:underline font-semibold">here</a>.</p>
+                            <p>We chose to use imitation learning to drive as we thought it best aligned with the spirit of the course (and because line following is boring!). We were the only team who managed to get imitation learning working, and we scored the best out of all the teams who tried machine learning for driving.</p>
+                            <p>We also wrote a final report for this project which you can check out <a href="assets/imgs/enph353-assets/ENPH353-Final-Report .pdf" class="text-blue-500 hover:underline font-semibold">here</a>.</p>
+                            <p>Here's a video of our robot navigating the course! ➔</p>
+                            <p class="text-xs opacity-70 mt-2">I forgot to reset the clue reader in the vid which is why it ignored the first clue :P</p>
                         </div>
-                    <p class="caption">Full Run Using Imitation Learning for Driving and CNN for clue board detection</p>
-                    </div>
-                </div> 
-            </div>
-        </section>
 
-        <div class="section-divider"></div>
-
-        <!--Introduction Section-->
-        <section id="Introduction" class="content-section">
-            <div class="container my-4">
-                <h2 class="subtitle section-title text-center my-2">Introduction</h2>
-                <h4>Overview</h4>
-                <div class="row">
-                    <div class="col-md text-left">
-                        <p>In this project, we developed code for an autonomous robot to compete in a simulated virtual environment.</p>
-                        <p>The robot, acting as a detective, must navigate through the environment to identify and collect clues related to a fictional crime scenario while adhering to traffic laws. The robot also had to avoid obstacles, namely the pedestrian, the truck, and Baby Yoda.</p>
-                        <p>The robot's performance was evaluated on three main criteria</p>
-                        <ol>
-                            <li>Its ability to quickly navigate the course.</li>
-                            <li>Its ability to stay on track and avoid obstacles.</li>
-                            <li>Its accuracy in reading messages off the clue boards stationed around the track.</li>
-                        </ol> 
-                        <p>A diagram of the track is shown on the right.</p>
-                    </div>
-                    <div class="col-md text-center">
-                        <img src="assets/imgs/enph353-assets/track-diagram.webp" alt="Diagram of the Competition Track" class="img-fluid" style="max-width: 95%; height: auto;" loading="lazy">
-                        <p class="caption">Diagram of the Competition Track</p>
+                        <!-- Video Column -->
+                        <div class="md:col-span-5 flex flex-col justify-center">
+                            <!-- Tailwind's aspect-video keeps the 16:9 ratio automatically -->
+                            <iframe class="w-full aspect-video rounded-lg shadow-sm border border-line" src="https://www.youtube.com/embed/1LDbDoa-DAM?si=a0MoCG5y-zmc0fn8" allowfullscreen></iframe>   
+                            <p class="caption mt-2">Full Run Using Imitation Learning for Driving and CNN for clue board detection</p>
+                        </div>
                     </div>
                 </div>
 
-                <div style="height: 20px;"></div> <!-- Spacer -->
+                <hr class="section-divider">
 
-                <h4>Scoring</h4>
-                <div class="row">
-                    <div class="col-md text-left">
-                        <p>The first six clues are worth 6 points and the last two are worth 8. This results in a maximum of 52 points from clues alone. There's also 5 bonus points you can get from reaching the tunnel area. This adds up to a total of 57 points. </p>
-                        <p>Alongside points, there are many penalties that teams can acquire. In fact, some teams get negative points. The penalites are as follows: </p>
-                        <ul>
-                            <li>Penalty of -5 for colliding with the pedestrian/truck/baby Yoda.</li>
-                            <li>Penalty of -2 for going offroad.</li>
-                            <li>Penalty of -2 for respawning/teleporting.</li>
-                        </ul> 
-                        <p>Speaking of respawning/teleporting, teams are allowed to teleport/respawn at the pink lines. It is good to teleport if you're robot cannot consistently navigate a section of the course.</p>
+                <!-- =========================================
+                     INTRODUCTION SECTION
+                     ========================================= -->
+                <div id="Introduction" class="mb-12 scroll-mt-24">
+                    <h2 class="section-title text-center mb-8">Introduction</h2>
+                    
+                    <h4 class="subsection-title1">Overview</h4>
+                    <div class="grid grid-cols-1 md:grid-cols-12 gap-6 mb-10 items-stretch">
+                        <div class="text-block !mb-0 md:col-span-7 flex flex-col justify-center">
+                            <p>In this project, we developed code for an autonomous robot to compete in a simulated virtual environment.</p>
+                            <p>The robot, acting as a detective, must navigate through the environment to identify and collect clues related to a fictional crime scenario while adhering to traffic laws. The robot also had to avoid obstacles, namely the pedestrian, the truck, and Baby Yoda.</p>
+                            <p class="font-bold text-ink">The robot's performance was evaluated on three main criteria:</p>
+                            <ol class="list-decimal list-inside ml-2 space-y-1">
+                                <li>Its ability to quickly navigate the course.</li>
+                                <li>Its ability to stay on track and avoid obstacles.</li>
+                                <li>Its accuracy in reading messages off the clue boards stationed around the track.</li>
+                            </ol> 
+                        </div>
+                        <div class="md:col-span-5 flex flex-col justify-center">
+                            <img src="assets/imgs/enph353-assets/track-diagram.webp" alt="Diagram of the Competition Track" class="w-full rounded-lg shadow-sm border border-line" loading="lazy">
+                            <p class="caption">Diagram of the Competition Track</p>
+                        </div>
                     </div>
-                    <div class="col-md text-center">
-                        <img src="assets/imgs/enph353-assets/fizz-score-tracker-full-score.webp" alt="Fizz Score Tracker Full Points" class="img-fluid" style="max-width: 95%; height: auto;" loading="lazy">
-                        <p class="caption">Fizz Score Tracker with Full Points</p>
+
+                    <h4 class="subsection-title1">Scoring</h4>
+                    <div class="grid grid-cols-1 md:grid-cols-12 gap-6 mb-10 items-stretch">
+                        <div class="text-block !mb-0 md:col-span-7 flex flex-col justify-center">
+                            <p>The first six clues are worth 6 points and the last two are worth 8. This results in a maximum of 52 points from clues alone. There's also 5 bonus points you can get from reaching the tunnel area. This adds up to a total of 57 points.</p>
+                            <p>Alongside points, there are many penalties that teams can acquire. In fact, some teams get negative points. The penalties are as follows:</p>
+                            <ul class="list-disc list-inside ml-2 space-y-1 text-red-700/80">
+                                <li>Penalty of -5 for colliding with the pedestrian/truck/baby Yoda.</li>
+                                <li>Penalty of -2 for going offroad.</li>
+                                <li>Penalty of -2 for respawning/teleporting.</li>
+                            </ul> 
+                            <p>Speaking of respawning/teleporting, teams are allowed to teleport/respawn at the pink lines. It is good to teleport if your robot cannot consistently navigate a section of the course.</p>
+                        </div>
+                        <div class="md:col-span-5 flex flex-col justify-center items-center">
+                            <img src="assets/imgs/enph353-assets/fizz-score-tracker-full-score.webp" alt="Fizz Score Tracker Full Points" class="w-full max-w-sm rounded-lg shadow-sm border border-line" loading="lazy">
+                            <p class="caption">Fizz Score Tracker with Full Points</p>
+                        </div>
                     </div>
                 </div>
-            </div>
-        </section><!--End of Introduction Section-->
 
-        <div class="section-divider"></div>
+                <hr class="section-divider">
 
-        <!--Package Overview Section-->
-        <section id="PackageOverview" class="content-section">
-            <div class="container my-4">
-                <h2 class="subtitle section-title text-center my-2">Package Overview</h2>
-                <h4>Topics</h4>
-                <div class="row">
-                    <div class="col-md text-left">
+                <!-- =========================================
+                     PACKAGE OVERVIEW SECTION
+                     ========================================= -->
+                <div id="PackageOverview" class="mb-12 scroll-mt-24">
+                    <h2 class="section-title text-center mb-8">Package Overview</h2>
+                    
+                    <h4 class="subsection-title1">Topics</h4>
+                    <div class="text-block">
                         <p>There are four main topics that our robot subscribes/publishes to.</p>
-                        <ol>
+                        <ol class="list-decimal list-inside ml-2 space-y-2">
                             <li><b>/B1/rrbot/camera1/image_raw:</b> This topic contains camera footage from the front facing camera.</li>
                             <li><b>/B1/rrbot/camera2/image_raw:</b> This topic contains camera footage from the left facing camera.</li>
                             <li><b>/score_tracker:</b> This topic is where we send our clue guesses. It's related to the score tracking GUI.</li>
                             <li><b>/B1/cmd_vel:</b> This topic is responsible for controlling the robots movements.</li>
                         </ol>  
-                        <p>All of the robot control logic is located in the same files as the GUI's. Perhaps it would have been better to seperate the robot logic from the GUIs, but we didn't think it was worth thinking about given the time constraints.</p>
+                        <p>All of the robot control logic is located in the same files as the GUIs. Perhaps it would have been better to separate the robot logic from the GUIs, but we didn't think it was worth thinking about given the time constraints.</p>
                     </div>
-                </div>
-                
-                <div class="row">
-                    <div class="col-md text-center">
-                        <img src="assets/imgs/enph353-assets/ros-architecture.webp" alt="Controller Package Overview" class="img-fluid" style="max-width: 95%; height: auto;" loading="lazy">
+                    
+                    <div class="flex flex-col items-center mb-10">
+                        <img src="assets/imgs/enph353-assets/ros-architecture.webp" alt="Controller Package Overview" class="w-full md:w-3/4 rounded-lg shadow-sm border border-line" loading="lazy">
                         <p class="caption">ROS Controller Package Overview</p>
                     </div>
                 </div>
 
-            </div>
-        </section><!--Package Overview End-->
+                <hr class="section-divider">
 
-        <div class="section-divider"></div>
+                <!-- =========================================
+                     CLUE RECOGNITION SECTION
+                     ========================================= -->
+                <div id="ClueRecognition" class="mb-12 scroll-mt-24">
+                    <h2 class="section-title text-center mb-8">Clue Recognition</h2>
 
-        <!--Clue Recognition Section-->
-        <section id="ClueRecognition" class="content-section">
-            <div class="container my-4">
-                <h2 class="subtitle section-title text-center my-2">Clue Recognition</h2>
-
-                <h4>Goal</h4>
-                <div class="row">
-                    <div class="col-md text-left">
+                    <h4 class="subsection-title1">Goal</h4>
+                    <div class="text-block">
                         <p>The goal here was to take a raw image, search it for a clue board, read the clue off the clue board and then publish our best guess. We needed an algorithm that was fast, reliable (and cool)!</p>
                     </div>
-                </div>
-                
-                <div style="height: 25px;"></div> <!-- Spacer -->
 
-                <h4>Clue Board Detection - SIFT</h4>
-                <div class="row">
-                    <div class="col-md text-left">
-                        <p>First things first, we needed a way of extracting the clue board from the camera footage. We went through quite a few ideas before arriving at our final algorithm. </p>
+                    <h4 class="subsection-title1">Clue Board Detection - SIFT</h4>
+                    <div class="text-block">
+                        <p>First things first, we needed a way of extracting the clue board from the camera footage. We went through quite a few ideas before arriving at our final algorithm.</p>
                         <p>Our first idea was to use SIFT (Scale-Invariant Feature Transform). SIFT is a computer vision algorithm that detects keypoints in a template image by finding distinctive, scale- and rotation-invariant features, which it then located in a target image.</p>
                         <p>The clue boards always have a FIZZ logo in the top left. The idea was to use SIFT to locate the FIZZ emblem which would then allow us to get the homography and perform an inverse perspective transform.</p>
-                        <p>We can see that this worked quite well on the right! Or at least it looks like it does. As it turns out, SIFT is incredibly computationally expensive and slow :(. It was highkey overkill here, but still really fun to try out. </p>
-                    </div>
-                </div>  
-
-                <div class="row">
-                    <div class="col-md text-center">
-                        <video class="video-fluid" controls style="height: 390px; object-fit: cover;">
-                            <source src="assets/imgs/enph353-assets/steven-SIFT.mp4" type="video/mp4" loading="lazy" >
-                            Your browser does not support the video tag.
-                        </video>
-                        <p class="caption">Example of SIFT in Action</p>
-                    </div>
-                    <div class="col-md text-center">                        
-                        <img src="assets/imgs/enph353-assets/SIFT-clueboard.webp" alt="Identifiying Clue Board using SIFT" class="img-fluid" style="height: 390px; object-fit: contain;" loading="lazy">
-                        <p class="caption">Clue Board Detection Using SIFT Algorithm</p>
+                        <p>We can see that this worked quite well on the right! Or at least it looks like it does. As it turns out, SIFT is incredibly computationally expensive and slow :(. It was highkey overkill here, but still really fun to try out.</p>
                     </div>  
-                </div>
 
-                <div style="height: 25px;"></div> <!-- Spacer -->
-
-                <h4>Clue Board Detection - HSV Mask</h4>
-                <div class="row">
-                    <div class="col-md text-left">
-                        <p>After realizing SIFT was too slow (and overkill) we went back to the drawing board. I decided to play around with HSV masks. In hindsight we probably should have started with this, I just didn't feel like it haha. </p>
-                        <p>Our clue board detection algorithm first uses a gray HSV mask and the morphological closing operation to make out the largest gray contour on screen.</p>
-                        <p>It then tries to find 4 corners and then uses that to perform an inverse perspective transform. The result is a nice clean head-on image of our clue board.</p>
-                        <p>We originally tried using a blue HSV mask but encountered issues when the camera was super close to the clue board, namely parts of the blue clue board outline would get clipped and lead to weird inverse perpsective transforms.</p>
-                        <p>I also want to note that before we do any kind of clue board detection, we use a blue mask to check the area of the largest blue contour. This was to check whether we were close enough to the clue board as images taken from far away would become quite fuzzy :( </p>
-                        <p>The robot has bad eyesight just like me >_></p>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-10">
+                        <div class="flex flex-col items-center justify-center">
+                            <video class="w-full h-80 object-cover rounded-lg shadow-sm border border-line" controls loading="lazy">
+                                <source src="assets/imgs/enph353-assets/steven-SIFT.mp4" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                            <p class="caption">Example of SIFT in Action</p>
+                        </div>
+                        <div class="flex flex-col items-center justify-center">                        
+                            <img src="assets/imgs/enph353-assets/SIFT-clueboard.webp" alt="Identifying Clue Board using SIFT" class="w-full h-80 object-contain rounded-lg shadow-sm border border-line bg-white/50" loading="lazy">
+                            <p class="caption">Clue Board Detection Using SIFT Algorithm</p>
+                        </div>  
                     </div>
-                    <div class="col-md text-center">
-                        <img src="assets/imgs/enph353-assets/clue-board-detection-block-diagram.webp" alt="Clue Board Detection Block Diagram" class="img-fluid" style="max-width: 90%; height: auto;" loading="lazy">
-                        <p class="caption">Clue Board Detection Block Diagram</p>
-                    </div>
-                </div>  
 
-                <div class="row mt-2">
-                    <div class="col-md text-center">
-                        <img src="assets/imgs/enph353-assets/grey-mask-horizontal.webp" alt="Grey Masks Being Applied" class="img-fluid" style="max-width: 90%; height: auto;" loading="lazy">
+                    <h4 class="subsection-title1">Clue Board Detection - HSV Mask</h4>
+                    <div class="grid grid-cols-1 md:grid-cols-12 gap-6 mb-6 items-stretch">
+                        <div class="text-block !mb-0 md:col-span-7 flex flex-col justify-center">
+                            <p>After realizing SIFT was too slow (and overkill) we went back to the drawing board. I decided to play around with HSV masks. In hindsight we probably should have started with this, I just didn't feel like it haha.</p>
+                            <p>Our clue board detection algorithm first uses a gray HSV mask and the morphological closing operation to make out the largest gray contour on screen.</p>
+                            <p>It then tries to find 4 corners and then uses that to perform an inverse perspective transform. The result is a nice clean head-on image of our clue board.</p>
+                            <p>We originally tried using a blue HSV mask but encountered issues when the camera was super close to the clue board, namely parts of the blue clue board outline would get clipped and lead to weird inverse perspective transforms.</p>
+                            <p>I also want to note that before we do any kind of clue board detection, we use a blue mask to check the area of the largest blue contour. This was to check whether we were close enough to the clue board as images taken from far away would become quite fuzzy :( </p>
+                            <p>The robot has bad eyesight just like me >_></p>
+                        </div>
+                        <div class="md:col-span-5 flex flex-col justify-center">
+                            <img src="assets/imgs/enph353-assets/clue-board-detection-block-diagram.webp" alt="Clue Board Detection Block Diagram" class="w-full rounded-lg shadow-sm border border-line" loading="lazy">
+                            <p class="caption">Clue Board Detection Block Diagram</p>
+                        </div>
+                    </div>  
+
+                    <div class="flex flex-col items-center mb-10">
+                        <img src="assets/imgs/enph353-assets/grey-mask-horizontal.webp" alt="Grey Masks Being Applied" class="w-full rounded-lg shadow-sm border border-line" loading="lazy">
                         <p class="caption">Grey Mask to Inverse Perspective Transform</p>
                     </div>
-                </div>
-                
-                <div style="height: 25px;"></div> <!-- Spacer -->
-
-                <h4>Letter Segmentation</h4>
-                <div class="row">                    
-                    <div class="col-md text-left">
-                        <p>After we detect a clueboard and perform the inverse perspective transform we then try to extract the two types of text from the board:</p>
-                        <ul>
-                            <li><b>Context:</b> Text on the top half of the board. Tells you the type of clue.</li>
-                            <li><b>Clue:</b> Text on the bottom half of the board.</li>
-                        </ul>  
-                        <p>We do this by splitting the clue board into a top and bottom half. We then mask for the blue letters, we erode (horiziontally) to prevent the letters from merging into each other, we find contours, and then draw bounding boxes around them and cut them out.</p>
+                    
+                    <h4 class="subsection-title1">Letter Segmentation</h4>
+                    <div class="grid grid-cols-1 md:grid-cols-12 gap-6 mb-10 items-center">                    
+                        <div class="text-block !mb-0 md:col-span-7">
+                            <p>After we detect a clueboard and perform the inverse perspective transform we then try to extract the two types of text from the board:</p>
+                            <ul class="list-disc list-inside ml-2">
+                                <li><b>Context:</b> Text on the top half of the board. Tells you the type of clue.</li>
+                                <li><b>Clue:</b> Text on the bottom half of the board.</li>
+                            </ul>  
+                            <p class="mt-4">We do this by splitting the clue board into a top and bottom half. We then mask for the blue letters, we erode (horizontally) to prevent the letters from merging into each other, we find contours, and then draw bounding boxes around them and cut them out.</p>
+                        </div>
+                        <div class="md:col-span-5 flex flex-col justify-center">
+                            <img src="assets/imgs/enph353-assets/letter-segmentation-block-diagram.webp" alt="Letter Segmentation Block Diagram" class="w-full rounded-lg shadow-sm border border-line" loading="lazy">
+                            <p class="caption">Letter Segmentation Block Diagram</p>
+                        </div>
                     </div>
-                </div>
 
-                <div class="row">
-                    <div class="col-md text-center">
-                        <img src="assets/imgs/enph353-assets/letter-segmentation-block-diagram.webp" alt="Letter Segmentation Block Diagram" class="img-fluid" style="max-width: 90%; height: auto;" loading="lazy">
-                        <p class="caption">Letter Segmentation Block Diagram</p>
-                    </div>
-                </div>
-
-                <div class="row">
-                    <div class="col-md text-left">
+                    <div class="text-block">
                         <p><b>Issue:</b> At competition, we lost points because the text letters "OO" bleed into each other when read from afar and get read as one massive letter. We could have fixed this using a constant cropping technique (simple) or by checking to see if the aspect ratio made sense (letters should be more tall than wide, otherwise they should be cut)</p>
                         <p>Anyway, this worked very well on clear images or letters that were skinny. Below is an image of the cropped letters.</p>
                     </div>
-                </div>
-               
-                <div class="row">
-                    <div class="col-md text-center">
-                        <img src="assets/imgs/enph353-assets/cropped-images-far.webp" alt="Letters Cropped From Distant Clue Board" class="img-fluid" style="max-width: 90%; height: auto;" loading="lazy">
+                   
+                    <div class="flex flex-col items-center mb-10">
+                        <img src="assets/imgs/enph353-assets/cropped-images-far.webp" alt="Letters Cropped From Distant Clue Board" class="w-full max-w-2xl rounded-lg shadow-sm border border-line" loading="lazy">
                         <p class="caption">Letters Cropped From Distant Clue Board</p>
                     </div>
-                </div>
 
-                <div style="height: 25px;"></div> <!-- Spacer -->
-
-                <h4>CNN Model</h4>
-                <div class="row">
-                    <div class="col-md text-left">
-                        <p>Our clue readng CNN takes 25x35 greyscale images. </p>
-                        <p>It contains three convolution layers with ReLU activation functions. Each convolution layer is followed by a pooling layer. The output is then fed to two fully connected layers. </p>
-                        <p>The final layer contains 36 output neurons which correspond to the 26 possible letters + 10 possible digits.</p>
-                        <p><b>Initial Mistake:</b> I was a goofy goober and intially gave our first FC layer 4096 parameters. This meant that we originally had ~6.5 million parameters in our model :| The model was approx 25Mb in size ;w;. I fixed this by reducing the number of neurons to 200 which resulted in about 400k parameters and a ~2Mb model size.  </p>
-                        <p>There was likely room to improve the model more but we moved on in the interest of time.</p>
-                    </div>
-                    <div class="col-md text-center">
-                        <img src="assets/imgs/enph353-assets/clue-CNN-summary.webp" alt="Summary of Clue Reading CNN" class="img-fluid" style="max-width: 100%; height: auto;" loading="lazy">
-                        <p class="caption">Autogenerated Summary of Clue CNN</p>
-                    </div>
-                </div>
-
-                <div style="height: 25px;"></div> <!-- Spacer -->
-
-                <h4>Data Generation</h4>
-                <div class="row">
-                    <div class="col-md text-left">
-                        <p>We trained our model on artificially generated data. We generated 25x35 images of letters, and applied a variety of transformations on the data.</p>
-                        <p>We changed lighting, wobblyness, rotation, position, noise and blurriness. Since the clue boards would usually be viewed from the left or right, we added extra examples of images blurred horizontally. We also added extra examples for 'B', '8', 'O' and 'Q' because it's hard to tell the difference.</p>
-                    </div>
-            
-                    <div class="col-md text-center">
-                        <img src="assets/imgs/enph353-assets/auto-generated-images.webp" alt="Summary of Clue Reading CNN" class="img-fluid" style="max-width: 100%; height: auto;" loading="lazy">
-                        <p class="caption">Autogenerated Summary of Clue CNN</p>
-                    </div>
-                </div>
-
-                <div style="height: 25px;"></div> <!-- Spacer -->
-
-                <h4>Training and Result</h4>
-                <div class="row">
-                    <div class="col-md text-left">
-                        <p>As this was a classification problem, we used Cross Entropy Loss as our criterion and Stochastic Gradient Descent as our optimizer. </p>
-                        <p>Our learning rate was 0.001, our momentum was 0.9, and our weight decay was 0.0001. We typically trained for about 10 epochs at a time. </p>
-                        <p>Our confusion matrix on the right shows that the model appears to be performing very well. We added extra examples of letters like "O", "P", "B", and "8" as the model originally often got those confused.</p>
-                        <p>Our final validation accuracy was 99.80% :D</p>
-                    </div>
-
-                    <div class="col-md text-center">
-                        <img src="assets/imgs/enph353-assets/CNN-confusion-matrix.webp" alt="Confusion Matrix for Letter Classifier" class="img-fluid" style="max-width: 90%; height: auto;" loading="lazy">
-                        <p class="caption">Confusion Matrix for Letter Classifier CNN Model</p>
-                    </div>
-                </div>
-
-                <div style="height: 25px;"></div> <!-- Spacer -->
-
-                <h4>Integration</h4>
-                <div class="row">
-                    <div class="col-md text-left">
-                        <p>All of aforementioned image processing algorithms are called by the clue GUI. Here is the general workflow.</p>
-                        <ul>
-                            <li>The GUI first looks for a clueboard by searching for large grey rectangles.</li>
-                            <li>If found, an inverse perspective transform is performed and the clue board is split into a top and bottom half.</li>
-                            <li>The top and bottom half have their letters cut out and fed into a CNN which ultimately converts the letter segment images into a string</li>
-                            <li>The context and clue (top and bottom text) are then saved into a hashmap which records how many times that specific context/clue pair has been guessed.</li>
-                            <li>Once the clue board has not been seen for 5 consecutive clues, or a context/clue pair has been guessed 20 times, the most frequently guessed clue/context pair is sent to the score tracker topic.</li>
-                        <ul>
-                    </div>
-
-                    <div class="col-md text-center">
-                        <div class="scroll-container">
-                            <img src="assets/imgs/enph353-assets/clue-prediction-flow-chart.webp" alt="Clue Prediction Flow Chart" class="img-fluid" style="max-width: 90%; height: auto;" loading="lazy">
+                    <h4 class="subsection-title1">CNN Model</h4>
+                    <div class="grid grid-cols-1 md:grid-cols-12 gap-6 mb-10 items-stretch">
+                        <div class="text-block !mb-0 md:col-span-7 flex flex-col justify-center">
+                            <p>Our clue reading CNN takes 25x35 greyscale images.</p>
+                            <p>It contains three convolution layers with ReLU activation functions. Each convolution layer is followed by a pooling layer. The output is then fed to two fully connected layers.</p>
+                            <p>The final layer contains 36 output neurons which correspond to the 26 possible letters + 10 possible digits.</p>
+                            <p><b>Initial Mistake:</b> I was a goofy goober and initially gave our first FC layer 4096 parameters. This meant that we originally had ~6.5 million parameters in our model :| The model was approx 25Mb in size ;w;. I fixed this by reducing the number of neurons to 200 which resulted in about 400k parameters and a ~2Mb model size.</p>
+                            <p>There was likely room to improve the model more but we moved on in the interest of time.</p>
                         </div>
-                        <p class="caption">Clue Prediction Flow Chart</p>
+                        <div class="md:col-span-5 flex flex-col justify-center">
+                            <img src="assets/imgs/enph353-assets/clue-CNN-summary.webp" alt="Summary of Clue Reading CNN" class="w-full rounded-lg shadow-sm border border-line" loading="lazy">
+                            <p class="caption">Autogenerated Summary of Clue CNN</p>
+                        </div>
                     </div>
-                </div>
 
-                <div class="row">
-                    <div class="col-md text-center">
-                        <img src="assets/imgs/enph353-assets/integration.webp" alt="Clue GUI in Action" class="img-fluid" style="max-width: 90%; height: auto;" loading="lazy">
+                    <h4 class="subsection-title1">Data Generation</h4>
+                    <div class="grid grid-cols-1 md:grid-cols-12 gap-6 mb-10 items-stretch">
+                        <div class="text-block !mb-0 md:col-span-7 flex flex-col justify-center">
+                            <p>We trained our model on artificially generated data. We generated 25x35 images of letters, and applied a variety of transformations on the data.</p>
+                            <p>We changed lighting, wobblyness, rotation, position, noise and blurriness. Since the clue boards would usually be viewed from the left or right, we added extra examples of images blurred horizontally. We also added extra examples for 'B', '8', 'O' and 'Q' because it's hard to tell the difference.</p>
+                        </div>
+                        <div class="md:col-span-5 flex flex-col justify-center">
+                            <img src="assets/imgs/enph353-assets/auto-generated-images.webp" alt="Auto Generated Training Images" class="w-full rounded-lg shadow-sm border border-line" loading="lazy">
+                            <p class="caption">Artificially Generated Training Data</p>
+                        </div>
+                    </div>
+
+                    <h4 class="subsection-title1">Training and Result</h4>
+                    <div class="grid grid-cols-1 md:grid-cols-12 gap-6 mb-10 items-stretch">
+                        <div class="text-block !mb-0 md:col-span-7 flex flex-col justify-center">
+                            <p>As this was a classification problem, we used Cross Entropy Loss as our criterion and Stochastic Gradient Descent as our optimizer.</p>
+                            <p>Our learning rate was 0.001, our momentum was 0.9, and our weight decay was 0.0001. We typically trained for about 10 epochs at a time.</p>
+                            <p>Our confusion matrix on the right shows that the model appears to be performing very well. We added extra examples of letters like "O", "P", "B", and "8" as the model originally often got those confused.</p>
+                            <p>Our final validation accuracy was 99.80% :D</p>
+                        </div>
+                        <div class="md:col-span-5 flex flex-col justify-center">
+                            <img src="assets/imgs/enph353-assets/CNN-confusion-matrix.webp" alt="Confusion Matrix for Letter Classifier" class="w-full rounded-lg shadow-sm border border-line" loading="lazy">
+                            <p class="caption">Confusion Matrix for Letter Classifier CNN Model</p>
+                        </div>
+                    </div>
+
+                    <h4 class="subsection-title1">Integration</h4>
+                    <div class="grid grid-cols-1 md:grid-cols-12 gap-6 mb-6 items-center">
+                        <div class="text-block !mb-0 md:col-span-7">
+                            <p>All of the aforementioned image processing algorithms are called by the clue GUI. Here is the general workflow:</p>
+                            <ul class="list-disc list-inside ml-2 space-y-1">
+                                <li>The GUI first looks for a clueboard by searching for large grey rectangles.</li>
+                                <li>If found, an inverse perspective transform is performed and the clue board is split into a top and bottom half.</li>
+                                <li>The top and bottom half have their letters cut out and fed into a CNN which ultimately converts the letter segment images into a string.</li>
+                                <li>The context and clue (top and bottom text) are then saved into a hashmap which records how many times that specific context/clue pair has been guessed.</li>
+                                <li>Once the clue board has not been seen for 5 consecutive clues, or a context/clue pair has been guessed 20 times, the most frequently guessed clue/context pair is sent to the score tracker topic.</li>
+                            </ul>
+                        </div>
+                        <div class="md:col-span-5 flex flex-col justify-center">
+                            <img src="assets/imgs/enph353-assets/clue-prediction-flow-chart.webp" alt="Clue Prediction Flow Chart" class="w-full rounded-lg shadow-sm border border-line bg-white/50" loading="lazy">
+                            <p class="caption">Clue Prediction Flow Chart</p>
+                        </div>
+                    </div>
+
+                    <div class="flex flex-col items-center mb-10">
+                        <img src="assets/imgs/enph353-assets/integration.webp" alt="Clue GUI in Action" class="w-full md:w-3/4 rounded-lg shadow-sm border border-line" loading="lazy">
                         <p class="caption">Clue GUI in Action</p>
                     </div>
                 </div>
 
-            </div>
-        </section><!--Clue Recognition Section End-->
+                <hr class="section-divider">
 
-        <div class="section-divider"></div>
-
-        <!--Imitation Learning Section-->
-        <section id="ImitationLearning" class="content-section">
-            <div class="container my-4">
-                <h2 class="subtitle section-title text-center my-2">Driving - Imitation Learning</h2>
-                <h4>Data Acquisition</h4>
-                <div class="row">
-                    <div class="col-md text-left">
-                        <p>One of the biggest challenges with imitaiton learning is getting high quality examples for the model to learn from.</p>
-                        <p> A basic driving controller is provided to us students, however, the quality of the controls is quite poor. You can only really input left, right, backwards, forwards, and diagonal, with no way to fine tune your movements. This make driving feel really awkward and unnatural to the user, which results in poor quality data.</p>
-                        <p>To solve this issue, I created another GUI to test imitation learning!</p>
-                        <p>I created an area for the user to click and steer on using their mouse. I also added exponentials to the controller, allowing the user to do fine movements in the middle area, and large coarse movements at the edges of the controller area. This was inspired by my time tuning the RC controllers for our pilots on UBC Aerodesign :D</p>
-                        <p>The GUI has a button that clears any previously built-up data, and then tells the GUI to begin logging data. The GUI records the current camera frame (at a low resolution) and the robots current linear and angular velocity, and then appends this data to a list. Any data points where the robot is perfectly still are discarded.</p>
-                        <p>Once the user hits the stop recording button, a pop-up appears allowing the user to save the data as a gzipped pickle file (wacky I know, I'm sorry).</p>
+                <!-- =========================================
+                     IMITATION LEARNING SECTION
+                     ========================================= -->
+                <div id="ImitationLearning" class="mb-12 scroll-mt-24">
+                    <h2 class="section-title text-center mb-8">Driving - Imitation Learning</h2>
+                    
+                    <h4 class="subsection-title1">Data Acquisition</h4>
+                    <div class="grid grid-cols-1 md:grid-cols-12 gap-6 mb-6 items-stretch">
+                        <div class="text-block !mb-0 md:col-span-7 flex flex-col justify-center">
+                            <p>One of the biggest challenges with imitation learning is getting high quality examples for the model to learn from.</p>
+                            <p>A basic driving controller is provided to us students, however, the quality of the controls is quite poor. You can only really input left, right, backwards, forwards, and diagonal, with no way to fine tune your movements. This makes driving feel really awkward and unnatural to the user, which results in poor quality data.</p>
+                            <p>To solve this issue, I created another GUI to test imitation learning!</p>
+                            <p>I created an area for the user to click and steer on using their mouse. I also added exponentials to the controller, allowing the user to do fine movements in the middle area, and large coarse movements at the edges of the controller area. This was inspired by my time tuning the RC controllers for our pilots on UBC Aerodesign :D</p>
+                            <p>The GUI has a button that clears any previously built-up data, and then tells the GUI to begin logging data. The GUI records the current camera frame (at a low resolution) and the robot's current linear and angular velocity, and then appends this data to a list. Any data points where the robot is perfectly still are discarded.</p>
+                            <p>Once the user hits the stop recording button, a pop-up appears allowing the user to save the data as a gzipped pickle file (wacky I know, I'm sorry).</p>
+                        </div>
+                        <div class="md:col-span-5 flex flex-col justify-center">
+                            <img src="assets/imgs/enph353-assets/driving-controller.webp" alt="Imitation Learning GUI DAQ" class="w-full rounded-lg shadow-sm border border-line" loading="lazy">
+                            <p class="caption">Imitation Learning GUI - Robot Controller</p>
+                        </div>
                     </div>
-                    <div class="col-md text-center">
-                        <img src="assets/imgs/enph353-assets/driving-controller.webp" alt="Imitation Learning GUI DAQ" class="img-fluid" style="max-width: 90%; height: auto;" loading="lazy">
-                        <p class="caption">Imitation Learning GUI - Robot Controller</p>
-                    </div>
-                </div>
 
-                <div class="row">
-                    <div class="col-md text-left">
+                    <div class="text-block mb-10">
                         <p>I found that when it came to data, we found quality beat quantity. There are actually only a few full runs in our final dataset!</p>
-                        <p>Most of the footage is of me driving slowly past the sign boards in a manner so that they're visible to the camera. There's also lots of footage of me driving on trickier areas of the track. </p>
-                        <p>I also trained the model to avoid collisions. I froze obstables like the truck or baby Yoda, plopped the car super close to them, and recorded myself backing up. I also collected data of myself waiting for the truck or baby Yoda to pass and following it from a safe distance.</p>
+                        <p>Most of the footage is of me driving slowly past the sign boards in a manner so that they're visible to the camera. There's also lots of footage of me driving on trickier areas of the track.</p>
+                        <p>I also trained the model to avoid collisions. I froze obstacles like the truck or baby Yoda, plopped the car super close to them, and recorded myself backing up. I also collected data of myself waiting for the truck or baby Yoda to pass and following it from a safe distance.</p>
                     </div>
-                </div>
 
-                <div style="height: 25px;"></div> <!-- Spacer -->
-
-                <h4>Imitation Learning Model</h4>
-                <div class="row">
-                    <div class="col-md text-left">
-                        <p>Here's the rundown of our convolutional neural network for end-to-end driving:</p>
-                        <ul>
-                            <li>Takes 150x200 colour images</li>
-                            <li>Contains three convolution layers each followed by a ReLU activation function</li>
-                            <li>Pooling layer after the last convolution layer</li>
-                            <li>That layer is flattened and passed to a fully coonnected layer, which then splits into two seperate fully conncted layers, one for linear velocity and one for angular velocity</li>
-                            <li>The final layer for each branch is a single neuron which outputs a float representing a linear or angular velocity</li>
-                        </ul>
-                        <div style="height: 15px;"></div> <!-- Spacer -->
-                        <p>For training:</p>
-                        <ul>
-                            <li>We used mean square error as our criterion for this regression task</li>
-                            <li>We used SGD as our optimizer again with a learning rate of 0.001</li>
-                            <li>I didn't bother with a validation set as collecting data was more time consuming/frustrating than just testing the model itself</li>
-                        </ul>
+                    <h4 class="subsection-title1">Imitation Learning Model</h4>
+                    <div class="grid grid-cols-1 md:grid-cols-12 gap-6 mb-10 items-stretch">
+                        <div class="text-block !mb-0 md:col-span-7 flex flex-col justify-center">
+                            <p>Here's the rundown of our convolutional neural network for end-to-end driving:</p>
+                            <ul class="list-disc list-inside ml-2 space-y-1 mb-4">
+                                <li>Takes 150x200 colour images</li>
+                                <li>Contains three convolution layers each followed by a ReLU activation function</li>
+                                <li>Pooling layer after the last convolution layer</li>
+                                <li>That layer is flattened and passed to a fully connected layer, which then splits into two separate fully connected layers, one for linear velocity and one for angular velocity</li>
+                                <li>The final layer for each branch is a single neuron which outputs a float representing a linear or angular velocity</li>
+                            </ul>
+                            <p>For training:</p>
+                            <ul class="list-disc list-inside ml-2 space-y-1">
+                                <li>We used mean square error as our criterion for this regression task</li>
+                                <li>We used SGD as our optimizer again with a learning rate of 0.001</li>
+                                <li>I didn't bother with a validation set as collecting data was more time consuming/frustrating than just testing the model itself</li>
+                            </ul>
+                        </div>
+                        <div class="md:col-span-5 flex flex-col justify-center">
+                            <img src="assets/imgs/enph353-assets/imitation-learning-model.webp" alt="Imitation Learning Model Summary" class="w-full rounded-lg shadow-sm border border-line" loading="lazy">
+                            <p class="caption">Imitation Learning Model Summary</p>
+                        </div>
                     </div>
-                    <div class="col-md text-center">
-                        <img src="assets/imgs/enph353-assets/imitation-learning-model.webp" alt="Imitation Learning Model Summary" class="img-fluid" style="max-width: 90%; height: auto;" loading="lazy">
-                        <p class="caption">Imitation Learning Model Summary</p>
-                    </div>
-                </div>
 
-
-                <div style="height: 25px;"></div> <!-- Spacer -->
-
-                <h4>Testing</h4>
-                <div class="row">
-                    <div class="col-md text-left">
+                    <h4 class="subsection-title1">Testing</h4>
+                    <div class="text-block">
                         <p>TO BE WRITTEN LATER. See the final report linked in the "about" to hear the rest of the story if you can't wait!</p>
-                </div>
-            </div>
-        </section><!--Imitation Learning Section End-->
-
-        <div class="section-divider"></div>
-
-        <!--State Machine Section-->
-        <section id="StateMachine" class="content-section">
-            <div class="container my-4">    
-                <h2 class="subtitle section-title text-center my-2">StateMachine</h2>
-                <h4>Topics</h4>
-                <div class="row">
-                    <div class="col-md text-left">
                     </div>
                 </div>
-            </div>
-        </section><!--State Machine Section End-->
 
-        <div class="section-divider"></div>
+                <hr class="section-divider">
 
-    </div> <!-- end of page container -->
-
-
-
-
-    <!-- Footer Section -->
-    <footer class="footer">
-        <div class="container text-center">
-            <div class="row">
-                <!-- Email Icon -->
-
-
-                <!-- LinkedIn Icon in the Center -->
-                <div class="col-md-4">
-                    <a href="https://www.linkedin.com/in/ella-yan-2a7421288/" target="_blank">
-                        <i class="ti-linkedin"></i>
-                    </a>
+                <!-- =========================================
+                     STATE MACHINE SECTION
+                     ========================================= -->
+                <div id="StateMachine" class="mb-12 scroll-mt-24">    
+                    <h2 class="section-title text-center mb-8">State Machine</h2>
+                    <h4 class="subsection-title1">Topics</h4>
+                    <div class="text-block">
+                        <!-- Content goes here when ready! -->
+                    </div>
                 </div>
 
-                <!-- GitHub Icon -->
-                <div class="col-md-4">
-                    <a href="https://github.com/111homell111" target="_blank">
-                        <p>GitHub <i class="ti-github"></i></p>
-                    </a>
-                </div>
-            </div>
-            <!-- Footer Credits -->
-            <div class="mt-3">
-                <p>Ella Yan</p>
-            </div>
-        </div>
-    </footer>
+            </div> <!-- End of Padding Wrapper -->
+        </section> <!-- End of Main Content Box -->
 
-    <!-- core  -->
-    <script src="assets/vendors/jquery/jquery-3.4.1.js"></script>
-    <script src="assets/vendors/bootstrap/bootstrap.bundle.js"></script>
-
-    <!-- Dorang js -->
-    <script src="assets/js/dorang.js"></script>
+    </main>
 
 </body>
 </html>
