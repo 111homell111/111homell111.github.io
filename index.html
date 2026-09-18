@@ -1,90 +1,101 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-NCSQJKWYEF"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag() { dataLayer.push(arguments); }
-        gtag('js', new Date());
-        gtag('config', 'G-NCSQJKWYEF');
-    </script>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Ella Yan's engineering portfolio.">
-    <meta name="author" content="Ella Yan">
     <title>Ella Yan | Engineering Portfolio</title>
+    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&display=swap" rel="stylesheet">
-    <link rel="icon" type="image/png" href="assets/imgs/placeholder-cat.jpg">
+    
     <link rel="stylesheet" href="assets/css/site.css">
+
+    <!-- 1. Load Tailwind -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- 2. Load YOUR custom theme settings -->
+    <script src="assets/js/tailwind-theme.js"></script>
+
 </head>
-<body>
+<body class="font-sans text-ink min-h-screen overflow-x-hidden">
+
+    <!-- Background Orbs -->
     <div class="bg-orb bg-orb-1" aria-hidden="true"></div>
     <div class="bg-orb bg-orb-2" aria-hidden="true"></div>
 
-    <header class="topbar">
-        <a class="brand" href="index.html">Ella Yan</a>
-        <nav class="nav-links">
-            <a href="#projects">Projects</a>
-            <a href="#about">About</a>
-            <a href="#contact">Contact</a>
+    <!-- Topbar (Recreated with Tailwind) -->
+    <header class="w-[min(1100px,92vw)] mx-auto mt-5 p-4 flex flex-col sm:flex-row justify-between items-center border border-line rounded-lg bg-surface backdrop-blur-md shadow-sm">
+        <a class="font-extrabold tracking-wide text-ink text-lg" href="index.html">Ella Yan</a>
+        <nav class="flex gap-4 mt-3 sm:mt-0 font-semibold text-muted">
+            <a href="#projects" class="hover:text-ink hover:bg-accent/20 px-3 py-1 rounded transition">Projects</a>
+            <a href="#about" class="hover:text-ink hover:bg-accent/20 px-3 py-1 rounded transition">About</a>
+            <a href="#contact" class="hover:text-ink hover:bg-accent/20 px-3 py-1 rounded transition">Contact</a>
         </nav>
     </header>
 
-    <main>
-        <section class="hero reveal">
-            <h1>Engineering Wahoo!</h1>
-
-            <p class="lead">
-                I enjoy multidisciplinary projects in the realm of embedded systems, software, and photonics.
-                Enjoy the tour of all my past projects meow!
+    <main class="w-[min(1100px,92vw)] mx-auto my-12 flex flex-col gap-12">
+        
+        <!-- Hero Section -->
+        <section class="mt-8">
+            <h1 class="text-5xl md:text-7xl font-extrabold leading-tight mb-4 max-w-[17ch]">Engineering Wahoo!</h1>
+            <p class="max-w-[62ch] text-muted text-lg mb-6">
+                I enjoy multidisciplinary projects in the realm of embedded systems, software, and photonics. Enjoy the tour of all my past projects meow!
             </p>
-            <a class="cta" href="#projects">Explore Projects</a>
+            <a href="#projects" class="inline-block font-bold text-ink border border-purple-900/20 rounded px-5 py-3 bg-gradient-to-r from-pink-300/40 to-blue-300/40 shadow-sm hover:-translate-y-1 transition-transform">
+                Explore Projects
+            </a>
         </section>
 
-        <section id="projects" class="projects reveal">
-            <div class="section-heading">
-                <h2>Featured Projects</h2>
-                <p>A curated set of builds, experiments, and competition work.</p>
+        <!-- Projects Section -->
+        <section id="projects">
+            <div class="mb-6">
+                <h2 class="text-3xl font-bold">Featured Projects</h2>
+                <p class="text-muted">A curated set of builds, experiments, and competition work.</p>
             </div>
 
-            <div class="project-grid">
-                <a class="project-card" href="aerodesign.html">
-                    <img src="assets/imgs/aerodesign-assets/2025/airspeed-PCB1-cropped.webp" alt="UBC Aerodesign avionics board">
+            <!-- The Grid (1 col on mobile, 2 on tablet, 3 on desktop) -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5">
+                
+                <!-- Project Card 1  -->
+                <a href="aerodesign.html" class="project-card">
+                    <img src="assets/imgs/aerodesign-assets/2025/airspeed-PCB1-cropped.webp" alt="UBC Aerodesign" class="project-media w-full h-56 object-cover">
                     <div class="project-meta">
-                        <h3>UBC Aerodesign</h3>
-                        <p>Avionics systems, PCB design, hardware integration</p>
-                        <span>2022-2025</span>
+                        <h3 class="font-bold text-lg mb-1">UBC Aerodesign</h3>
+                        <p class="text-muted text-sm mb-4">Avionics systems, PCB design, hardware integration</p>
+                        <span class="project-date">2022-2025</span>
                     </div>
                 </a>
 
-                <a class="project-card" href="robotsummer.html">
-                    <img src="assets/imgs/robotsummer-assets/robotsummer-43.webp" alt="Robot Summer competition robot">
+                <!-- Project Card 2 -->
+                <a href="robotsummer.html" class="project-card">
+                    <img src="assets/imgs/robotsummer-assets/robotsummer-43.webp" alt="Robot Summer" class="project-media w-full h-56 object-cover">
                     <div class="project-meta">
-                        <h3>Robot Summer Competition</h3>
-                        <p>Autonomous cooking robots with CAD, C++, and circuits</p>
-                        <span>Summer 2024</span>
+                        <h3 class="font-bold text-lg mb-1">Robot Summer Competition</h3>
+                        <p class="text-muted text-sm mb-4">Autonomous cooking robots with CAD, C++, and circuits</p>
+                        <span class="project-date">Summer 2024</span>
                     </div>
                 </a>
 
-                <a class="project-card" href="enph353.html">
-                    <video autoplay loop muted playsinline>
+                <!-- Project Card 3 -->
+                <a href="enph353.html" class="project-card">
+                    <video autoplay loop muted playsinline class="project-media w-full h-56 object-cover">
                         <source src="assets/imgs/enph353-assets/enph353-cropped.mp4" type="video/mp4">
                     </video>
                     <div class="project-meta">
-                        <h3>Autonomous Driving AI Detective</h3>
-                        <p>Imitation learning, CNNs, and Pytorch</p>
-                        <span>Fall 2024</span>
+                        <h3 class="font-bold text-lg mb-1">Autonomous Driving AI</h3>
+                        <p class="text-muted text-sm mb-4">Imitation learning, CNNs, and Pytorch</p>
+                        <span class="project-date">Fall 2024</span>
                     </div>
                 </a>
+
 
                 <a class="project-card" href="coilgun.html">
                     <img src="assets/imgs/coilgun-assets/coil-gun-43.webp" alt="Multistage coil gun project">
                     <div class="project-meta">
                         <h3>Multistage Coil Gun</h3>
                         <p>High voltage switching, E&amp;M, embedded control</p>
-                        <span>Winter 2023</span>
+                        <span class="project-date">Winter 2023</span>
                     </div>
                 </a>
 
@@ -93,7 +104,7 @@
                     <div class="project-meta">
                         <h3>Gesture Controlled Laser Turret</h3>
                         <p>Computer vision, Python, and C++ integration</p>
-                        <span>Fall 2021</span>
+                        <span class="project-date">Fall 2021</span>
                     </div>
                 </a>
 
@@ -102,30 +113,32 @@
                     <div class="project-meta">
                         <h3>Silicon Photonics</h3>
                         <p>Mach-Zehnder interferometer PIC design and analysis</p>
-                        <span>Winter 2025</span>
+                        <span class="project-date">Winter 2025</span>
                     </div>
-                </a>
+
+
             </div>
         </section>
 
-        <section id="about" class="about reveal">
-            <h2>About</h2>
-            <p>
+        <!-- About Section -->
+        <section id="about" class="border border-line rounded-lg bg-surface p-6 shadow-sm">
+            <h2 class="text-3xl font-bold mb-2">About</h2>
+            <p class="text-muted leading-relaxed">
                 I was born at a young age in a city in a province in Canada. I grew up spending my days drawing, playing video games, and beating up my sister. I have an adorable tabby cat named muffin and I enjoy spending my free time knitting. I
                 also love being able to help and mentor others so if you're just starting your engineering journey and have questions feel free to reach out <3   
             </p>
         </section>
     </main>
 
-    <footer id="contact" class="footer reveal">
-        <p>Connect with me:</p>
-        <div class="footer-links">
-            <a href="https://www.linkedin.com/in/ella-yan-2a7421288/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-            <a href="https://github.com/111homell111" target="_blank" rel="noopener noreferrer">GitHub</a>
+    <!-- Footer -->
+    <footer id="contact" class="w-[min(1100px,92vw)] mx-auto mb-8 border border-line rounded-lg bg-surface p-6 shadow-sm flex flex-col gap-2">
+        <p class="font-semibold">Connect with me:</p>
+        <div class="flex gap-4 font-bold text-indigo-600">
+            <a href="https://www.linkedin.com/in/ella-yan-2a7421288/" target="_blank" class="hover:underline">LinkedIn</a>
+            <a href="https://github.com/111homell111" target="_blank" class="hover:underline">GitHub</a>
         </div>
-        <small>Ella Yan</small>
+        <small class="text-muted mt-2">Ella Yan</small>
     </footer>
 
-    <script src="assets/js/site.js"></script>
 </body>
 </html>
